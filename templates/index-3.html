@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="x-ua-compatible" content="ie=edge" />
+	<meta name="keywords"
+		content="agency, photography, business, company, consulting, corporate, creative, designer, digital marketing, elementor, industry, portfolio, studio, web design">
+	<meta name="description"
+		content="Qurifolio - Personal Portfolio Flask Template for all kinds of business, modern, multipurpose, personal, marketing,portfolio, online bussines, Ecommerce, Shop,website">
+	<title>Qurifolio - Personal Portfolio Flask Template</title>
+	<meta property="og:site_name" content="Logistics">
+	<meta property="og:url" content="">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Qurifolio - Personal Portfolio Flask Template">
+	<meta name='og:image' content='images/assets/ogg.png'>
+	<!-- For IE -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- For Resposive Device -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- For Window Tab Color -->
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#913BFF">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#913BFF">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#913BFF">
+
+	<!-- <link rel="manifest" href="site.webmanifest" /> -->
+	<link rel="shortcut icon" type="image/x-icon" href={{ url_for('static', filename='img/favicon.png') }} />
+	<!-- Place favicon.ico in the root directory -->
+
+	<!-- CSS here -->
+	<link rel="stylesheet" href={{ url_for('static', filename='css/bootstrap.min.css') }} />
+	<link rel="stylesheet" href={{ url_for('static', filename='fonts/bootstrap-icons/font-css.css') }} />
+	<link rel="stylesheet" href={{ url_for('static', filename='css/animate.min.css') }} />
+	<link rel="stylesheet" href={{ url_for('static', filename='css/slick.css') }} />
+	<link rel="stylesheet" href={{ url_for('static', filename='css/all.min.css') }} />
+	<link rel="stylesheet" href={{ url_for('static', filename='css/nice-select.css') }} />
+	<link rel="stylesheet" href={{ url_for('static', filename='css/magnific-popup.css') }} />
+	<link rel="stylesheet" href={{ url_for('static', filename='css/metisMenu.css') }} />
+	<link rel="stylesheet" href={{ url_for('static', filename='css/aos.css') }} />
+	<link rel="stylesheet" href={{ url_for('static', filename='css/spacing.css') }} />
+	<link rel="stylesheet" href={{ url_for('static', filename='css/main.css') }} />
+</head>
+
+<body id="body" class="light-bg">
+	<!-- main-page-wrapper start -->
+	<div class="main-page-wrapper position-relative">
+		<!--[if lte IE 9]> <p class="browserupgrade"> You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security. </p> <![endif]-->
+
+		<!-- Add your site or application content here -->
+
+		<!-- Gearbox content here -->
+		<div class="gear-box">
+			<div class="icon">
+				<span class="gear-icon"><i class="bi bi-gear"></i></span>
+				<span class="close-icon"><i class="bi bi-x-lg"></i></span>
+			</div>
+			<h5 class="text-white fw-medium">Mode</h5>
+			<div class="color-mode">
+				<input type="checkbox" class="checkbox" id="checkbox">
+				<label for="checkbox" class="checkbox-label">
+					<i class="bi bi-moon-fill"></i>
+					<i class="bi bi-sun-fill"></i>
+					<span class="ball"></span>
+				</label>
+			</div>
+			<ul class="nav-menu-list">
+				<li><a href="index.html">Home Style - 1</a></li>
+				<li><a href="index-2.html">Home Style - 2</a></li>
+			</ul>
+		</div>
+
+
+		<!-- preloader -->
+		<div id="preloader" class="preloader-main">
+			<div class="loader-wrapper">
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+		</div>
+		<!-- preloader end  -->
+
+
+		<!-- offcanvas start  -->
+		<div class="offcanvas offcanvas-top theme-bg" tabindex="-1" id="offcanvasTop">
+			<div class="offcanvas-header">
+				<a data-bs-dismiss="offcanvas" aria-label="Close">
+					<i class="fas fa-times search-close" id="search-close"></i>
+				</a>
+			</div>
+			<div class="offcanvas-body">
+				<!-- Fullscreen search -->
+				<div class="search-wrap">
+					<form method="get">
+						<input type="search" class="main-search-input" placeholder="Search Your Keyword...">
+					</form>
+				</div>
+				<!-- end fullscreen search -->
+			</div>
+		</div>
+		<!-- offcanvas end  -->
+
+
+		<!-- header-area start -->
+		<header class="theme-main-menu theme-menu-two pt-40 pb-30 d-none">
+			<div class="main-header-area">
+				<div class="container-fluid">
+					<div class="row align-items-center">
+						<div class="d-none text-center">
+							<div class="main-menu d-none">
+								<nav id="mobile-menu2">
+									<ul class="menu-list ps-0">
+										<li>
+											<a href="#">
+												Home
+											</a>
+											<ul class="sub-menu">
+												<li>
+													<a href="index.html">Home Style 1</a>
+												</li>
+												<li>
+													<a href="index-2.html">Home Style 2</a>
+												</li>
+												<li>
+													<a href="index-3.html">Home Style 3</a>
+												</li>
+											</ul>
+										</li>
+										<li>
+											<a href="about.html">About Us</a>
+										</li>
+										<li>
+											<a href="#">Services</a>
+											<ul class="sub-menu">
+												<li>
+													<a href="service.html">Services</a>
+												</li>
+												<li>
+													<a href="service-details.html">Services Details</a>
+												</li>
+											</ul>
+										</li>
+										<li>
+											<a href="#">Project</a>
+											<ul class="sub-menu">
+												<li>
+													<a href="portfolio.html">Project</a>
+												</li>
+												<li>
+													<a href="project-details.html">Project
+														Details</a>
+												</li>
+											</ul>
+										</li>
+										<li>
+											<a href="#">Blog</a>
+											<ul class="sub-menu">
+												<li>
+													<a href="blog-list.html">Blog</a>
+												</li>
+												<li>
+													<a href="blog-details.html">Blog Details</a>
+												</li>
+											</ul>
+										</li>
+										<li>
+											<a href="contact.html">contact</a>
+										</li>
+									</ul>
+								</nav>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /.theme-main-menu -->
+		</header>
+		<!-- header-area end -->
+
+		<!-- slide-bar start -->
+		<aside class="slide-bar">
+			<div class="close-mobile-menu">
+				<a href="javascript:void(0);">
+					<i class="fas fa-times"></i>
+				</a>
+			</div>
+			<!-- offset-sidebar start -->
+			<div class="offset-sidebar">
+				<div class="offset-widget offset-logo mb-30">
+					<a href="index-3.html">
+						<img src={{ url_for('static', filename='img/logo/header-logo-1.png') }} alt="logo">
+					</a>
+				</div>
+				<!-- <div class="mobile-menu2"></div> -->
+
+				<div class="left-menu mt-30 mb-10">
+					<ul>
+						<li class=""><a href="#Home">Home</a></li>
+						<li class=""><a href="#About">About</a></li>
+						<li class=""><a href="#Services">Services</a></li>
+						<li class=""><a href="#Portfolio">Portfolio</a></li>
+						<li class=""><a href="#Blog">Blog</a></li>
+						<li class=""><a href="#Contact">Contact</a></li>
+					</ul>
+				</div>
+
+				<div class="offset-widget mb-40">
+					<div class="info-widget">
+						<h4 class="offset-title mb-20">About Us</h4>
+						<p class="mb-30">
+							But I must explain to you how all this mistaken idea of denouncing pleasure and
+							praising pain was born and will give you a complete account of the system and
+							expound the actual teachings of the great explore
+						</p>
+					</div>
+				</div>
+				<div class="offset-widget mb-30 pr-10">
+					<div class="info-widget info-widget2">
+						<h4 class="offset-title mb-20">Contact Info</h4>
+						<p>
+							<i class="fal fa-address-book"></i>
+							23/A, Miranda City Likaoli Prikano, Dope</p>
+						<p>
+							<i class="fal fa-phone"></i>
+							+0989 7876 9865 9
+						</p>
+						<p>
+							<i class="fal fa-envelope-open"></i>
+							info@example.com
+						</p>
+					</div>
+				</div>
+				<!-- <div class="login-btn text-center">
+					<a class="ht_btn w-100" href="login.html">Login</a>
+				</div> -->
+			</div>
+			<!-- offset-sidebar end -->
+
+		</aside>
+		<div class="body-overlay"></div>
+		<!-- slide-bar end -->
+
+		<header class="header-section">
+			<div class="container-fluid">
+				<div class="hrader-topbar d-lg-none d-md-block">
+					<div class="main-header-area">
+						<div class="row align-items-center justify-content-end">
+							<div class="col-8">
+								<a class="logo-three" href="index-3.html">
+									<!-- <h4 class="text-dark">John Wick</h4> -->
+									<img class="img-fluid" src={{ url_for('static', filename='img/logo/header-logo-1.png') }} alt="">
+								</a>
+							</div>
+							<div class="col-lg-3 col-4 text-end">
+								<div class="hamburger-menu text-end">
+									<a href="javascript:void(0);">
+										<span class="round-menu">
+											<span class="line"></span>
+										</span>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="side-menu text-center d-none d-lg-inline-block" id="menu_wrap">
+					<div class="auhtor-info">
+						<h2>John Wick</h2>
+						<h4>Product Designer</h4>
+						<div class="author-avatar">
+							<img class="w-100" src={{ url_for('static', filename='img/media/img-3.jpg') }} alt="author">
+						</div>
+					</div>
+					<div class="left-menu mt-30 mb-10">
+						<ul>
+							<li class=""><a href="#Home">Home</a></li>
+							<li class=""><a href="#About">About</a></li>
+							<li class=""><a href="#Services">Services</a></li>
+							<li class=""><a href="#Portfolio">Portfolio</a></li>
+							<li class=""><a href="#Blog">Blog</a></li>
+							<li class=""><a href="#Contact">Contact</a></li>
+						</ul>
+					</div>
+					<div class="bottom-section d-none d-xl-block">
+						<div class="social-media-3 mb-10">
+							<a href="#"><i class="fab fa-facebook-f"></i></a>
+							<a href="#"><i class="fab fa-twitter"></i></a>
+							<a href="#"><i class="fab fa-instagram"></i></a>
+							<a href="#"><i class="fab fa-youtube"></i></a>
+						</div>
+						<p class="text-white">@2024 Pixel-Eyez. All Rights Reserved</p>
+					</div>
+				</div>
+			</div>
+		</header>
+
+
+
+		<main class="page-content">
+			<div class="smooth-scrool-animate" id="has_smooth"></div>
+
+			<!-- theme-main-banner start -->
+			<section id="Home"
+				class="theme-main-banner-three position-relative mt-110 pt-40 pb-100 mt-lg-20 mt-md-60 pb-lg-20">
+				<div class="portfolio-thumb d-none d-md-block" data-background="static/img/media/img-4.png">
+				</div>
+				<img class="shape-01" src={{ url_for('static', filename='img/shape/round-bg-3.svg') }} alt="shape">
+				<div class="container">
+					<div class="row align-items-center">
+						<div class="col-12 d-md-none d-sm-block mb-5">
+							<div class="hero-img">
+								<img class="w-100" src={{ url_for('static', filename='img/hero/author-md-2.png') }} alt="author">
+							</div>
+						</div>
+						<div class="col-xl-8 col-lg-12">
+							<div class="inner-content text-lg-start text-center">
+								<h4 class="subtitle-four mb-25">This is me!</h4>
+								<h1 class="title-four mb-50">Exploring
+									<span class="highlight-text" data-text="Design">Design</span>
+									Excellence with
+									John’s Portfolio</h1>
+								<div class="button-group">
+									<a class="ht_btn me-sm-3" href="#Contact">Book a Call</a>
+									<a class="ht-btn-three" href="#Portfolio">View Work</a>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</section>
+			<!-- theme-main-banner end -->
+
+
+			<!-- counter-section start -->
+			<section class="counter-section position-relative pt-60 pb-90 pb-lg-35">
+				<div class="container">
+					<div class="row">
+						<div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+							<div class="counter-wrapper-2 mb-30">
+								<h4>Global Completed</h4>
+								<div class="counter-number">
+									<span class="counter">1647</span>+
+								</div>
+							</div>
+						</div>
+						<div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="150">
+							<div class="counter-wrapper-2 mb-30 ps-xl-3">
+								<h4>Worldwide Client</h4>
+								<div class="counter-number">
+									<span class="counter">568</span>+
+								</div>
+							</div>
+						</div>
+						<div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+							<div class="counter-wrapper-2 mb-30 ps-xl-3">
+								<h4>Best Dev Winner</h4>
+								<div class="counter-number">
+									<span class="counter">235</span>+
+								</div>
+							</div>
+						</div>
+						<div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="250">
+							<div class="counter-wrapper-2 mb-30 ps-xl-3">
+								<h4>Client Reviews</h4>
+								<div class="counter-number">
+									<span class="counter">496</span>+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- counter-section end -->
+
+			<!-- about-section start -->
+			<section id="About" class="about-section position-relative pt-120 pt-lg-60">
+				<div class="container">
+					<div class="row align-items-center">
+						<div class="col-lg-12">
+							<div class="about-text-wrapper-3 mb-30">
+								<div class="upper-title-2 mb-30">Welcome!</div>
+								<h2 class="about-title mb-15">Designing Digital Delights: John's Portfolio</h2>
+								<div class="inner-card d-md-flex justify-content-between align-items-start mt-35">
+									<div class="bottom-title mt-20">
+										About <span class="line"></span>
+									</div>
+									<p class="mt-20">An independent creative designer with 10 years of experience
+										combining
+										distinctive
+										design with thoughtful strategy across a wide range of media.</p>
+								</div>
+								<div class="media-img mt-40">
+									<img class="img-fluid" src={{ url_for('static', filename='img/media/img-5.jpg') }} alt="media">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- about-section end -->
+
+			<!-- services-section start -->
+			<section id="Services" class="services-secion pt-100 pb-120 pb-lg-70 pt-lg-90">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10">
+							<h2 class="wrapper-title mb-20">Our Services</h2>
+							<p>Interactively enable corporate functionalities rather than front-end catalysts for
+								change. Seamlessly myocardinate collaborative relationships.</p>
+						</div>
+					</div>
+					<div class="row service-wrapper align-items-end">
+						<div class="col-md-2 ps-md-0">
+							<span class="me-4">01.</span>
+						</div>
+						<div class="col-md-8">
+							<h2>Design</h2>
+						</div>
+						<div class="col-md-2 pe-md-0">
+							<div class="text-md-end">
+								<a class="icon-link" href="#"><i class="bi bi-arrow-right-short"></i></a>
+							</div>
+						</div>
+					</div>
+					<div class="row service-wrapper align-items-end">
+						<div class="col-md-2 ps-md-0">
+							<span class="me-4">02.</span>
+						</div>
+						<div class="col-md-8">
+							<h2>Branding</h2>
+						</div>
+						<div class="col-md-2  pe-md-0">
+							<div class="text-md-end">
+								<a class="icon-link" href="#"><i class="bi bi-arrow-right-short"></i></a>
+							</div>
+						</div>
+					</div>
+					<div class="row service-wrapper align-items-end">
+						<div class="col-md-2 ps-md-0">
+							<span class="me-4">03.</span>
+						</div>
+						<div class="col-md-8">
+							<h2>Marketing</h2>
+						</div>
+						<div class="col-md-2  pe-md-0">
+							<div class="text-md-end">
+								<a class="icon-link" href="#"><i class="bi bi-arrow-right-short"></i></a>
+							</div>
+						</div>
+					</div>
+					<div class="row service-wrapper align-items-end">
+						<div class="col-md-2 ps-md-0">
+							<span class="me-4">04.</span>
+						</div>
+						<div class="col-md-8">
+							<h2>Consult</h2>
+						</div>
+						<div class="col-md-2  pe-md-0">
+							<div class="text-md-end">
+								<a class="icon-link" href="#"><i class="bi bi-arrow-right-short"></i></a>
+							</div>
+						</div>
+					</div>
+					<div class="row service-wrapper align-items-end">
+						<div class="col-md-2 ps-md-0">
+							<span class="me-4">05.</span>
+						</div>
+						<div class="col-md-8">
+							<h2>Graphics</h2>
+						</div>
+						<div class="col-md-2  pe-md-0">
+							<div class="text-md-end">
+								<a class="icon-link" href="#"><i class="bi bi-arrow-right-short"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- services-section end -->
+
+			<!-- partners-section start -->
+			<div class="black-bg partners-section pt-sect-3 mt-60">
+				<div class="container">
+					<div class="brand-wrapper">
+						<div class="row text-center">
+							<div class="col">
+								<img src={{ url_for('static', filename='img/brand/brand-4.png') }} alt="brand">
+							</div>
+							<div class="col d-none d-sm-inline-block">
+								<img src={{ url_for('static', filename='img/brand/brand-5.png') }} alt="brand">
+							</div>
+							<div class="col d-none d-xl-inline-block">
+								<img src={{ url_for('static', filename='img/brand/brand-6.png') }} alt="brand">
+							</div>
+							<div class="col d-none d-xxl-inline-block">
+								<img src={{ url_for('static', filename='img/brand/brand-7.png') }} alt="brand">
+							</div>
+						</div>
+						<div class="row text-center row-divider">
+							<div class="col">
+								<img src={{ url_for('static', filename='img/brand/brand-8.png') }} alt="brand">
+							</div>
+							<div class="col d-none d-sm-inline-block">
+								<img src={{ url_for('static', filename='img/brand/brand-9.png') }} alt="brand">
+							</div>
+							<div class="col d-none d-xxl-inline-block">
+								<img src={{ url_for('static', filename='img/brand/brand-10.png') }} alt="brand">
+							</div>
+							<div class="col d-none d-xxl-inline-block">
+								<img src={{ url_for('static', filename='img/brand/brand-11.png') }} alt="brand">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- partners-section end -->
+
+			<!-- qualifications-section start -->
+			<section class="qualifications-section pt-160 pb-90 pt-lg-120 pb-lg-50">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 mb-50">
+							<h2 class="wrapper-title mb-20">My Qualification</h2>
+							<p>Interactively enable corporate functionalities rather than front-end catalysts for
+								change. Seamlessly myocardinate collaborative relationships.</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="header-sec mb-40">
+								<h3>Education</h3>
+							</div>
+							<ul class="exp-timeline">
+								<li>
+									<div class="qualifications-wrapper-two mb-40">
+										<h6>2010-2014</h6>
+										<h4>Diploma In Human Interface</h4>
+										<div class="institute">University Of Temporary</div>
+										<p>Dynamically visualize mission-critical niches via virtual results.
+											Distinctive
+											engage market positioning infomediaries before backend.</p>
+									</div>
+								</li>
+								<li>
+									<div class="qualifications-wrapper-two mb-40">
+										<div class="body-contents">
+											<h6>2015-2016</h6>
+											<h4>Post Grad In Design</h4>
+											<div class="institute">University Of Temporary</div>
+											<p>Dynamically visualize mission-critical niches via virtual results.
+												Distinctive
+												engage market positioning infomediaries before backend.</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<div class="col-lg-6">
+							<div class="header-sec mb-40">
+								<h3>Experiences</h3>
+							</div>
+							<ul class="exp-timeline">
+								<li>
+									<div class="qualifications-wrapper-two mb-40">
+										<h6>2010-2014</h6>
+										<h4>Diploma In Human Interface</h4>
+										<div class="institute">University Of Temporary</div>
+										<p>Dynamically visualize mission-critical niches via virtual results.
+											Distinctive
+											engage market positioning infomediaries before backend.</p>
+									</div>
+								</li>
+								<li>
+									<div class="qualifications-wrapper-two mb-40">
+										<div class="body-contents">
+											<h6>2015-2016</h6>
+											<h4>Post Grad In Design</h4>
+											<div class="institute">University Of Temporary</div>
+											<p>Dynamically visualize mission-critical niches via virtual results.
+												Distinctive
+												engage market positioning infomediaries before backend.</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- qualifications-section end -->
+
+			<!-- skills-section start -->
+			<section class="skills-secion pt-30 pb-20">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 mb-60">
+							<h2 class="wrapper-title mb-20">My Advantages</h2>
+							<p>Interactively enable corporate functionalities rather than front-end catalysts for
+								change. Seamlessly myocardinate collaborative relationships.</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xl-3 col-md-4">
+							<div class="progressbar-content text-center mb-50">
+								<div class="chart" data-percent="92">
+									<img class="icon" src={{ url_for('static', filename='img/icon/icon-17.png') }} alt="icon">
+									<img class="icon-w" src={{ url_for('static', filename='img/icon/icon-17w.png') }} alt="icon">
+								</div>
+
+							</div>
+						</div>
+						<div class="col-xl-3 col-md-4">
+							<div class="progressbar-content text-center mb-50">
+								<div class="chart" data-percent="92">
+									<img class="icon" src={{ url_for('static', filename='img/icon/icon-18.png') }} alt="icon">
+									<img class="icon-w" src={{ url_for('static', filename='img/icon/icon-18w.png') }} alt="icon">
+								</div>
+							</div>
+						</div>
+						<div class="col-xl-3 col-md-4">
+							<div class="progressbar-content text-center mb-50">
+								<div class="chart" data-percent="92">
+									<img class="icon" src={{ url_for('static', filename='img/icon/icon-19.png') }} alt="icon">
+									<img class="icon-w" src={{ url_for('static', filename='img/icon/icon-19w.png') }} alt="icon">
+								</div>
+							</div>
+						</div>
+						<div class="col-xl-3 col-md-4">
+							<div class="progressbar-content text-center mb-50">
+								<div class="chart" data-percent="92">
+									<img class="icon" src={{ url_for('static', filename='img/icon/icon-20.png') }} alt="icon">
+									<img class="icon-w" src={{ url_for('static', filename='img/icon/icon-20w.png') }} alt="icon">
+								</div>
+							</div>
+						</div>
+						<div class="col-xl-3 col-md-4">
+							<div class="progressbar-content text-center mb-50">
+								<div class="chart" data-percent="92">
+									<img class="icon" src={{ url_for('static', filename='img/icon/icon-21.png') }} alt="icon">
+									<img class="icon-w" src={{ url_for('static', filename='img/icon/icon-21w.png') }} alt="icon">
+								</div>
+							</div>
+						</div>
+						<div class="col-xl-3 col-md-4">
+							<div class="progressbar-content text-center mb-50">
+								<div class="chart" data-percent="92">
+									<img class="icon" src={{ url_for('static', filename='img/icon/icon-22.png') }} alt="icon">
+									<img class="icon-w" src={{ url_for('static', filename='img/icon/icon-22w.png') }} alt="icon">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- skills-section end -->
+
+			<!-- project-section start -->
+			<section id="Portfolio" class="project-section pt-80 pb-180 pt-lg-40 pb-lg-110">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 mb-60">
+							<h2 class="wrapper-title mb-20">My Portfolio</h2>
+							<p>Interactively enable corporate functionalities rather than front-end catalysts for
+								change. Seamlessly myocardinate collaborative relationships.</p>
+						</div>
+					</div>
+					<div class="row gx-xl-5">
+						<div class="col-xl-6 col-lg-12">
+							<div class="text-wrapper-two mb-80">
+								<div class="portfolio-thumb mb-30">
+									<img class="paralaxThumb1" src={{ url_for('static', filename='img/gallery/img-8.jpg') }} alt="gallery">
+								</div>
+								<div class="portfolio-content">
+									<h5>Apps Design</h5>
+									<h3><a href="project-details.html">E-Learning Apps</a></h3>
+									<a class="ht-btn-five" href="project-details.html"><i
+											class="bi bi-arrow-up-right"></i></a>
+								</div>
+							</div>
+						</div>
+						<div class="col-xl-6 col-lg-12">
+							<div class="text-wrapper-two mb-80 mt-130 mt-lg-10">
+								<div class="portfolio-thumb mb-30">
+									<img class="paralaxThumb2" src={{ url_for('static', filename='img/gallery/img-9.jpg') }} alt="gallery">
+								</div>
+								<div class="portfolio-content">
+									<h5>Apps Design</h5>
+									<h3><a href="project-details.html">Restaurant Apps</a></h3>
+									<a class="ht-btn-five" href="project-details.html"><i
+											class="bi bi-arrow-up-right"></i></a>
+								</div>
+							</div>
+						</div>
+						<div class="col-xl-6 col-lg-12">
+							<div class="text-wrapper-two mt-style mb-80">
+								<div class="portfolio-thumb mb-30">
+									<img class="paralaxThumb1" src={{ url_for('static', filename='img/gallery/img-10.jpg') }} alt="gallery">
+								</div>
+								<div class="portfolio-content">
+									<h5>Website Design</h5>
+									<h3><a href="project-details.html">Food Landing Page</a></h3>
+									<a class="ht-btn-five" href="project-details.html"><i
+											class="bi bi-arrow-up-right"></i></a>
+								</div>
+							</div>
+						</div>
+						<div class="col-xl-6 col-lg-12">
+							<div class="text-wrapper-two mb-80 mt-lg-4">
+								<div class="portfolio-thumb mb-30">
+									<img class="paralaxThumb2" src={{ url_for('static', filename='img/gallery/img-11.jpg') }} alt="gallery">
+								</div>
+								<div class="portfolio-content">
+									<h5>Dashboard Design</h5>
+									<h3><a href="project-details.html">Bitcoin Staturs</a></h3>
+									<a class="ht-btn-five" href="project-details.html"><i
+											class="bi bi-arrow-up-right"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12 text-center mt-20">
+							<a href=" #" class="ht_btn">View All Projects</a>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- project-section end -->
+
+			<!-- faq-section start -->
+			<section class="faq-section pb-120 pb-lg-80">
+				<div class="container">
+					<div class="row">
+						<div class="col-xl-4">
+							<div class="faq-text-wrapper mb-50">
+								<h2 class="wrapper-title">FAQ</h2>
+								<p>Interactively enable corporate functionalities rather than front-end catalysts for
+									change. The Seamlessly my cordinate no in the collaborative relationships.</p>
+								<a href=" #" class="ht_btn mt-10">Add Question</a>
+							</div>
+						</div>
+						<div class="col-xl-8">
+							<div class="faq-que-list faq-que-four mb-40">
+								<div class="accordion accordion-one" id="accordionExample">
+									<div class="accordion-item">
+										<h2 class="accordion-header" id="headingOne">
+											<button class="accordion-button" type="button" data-bs-toggle="collapse"
+												data-bs-target="#collapseOne" aria-expanded="true"
+												aria-controls="collapseOne">
+												What is included in IT support?
+											</button>
+										</h2>
+										<div id="collapseOne" class="accordion-collapse collapse show"
+											aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+											<div class="accordion-body">
+												<p>Proactively initiate corporate vortals via bricks-and
+													clicks relationsh.
+													Dynamically envisioneer cutting-edge paradigms via
+													client-centered
+													relationships. Globally repurpobackward-compatible.</p>
+											</div>
+										</div>
+									</div>
+									<div class="accordion-item">
+										<h2 class="accordion-header" id="headingTwo">
+											<button class="accordion-button collapsed" type="button"
+												data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+												aria-expanded="false" aria-controls="collapseTwo">
+												WHAT IT solutions companies do?
+											</button>
+										</h2>
+										<div id="collapseTwo" class="accordion-collapse collapse"
+											aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+											<div class="accordion-body">
+												<p>Proactively initiate corporate vortals via bricks-and
+													clicks relationsh.
+													Dynamically envisioneer cutting-edge paradigms via
+													client-centered
+													relationships. Globally repurpobackward-compatible.</p>
+											</div>
+										</div>
+									</div>
+									<div class="accordion-item">
+										<h2 class="accordion-header" id="headingThree">
+											<button class="accordion-button collapsed" type="button"
+												data-bs-toggle="collapse" data-bs-target="#collapseThree"
+												aria-expanded="false" aria-controls="collapseThree">
+												What are examples of IT solutions?
+											</button>
+										</h2>
+										<div id="collapseThree" class="accordion-collapse collapse"
+											aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+											<div class="accordion-body">
+												<p>Proactively initiate corporate vortals via bricks-and
+													clicks relationsh.
+													Dynamically envisioneer cutting-edge paradigms via
+													client-centered
+													relationships. Globally repurpobackward-compatible.</p>
+											</div>
+										</div>
+									</div>
+									<div class="accordion-item">
+										<h2 class="accordion-header" id="headingFive">
+											<button class="accordion-button collapsed" type="button"
+												data-bs-toggle="collapse" data-bs-target="#collapseFive"
+												aria-expanded="false" aria-controls="collapseFive">
+												What is a software solution company?
+											</button>
+										</h2>
+										<div id="collapseFive" class="accordion-collapse collapse"
+											aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+											<div class="accordion-body">
+												<p>Proactively initiate corporate vortals via bricks-and
+													clicks relationsh.
+													Dynamically envisioneer cutting-edge paradigms via
+													client-centered
+													relationships. Globally repurpobackward-compatible.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- faq-section end -->
+
+			<!-- blog-section start -->
+			<section id="Blog" class="blog-section">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 mb-60">
+							<h2 class="wrapper-title mb-20">Recent Activities</h2>
+							<p>Interactively enable corporate functionalities rather than front-end catalysts for
+								change. Seamlessly myocardinate collaborative relationships.</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="custom-blog-wrapper">
+								<div class="blog-style-one mb-40 float-xl-start me-xl-3">
+									<div class="blog-thumb" data-background={{ url_for('static', filename='img/media/img-6.jpg') }}></div>
+									<div class="blog-meta">
+										<a href="#">5 Min Read</a>
+									</div>
+									<h3 class="blog-title"><a href="#">Responsive Web Design: The Showcase Design</a>
+									</h3>
+									<div class="blog-meta-2">
+										<a href="#"><b>Post By</b> Erik</a>
+									</div>
+								</div>
+								<div class="blog-wrapper">
+									<div class="blog-style-two mb-35">
+										<div class="blog-thumb" data-background={{ url_for('static', filename='img/media/img-7.jpg') }}></div>
+										<div class="blog-content">
+											<div class="blog-meta">
+												<a href="#">5 Min Read</a>
+											</div>
+											<h3 class="blog-title"><a href="#">Designing for Accessib: Best
+													Practices</a>
+											</h3>
+											<div class="blog-meta-2">
+												<a href="#"><b>Post By</b> Erik</a>
+											</div>
+										</div>
+									</div>
+									<div class="blog-style-two mb-40">
+										<div class="blog-thumb" data-background={{ url_for('static', filename='img/media/img-7.jpg') }}></div>
+										<div class="blog-content">
+											<div class="blog-meta">
+												<a href="#">5 Min Read</a>
+											</div>
+											<h3 class="blog-title"><a href="#">Designing for Accessib: Best
+													Practices</a>
+											</h3>
+											<div class="blog-meta-2">
+												<a href="#"><b>Post By</b> Erik</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- blog-section end -->
+
+			<!-- contact-section start -->
+			<section id="Contact" class="contact-section contact-2 pt-120 pb-80 pt-lg-80">
+				<div class="container">
+					<div class="row align-items-end mb-50">
+						<div class="col-xl-6 mb-30">
+							<h2 class="wrapper-title mb-20">Get In Touch</h2>
+							<p class="mb-0">Appropriately mesh effective collaboration & idea sharing for
+								next-generation strategic
+								theme areas. Efficiently innovate functional opportunities with.</p>
+						</div>
+						<div class="col-xl-3 col-md-6 mb-30">
+							<div class="info-box">
+								<h3>Contact</h3>
+								<p>(316) 555-0106</p>
+								<p>(480) 555-0101</p>
+							</div>
+						</div>
+						<div class="col-xl-3 col-md-6 mb-30">
+							<div class="info-box">
+								<h3>Contact</h3>
+								<p>(316) 555-0106</p>
+								<p>(480) 555-0101</p>
+							</div>
+						</div>
+					</div>
+					<div class="main-form">
+						<form action="#" class="row">
+							<div class="col-lg-6 input-box">
+								<input type="text" placeholder="Enter your first name">
+							</div>
+							<div class="col-lg-6 input-box">
+								<input type="text" placeholder="Enter your e-mail">
+							</div>
+							<div class="col-lg-6 input-box">
+								<input type="text" placeholder="Enter your e-mail">
+							</div>
+							<div class="col-lg-6 input-box">
+								<select class="form-select" aria-label="Default select example">
+									<option selected>Services</option>
+									<option value="1">One</option>
+									<option value="2">Two</option>
+									<option value="3">Three</option>
+								</select>
+							</div>
+							<div class="col-lg-12 input-box">
+								<textarea cols="30" rows="10" placeholder="Write you message"></textarea>
+							</div>
+							<div class="col-12 text-center">
+								<button class="ht_btn" type="submit">Send Message</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</section>
+			<!-- contact-section end -->
+
+
+		</main>
+
+
+		<!--footer-area start-->
+		<footer class="footer-area-three">
+			<div class="container d-flex justify-content-end">
+				<div class="copyright-area pt-40">
+					<div class="row align-items-center">
+						<div class="col-lg-6 col-md-6">
+							<div class="copyright-text text-md-start text-center mb-30">
+								<p class="text-heding">©copyright by <a class="text-theme"
+										href="https://themeforest.net/user/pixel-eyez" target="_blank">Pixel-Eyez</a></p>
+							</div>
+						</div>
+						<div class="col-lg-6 col-md-6 text-md-end text-center">
+							<div class="footer-social mb-30">
+								<ul class="style-none">
+									<li>
+										<a href="#">Facebook</a>
+									</li>
+									<li>
+										<a href="#">Twitter</a>
+									</li>
+									<li>
+										<a href="#">Instagram</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!--footer-area end-->
+
+		<!--scrollToTopBtn end-->
+		<a id="scrollToTopBtn" class="progress-wrap">
+			<i class="bi bi-arrow-up"></i>
+		</a>
+
+
+	</div>
+	<!-- main-page-wrapper end -->
+
+
+
+	<!-- JS here -->
+
+	<script src={{ url_for('static', filename='js/vendor/jquery-2.2.4.min.js') }}></script>
+	<script src={{ url_for('static', filename='js/vendor/popper.min.js') }}></script>
+	<script src={{ url_for('static', filename='js/vendor/bootstrap.min.js') }}></script>
+	<script src={{ url_for('static', filename='js/jquery.meanmenu.js') }}></script>
+	<script src={{ url_for('static', filename='js/slick.min.js') }}></script>
+	<script src={{ url_for('static', filename='js/jquery.easypiechart.min.js') }}></script>
+	<script src={{ url_for('static', filename='js/jquery.counterup.min.js') }}></script>
+	<script src={{ url_for('static', filename='js/jquery.magnific-popup.min.js') }}></script>
+	<script src={{ url_for('static', filename='js/metisMenu.min.js') }}></script>
+	<script src={{ url_for('static', filename='js/wow.min.js') }}></script>
+	<script src={{ url_for('static', filename='js/jquery.waypoints.min.js') }}></script>
+	<script src={{ url_for('static', filename='js/simpleParallax.min.js') }}></script>
+	<script src={{ url_for('static', filename='js/aos.js') }}></script>
+	<script src={{ url_for('static', filename='js/lenis.min.js') }}></script>
+	<script src={{ url_for('static', filename='js/jquery.nice-select.min.js') }}></script>
+
+
+	<!--Custom JS here -->
+	<script src={{ url_for('static', filename='js/main.js') }}></script>
+
+
+</body>
+
+</html>

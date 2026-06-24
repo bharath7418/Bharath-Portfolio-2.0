@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="x-ua-compatible" content="ie=edge" />
+	<meta name="keywords"
+		content="agency, photography, business, company, consulting, corporate, creative, designer, digital marketing, elementor, industry, portfolio, studio, web design">
+	<meta name="description"
+		content="Qurifolio - Personal Portfolio Flask Template for all kinds of business, modern, multipurpose, personal, marketing,portfolio, online bussines, Ecommerce, Shop,website">
+	<title>Qurifolio - Personal Portfolio Flask Template</title>
+	<meta property="og:site_name" content="Logistics">
+	<meta property="og:url" content="">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Qurifolio - Personal Portfolio Flask Template">
+	<meta name='og:image' content='images/assets/ogg.png'>
+	<!-- For IE -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- For Resposive Device -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- For Window Tab Color -->
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#913BFF">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#913BFF">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#913BFF">
+
+	<!-- <link rel="manifest" href="site.webmanifest" /> -->
+	<link rel="shortcut icon" type="image/x-icon" href={{ url_for('static', filename='img/favicon.png') }} />
+	<!-- Place favicon.ico in the root directory -->
+
+	<!-- CSS here -->
+	<link rel="stylesheet" href={{ url_for('static', filename='css/bootstrap.min.css') }} />
+	<link rel="stylesheet" href={{ url_for('static', filename='fonts/bootstrap-icons/font-css.css') }} />
+	<link rel="stylesheet" href={{ url_for('static', filename='css/animate.min.css') }} />
+	<link rel="stylesheet" href={{ url_for('static', filename='css/slick.css') }} />
+	<link rel="stylesheet" href={{ url_for('static', filename='css/all.min.css') }} />
+	<link rel="stylesheet" href={{ url_for('static', filename='css/nice-select.css') }} />
+	<link rel="stylesheet" href={{ url_for('static', filename='css/magnific-popup.css') }} />
+	<link rel="stylesheet" href={{ url_for('static', filename='css/metisMenu.css') }} />
+	<link rel="stylesheet" href={{ url_for('static', filename='css/aos.css') }} />
+	<link rel="stylesheet" href={{ url_for('static', filename='css/spacing.css') }} />
+	<link rel="stylesheet" href={{ url_for('static', filename='css/main.css') }} />
+</head>
+
+<body class="light-bg">
+	<!-- main-page-wrapper start -->
+	<div class="main-page-wrapper">
+		<!--[if lte IE 9]> <p class="browserupgrade"> You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security. </p> <![endif]-->
+
+		<!-- Add your site or application content here -->
+
+		<!-- preloader -->
+		<div id="preloader" class="preloader-main">
+			<div class="loader-wrapper">
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+		</div>
+		<!-- preloader end  -->
+
+		<!-- Gearbox content here -->
+		<div class="gear-box">
+			<div class="icon">
+				<span class="gear-icon"><i class="bi bi-gear"></i></span>
+				<span class="close-icon"><i class="bi bi-x-lg"></i></span>
+			</div>
+			<h5 class="text-white fw-medium">Mode</h5>
+			<div class="color-mode">
+				<input type="checkbox" class="checkbox" id="checkbox">
+				<label for="checkbox" class="checkbox-label">
+					<i class="bi bi-moon-fill"></i>
+					<i class="bi bi-sun-fill"></i>
+					<span class="ball"></span>
+				</label>
+			</div>
+			<ul class="nav-menu-list">
+				<li><a href="index.html">Home Style - 1</a></li>
+				<li><a href="index-2.html">Home Style - 2</a></li>
+				<li><a href="index-3.html">Single Page</a></li>
+			</ul>
+		</div>
+
+
+		<!-- offcanvas start  -->
+		<div class="offcanvas offcanvas-top theme-bg" tabindex="-1" id="offcanvasTop">
+			<div class="offcanvas-header">
+				<a data-bs-dismiss="offcanvas" aria-label="Close">
+					<i class="fas fa-times search-close" id="search-close"></i>
+				</a>
+			</div>
+			<div class="offcanvas-body">
+				<!-- Fullscreen search -->
+				<div class="search-wrap">
+					<form method="get">
+						<input type="search" class="main-search-input" placeholder="Search Your Keyword...">
+					</form>
+				</div>
+				<!-- end fullscreen search -->
+			</div>
+		</div>
+		<!-- offcanvas end  -->
+
+
+		<!-- header-area start -->
+		<header class="theme-main-menu theme-menu-two pt-40 pb-30 pt-md-20 pb-md-10">
+			<div class="main-header-area">
+				<div class="container-fluid">
+					<div class="row align-items-center">
+						<div class="col-lg-3 col-6">
+							<div class="hamburger-menu">
+								<a href="javascript:void(0);">
+									<span class="round-menu">
+										<span class="line"></span>
+									</span>
+									<span class="text">menu</span>
+								</a>
+							</div>
+						</div>
+						<div class="col-lg-6 col-6 d-none d-lg-inline-block text-center">
+							<div class="main-menu d-none">
+								<nav id="mobile-menu2">
+									<ul class="menu-list ps-0">
+										<li>
+											<a href="#">
+												Home
+											</a>
+											<ul class="sub-menu">
+												<li>
+													<a href="index.html">Home Style 1</a>
+												</li>
+												<li>
+													<a href="index-2.html">Home Style 2</a>
+												</li>
+												<li>
+													<a href="index-3.html">Home Style 3</a>
+												</li>
+											</ul>
+										</li>
+										<li>
+											<a href="about.html">About Us</a>
+										</li>
+										<li>
+											<a href="#">Services</a>
+											<ul class="sub-menu">
+												<li>
+													<a href="service.html">Services</a>
+												</li>
+												<li>
+													<a href="service-details.html">Services Details</a>
+												</li>
+											</ul>
+										</li>
+										<li>
+											<a href="#">Project</a>
+											<ul class="sub-menu">
+												<li>
+													<a href="portfolio.html">Project</a>
+												</li>
+												<li>
+													<a href="project-details.html">Project
+														Details</a>
+												</li>
+											</ul>
+										</li>
+										<li>
+											<a href="#">Blog</a>
+											<ul class="sub-menu">
+												<li>
+													<a href="blog-list.html">Blog</a>
+												</li>
+												<li>
+													<a href="blog-details.html">Blog Details</a>
+												</li>
+											</ul>
+										</li>
+										<li>
+											<a href="contact.html">contact</a>
+										</li>
+									</ul>
+								</nav>
+							</div>
+							<div class="social-media-2">
+								<a href="#"><i class="fab fa-facebook-f"></i></a>
+								<a href="#"><i class="fab fa-twitter"></i></a>
+								<a href="#"><i class="fab fa-instagram"></i></a>
+								<a href="#"><i class="fab fa-youtube"></i></a>
+							</div>
+						</div>
+						<div class="col-lg-3 col-6">
+							<div class="quote__btn text-end">
+								<a href="contact.html" class="ht_btn">Start <span class="d-none d-md-inline-block"> A
+									</span> Project</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /.theme-main-menu -->
+		</header>
+		<!-- header-area end -->
+
+		<!-- slide-bar start -->
+		<aside class="slide-bar">
+			<div class="close-mobile-menu">
+				<a href="javascript:void(0);">
+					<i class="fas fa-times"></i>
+				</a>
+			</div>
+			<!-- offset-sidebar start -->
+			<div class="offset-sidebar">
+				<div class="offset-widget offset-logo mb-30">
+					<a href="index.html">
+						<img src={{ url_for('static', filename='img/logo/header-logo-2.png') }} alt="logo">
+					</a>
+				</div>
+				<div class="mobile-menu-content overflow-hidden mb-30">
+					<div class="mobile-menu2"></div>
+				</div>
+				<hr>
+				<div class="offset-widget mb-40">
+					<div class="info-widget">
+						<h4 class="offset-title mb-20">About Us</h4>
+						<p class="mb-30">
+							But I must explain to you how all this mistaken idea of denouncing pleasure and
+							praising pain was born and will give you a complete account of the system and
+							expound the actual teachings of the great explore
+						</p>
+					</div>
+				</div>
+				<div class="offset-widget mb-30 pr-10">
+					<div class="info-widget info-widget2">
+						<h4 class="offset-title mb-20">Contact Info</h4>
+						<p>
+							<i class="fal fa-address-book"></i>
+							23/A, Miranda City Likaoli Prikano, Dope</p>
+						<p>
+							<i class="fal fa-phone"></i>
+							+0989 7876 9865 9
+						</p>
+						<p>
+							<i class="fal fa-envelope-open"></i>
+							info@example.com
+						</p>
+					</div>
+				</div>
+				<!-- <div class="login-btn text-center">
+					<a class="ht_btn w-100" href="login.html">Login</a>
+				</div> -->
+			</div>
+			<!-- offset-sidebar end -->
+
+		</aside>
+		<div class="body-overlay"></div>
+		<!-- slide-bar end -->
+
+		<main>
+			<!-- theme-main-banner start -->
+			<section class="theme-main-banner-two position-relative pt-100">
+				<div class="container">
+					<div class="row align-items-center">
+						<div class="col-lg-6">
+							<div class="inner-content text-lg-start text-center">
+								<h4 class="subtitle-two mb-25">
+									Crafting Digital Experiences
+								</h4>
+								<h1 class="title-three mb-50">Designing Digital Delights: John's Portfolio</h1>
+								<div class="button-group">
+									<a class="ht_btn me-sm-3" href="contact.html">Book a Call</a>
+									<a class="ht-btn-three" href="portfolio.html">View Work</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="hero-img-wrapper position-relative">
+								<div class="img-container text-center text-lg-end">
+									<img class="img-fluid pe-lg-5" src={{ url_for('static', filename='img/hero/author-thumb-2.png') }}
+										alt="author">
+								</div>
+								<img class="shape-01" src={{ url_for('static', filename='img/shape/star-3.png') }} alt="star">
+								<img class="shape-02" src={{ url_for('static', filename='img/shape/vector-1.png') }} alt="star">
+								<a class="scroll-btn d-none d-md-block" href="#">
+									<img class="bg-round" src={{ url_for('static', filename='img/hero/sbutton-2.png') }} alt="shape">
+									<div class="icon">
+										<i class="bi bi-arrow-up-right"></i>
+									</div>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- theme-main-banner end -->
+
+			<!-- partners-section start -->
+			<div class="theme-bg logos brand-padding">
+				<div class="partners-two logos-slide">
+					<div class="items"> <img src={{ url_for('static', filename='img/brand/brand-12.png') }} alt="brand"></div>
+					<div class="items"><img src={{ url_for('static', filename='img/icon/icon-1.svg') }} alt="brand"></div>
+					<div class="items"> <img src={{ url_for('static', filename='img/brand/brand-13.png') }} alt="brand"></div>
+					<div class="items"><img src={{ url_for('static', filename='img/icon/icon-1.svg') }} alt="brand"></div>
+					<div class="items"> <img src={{ url_for('static', filename='img/brand/brand-14.png') }} alt="brand"></div>
+					<div class="items"><img src={{ url_for('static', filename='img/icon/icon-1.svg') }} alt="brand"></div>
+					<div class="items"> <img src={{ url_for('static', filename='img/brand/brand-15.png') }} alt="brand"></div>
+					<div class="items"><img src={{ url_for('static', filename='img/icon/icon-1.svg') }} alt="brand"></div>
+					<div class="items"> <img src={{ url_for('static', filename='img/brand/brand-16.png') }} alt="brand"></div>
+					<div class="items"><img src={{ url_for('static', filename='img/icon/icon-1.svg') }} alt="brand"></div>
+					<div class="items"> <img src={{ url_for('static', filename='img/brand/brand-17.png') }} alt="brand"></div>
+					<div class="items"><img src={{ url_for('static', filename='img/icon/icon-1.svg') }} alt="brand"></div>
+				</div>
+				<div class="partners-two logos-slide">
+					<div class="items"> <img src={{ url_for('static', filename='img/brand/brand-12.png') }} alt="brand"></div>
+					<div class="items"><img src={{ url_for('static', filename='img/icon/icon-1.svg') }} alt="brand"></div>
+					<div class="items"> <img src={{ url_for('static', filename='img/brand/brand-13.png') }} alt="brand"></div>
+					<div class="items"><img src={{ url_for('static', filename='img/icon/icon-1.svg') }} alt="brand"></div>
+					<div class="items"> <img src={{ url_for('static', filename='img/brand/brand-14.png') }} alt="brand"></div>
+					<div class="items"><img src={{ url_for('static', filename='img/icon/icon-1.svg') }} alt="brand"></div>
+					<div class="items"> <img src={{ url_for('static', filename='img/brand/brand-15.png') }} alt="brand"></div>
+					<div class="items"><img src={{ url_for('static', filename='img/icon/icon-1.svg') }} alt="brand"></div>
+					<div class="items"> <img src={{ url_for('static', filename='img/brand/brand-16.png') }} alt="brand"></div>
+					<div class="items"><img src={{ url_for('static', filename='img/icon/icon-1.svg') }} alt="brand"></div>
+					<div class="items"> <img src={{ url_for('static', filename='img/brand/brand-17.png') }} alt="brand"></div>
+					<div class="items"><img src={{ url_for('static', filename='img/icon/icon-1.svg') }} alt="brand"></div>
+				</div>
+			</div>
+			<!-- partners-section end -->
+
+
+			<!-- feedback-section start -->
+			<section class="feedback-section position-relative pt-160 pb-170 pb-lg-100 pt-lg-100">
+				<h2 class="wrapper-title text-center mb-60">Our Testimonials</h2>
+				<div class="container">
+					<div class="row">
+						<div class="feedback-active pb-50">
+							<div class="feedback-wrapper text-center">
+								<div class="rating mb-30">
+									<a href="#"><i class="bi bi-star-fill"></i></a>
+									<a href="#"><i class="bi bi-star-fill"></i></a>
+									<a href="#"><i class="bi bi-star-fill"></i></a>
+									<a href="#"><i class="bi bi-star-fill"></i></a>
+									<a href="#"><i class="bi bi-star-fill"></i></a>
+								</div>
+								<p>“This designer's work is simply exceptional – a perfect blend of creativity and
+									functionality.”</p>
+								<div class="auhtor-img">
+									<span><i class="bi bi-quote"></i></span>
+									<img src={{ url_for('static', filename='img/media/img-1.jpg') }} alt="author">
+								</div>
+								<h3>Brooklyn Simmons</h3>
+								<img class="shape-01" src={{ url_for('static', filename='img/shape/round-bg-2.svg') }} alt="shape">
+							</div>
+							<div class="feedback-wrapper text-center">
+								<div class="rating mb-30">
+									<a href="#"><i class="bi bi-star-fill"></i></a>
+									<a href="#"><i class="bi bi-star-fill"></i></a>
+									<a href="#"><i class="bi bi-star-fill"></i></a>
+									<a href="#"><i class="bi bi-star-fill"></i></a>
+									<a href="#"><i class="bi bi-star-fill"></i></a>
+								</div>
+								<p>“This designer's work is simply exceptional – a perfect blend of creativity and
+									functionality.”</p>
+								<div class="auhtor-img">
+									<span><i class="bi bi-quote"></i></span>
+									<img src={{ url_for('static', filename='img/media/img-1.jpg') }} alt="author">
+								</div>
+								<h3>Brooklyn Simmons</h3>
+								<img class="shape-01" src={{ url_for('static', filename='img/shape/round-bg-2.svg') }} alt="shape">
+							</div>
+							<div class="feedback-wrapper text-center">
+								<div class="rating mb-30">
+									<a href="#"><i class="bi bi-star-fill"></i></a>
+									<a href="#"><i class="bi bi-star-fill"></i></a>
+									<a href="#"><i class="bi bi-star-fill"></i></a>
+									<a href="#"><i class="bi bi-star-fill"></i></a>
+									<a href="#"><i class="bi bi-star-fill"></i></a>
+								</div>
+								<p>“This designer's work is simply exceptional – a perfect blend of creativity and
+									functionality.”</p>
+								<div class="auhtor-img">
+									<span><i class="bi bi-quote"></i></span>
+									<img src={{ url_for('static', filename='img/media/img-1.jpg') }} alt="author">
+								</div>
+								<h3>Brooklyn Simmons</h3>
+								<img class="shape-01" src={{ url_for('static', filename='img/shape/round-bg-2.svg') }} alt="shape">
+							</div>
+						</div>
+						<div class="next_t1 d-none d-lg-inline-block"><i class="bi bi-chevron-left"></i></div>
+						<div class="prev_t1 d-none d-lg-inline-block"><i class="bi bi-chevron-right"></i></div>
+					</div>
+				</div>
+			</section>
+			<!-- feedback-section end -->
+
+			<!-- about-section start -->
+			<section class="theme-bg about-section position-relative pt-95 pb-115">
+				<img class="shape-1a" src={{ url_for('static', filename='img/shape/vector-2.png') }} alt="shape">
+				<img class="shape-2a" src={{ url_for('static', filename='img/shape/star-4.png') }} alt="shape">
+				<img class="shape-3a" src={{ url_for('static', filename='img/shape/square-2.png') }} alt="shape">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-11">
+							<div class="upper-text mb-30">
+								<h2 class="upper-text-title mb-35">About Me.</h2>
+								<p>An independent creative designer with 10 years of experience combining distinctive
+									design
+									with thoughtful strategy across a wide range of media.</p>
+							</div>
+						</div>
+					</div>
+					<div class="row align-items-center bottom-content">
+						<div class="col-md-4 text-center">
+							<a class="scroll-btn" href="#">
+								<img class="bg-round" src={{ url_for('static', filename='img/about/s-button-3.png') }} alt="shape">
+								<div class="icon">
+									<i class="bi bi-arrow-up-right"></i>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-8">
+							<div class="text-inner-content">
+								<h4>Hello</h4>
+								<h3>I’m Anthony</h3>
+								<p>Passionate UI/UX designer dedicated to crafting exceptional digital experiences. With
+									a keen eye for detail and a user-centric approach, I transform ideas into intuitive
+									and visually stunning designs.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- about-section end -->
+
+			<!-- project-section start -->
+			<section class="project-section pb-180 pt-160 pt-lg-100 pb-lg-100">
+				<h2 class="wrapper-title text-center mb-30">Recent Projects</h2>
+				<div class="container">
+					<div class="row portfolio-wrapper align-items-center">
+						<div class="col-xl-7 col-lg-6">
+							<div class="portfolio-name">
+								<span class="me-xl-4 me-1">01.</span> Bitx - Crypto Dashboard Design
+							</div>
+						</div>
+						<div class="col-xl-5 col-lg-6">
+							<div class="skills-desc d-sm-flex justify-content-lg-end">
+								<p>Drama extend resource maximize content whereas ubiquitous.</p>
+								<a class="ht-btn-two ms-sm-4" href="#"><i class="bi bi-arrow-up-right"></i></a>
+							</div>
+						</div>
+						<div class="col-12">
+							<div class="img-holder mt-40" data-background="/static/img/gallery/img-6.jpg">
+
+							</div>
+						</div>
+					</div>
+					<div class="row portfolio-wrapper align-items-center">
+						<div class="col-xl-7 col-lg-6">
+							<div class="portfolio-name">
+								<span class="me-xl-4 me-1">02.</span> Food Delivery Mobile Apps
+							</div>
+						</div>
+						<div class="col-xl-5 col-lg-6">
+							<div class="skills-desc d-sm-flex justify-content-lg-end">
+								<p>Drama extend resource maximize content whereas ubiquitous.</p>
+								<a class="ht-btn-two ms-sm-4" href="#"><i class="bi bi-arrow-up-right"></i></a>
+							</div>
+						</div>
+						<div class="col-12">
+							<div class="img-holder mt-40" data-background="/static/img/gallery/img-6.jpg">
+
+							</div>
+						</div>
+					</div>
+					<div class="row portfolio-wrapper align-items-center">
+						<div class="col-xl-7 col-lg-6">
+							<div class="portfolio-name">
+								<span class="me-xl-4 me-1">03.</span> Restaurant Website Design
+							</div>
+						</div>
+						<div class="col-xl-5 col-lg-6">
+							<div class="skills-desc d-sm-flex justify-content-lg-end">
+								<p>Drama extend resource maximize content whereas ubiquitous.</p>
+								<a class="ht-btn-two ms-sm-4" href="#"><i class="bi bi-arrow-up-right"></i></a>
+							</div>
+						</div>
+						<div class="col-12">
+							<div class="img-holder mt-40" data-background="/static/img/gallery/img-6.jpg">
+
+							</div>
+						</div>
+					</div>
+					<div class="row portfolio-wrapper align-items-center">
+						<div class="col-xl-7 col-lg-6">
+							<div class="portfolio-name">
+								<span class="me-xl-4 me-1">04.</span> Education - Mobile App Design
+							</div>
+						</div>
+						<div class="col-xl-5 col-lg-6">
+							<div class="skills-desc d-sm-flex justify-content-lg-end">
+								<p>Drama extend resource maximize content whereas ubiquitous.</p>
+								<a class="ht-btn-two ms-sm-4" href="#"><i class="bi bi-arrow-up-right"></i></a>
+							</div>
+						</div>
+						<div class="col-12">
+							<div class="img-holder mt-40" data-background="/static/img/gallery/img-6.jpg">
+
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12 mt-80 text-center">
+							<a class="ht_btn" href="portfolio.html">View All Projects</a>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- project-section end -->
+
+			<!-- qualifications-section start -->
+			<section class="theme-bg qualifications-section pt-100 pb-90">
+				<h2 class="wrapper-title mb-60 text-center text-white">My Qualification</h2>
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="qualifications-wrapper mb-30">
+								<div class="header-sec mb-15">
+									<div class="icon">
+										<img src={{ url_for('static', filename='img/icon/icon-2.svg') }} alt="">
+									</div>
+									<h3>Education</h3>
+								</div>
+								<div class="body-list">
+									<div class="body-contents">
+										<h4>Master in Human Research</h4>
+										<h6>2023 - 2024</h6>
+										<p>University of Liberal Arts</p>
+									</div>
+									<a class="round-btn" href="#"><i class="bi bi-arrow-up-right"></i></a>
+								</div>
+								<div class="body-list">
+									<div class="body-contents">
+										<h4>BSc in Graphics & Multimedia</h4>
+										<h6>2023 - 2024</h6>
+										<p>University of Liberal Arts</p>
+									</div>
+									<a class="round-btn" href="#"><i class="bi bi-arrow-up-right"></i></a>
+								</div>
+								<div class="body-list">
+									<div class="body-contents">
+										<h4>Hsc in Graphics Design</h4>
+										<h6>2023 - 2024</h6>
+										<p>University of Liberal Arts</p>
+									</div>
+									<a class="round-btn" href="#"><i class="bi bi-arrow-up-right"></i></a>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="qualifications-wrapper mb-30">
+								<div class="header-sec mb-15">
+									<div class="icon">
+										<img src={{ url_for('static', filename='img/icon/icon-3.svg') }} alt="">
+									</div>
+									<h3>Experiences</h3>
+								</div>
+								<div class="body-list">
+									<div class="body-contents">
+										<h4>Product Designer at Zone7</h4>
+										<h6>2023 - 2024</h6>
+										<p>University of Liberal Arts</p>
+									</div>
+									<a class="round-btn" href="#"><i class="bi bi-arrow-up-right"></i></a>
+								</div>
+								<div class="body-list">
+									<div class="body-contents">
+										<h4>UX/UI Designer at Themeforest</h4>
+										<h6>2023 - 2024</h6>
+										<p>University of Liberal Arts</p>
+									</div>
+									<a class="round-btn" href="#"><i class="bi bi-arrow-up-right"></i></a>
+								</div>
+								<div class="body-list">
+									<div class="body-contents">
+										<h4>Graphics Designer at Graphicriver</h4>
+										<h6>2023 - 2024</h6>
+										<p>University of Liberal Arts</p>
+									</div>
+									<a class="round-btn" href="#"><i class="bi bi-arrow-up-right"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- qualifications-section end -->
+
+			<!-- counter-section start -->
+			<section class="black-bg counter-section position-relative pt-120 pb-90">
+				<img class="counter-shape" src={{ url_for('static', filename='img/shape/square-2.png') }} alt="shape">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+							<div class="counter-wrapper mb-30">
+								<img src={{ url_for('static', filename='img/icon/icon-4.svg') }} alt="icon">
+								<h4>Global Completed</h4>
+								<div class="counter-number">
+									<span class="counter">164</span>K
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="150">
+							<div class="counter-wrapper mb-30">
+								<img src={{ url_for('static', filename='img/icon/icon-5.svg') }} alt="icon">
+								<h4>Worldwide Client</h4>
+								<div class="counter-number">
+									<span class="counter">164</span>K
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+							<div class="counter-wrapper mb-30">
+								<img src={{ url_for('static', filename='img/icon/icon-6.svg') }} alt="icon">
+								<h4>Best Dev Winner</h4>
+								<div class="counter-number">
+									<span class="counter">164</span>K
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="250">
+							<div class="counter-wrapper mb-30">
+								<img src={{ url_for('static', filename='img/icon/icon-7.svg') }} alt="icon">
+								<h4>Client Reviews</h4>
+								<div class="counter-number">
+									<span class="counter">164</span>K
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- counter-section end -->
+
+			<!-- skills-section start -->
+			<section class="skills-section pt-100 pb-90">
+				<h2 class="wrapper-title text-center mb-60" data-aos="fade-up" data-aos-delay="100">My Expertise</h2>
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="0">
+							<div class="box-style-one mb-45">
+								<div class="icon mb-20"><img src={{ url_for('static', filename='img/icon/icon-8.svg') }} alt="icon"></div>
+								<h3>UI/UX Design</h3>
+								<p>Interactively deliver front-end customer service after bricks & click total linkage.
+								</p>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+							<div class="box-style-one mb-45">
+								<div class="icon mb-20"><img src={{ url_for('static', filename='img/icon/icon-9.svg') }} alt="icon"></div>
+								<h3>Web Development</h3>
+								<p>Interactively deliver front-end customer service after bricks & click total linkage.
+								</p>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="150">
+							<div class="box-style-one mb-45">
+								<div class="icon mb-20"><img src={{ url_for('static', filename='img/icon/icon-10.svg') }} alt="icon"></div>
+								<h3>Branding Identity</h3>
+								<p>Interactively deliver front-end customer service after bricks & click total linkage.
+								</p>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+							<div class="box-style-one mb-45">
+								<div class="icon mb-20"><img src={{ url_for('static', filename='img/icon/icon-11.svg') }} alt="icon"></div>
+								<h3>Digital Marketing</h3>
+								<p>Interactively deliver front-end customer service after bricks & click total linkage.
+								</p>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="250">
+							<div class="box-style-one mb-45">
+								<div class="icon mb-20"><img src={{ url_for('static', filename='img/icon/icon-12.svg') }} alt="icon"></div>
+								<h3>Communication</h3>
+								<p>Interactively deliver front-end customer service after bricks & click total linkage.
+								</p>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+							<div class="box-style-one mb-45">
+								<div class="icon mb-20"><img src={{ url_for('static', filename='img/icon/icon-13.svg') }} alt="icon"></div>
+								<h3>Motion Graphics</h3>
+								<p>Interactively deliver front-end customer service after bricks & click total linkage.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- skills-section end -->
+
+			<!-- partners-section start -->
+			<div class="logos container-border-black pb-5 mb-xl-5">
+				<div class="logos-slide">
+					<div class="items"> <img src={{ url_for('static', filename='img/brand/brand-1.png') }} alt="brand"></div>
+					<div class="items"><img src={{ url_for('static', filename='img/brand/brand-line-1.svg') }} alt="brand"></div>
+					<div class="items"><img src={{ url_for('static', filename='img/brand/brand-2.png') }} alt="brand"></div>
+					<div class="items"> <img src={{ url_for('static', filename='img/brand/brand-line-1.svg') }} alt="brand"></div>
+					<div class="items"><img src={{ url_for('static', filename='img/brand/brand-3.png') }} alt="brand"></div>
+					<div class="items"><img src={{ url_for('static', filename='img/brand/brand-line-1.svg') }} alt="brand"></div>
+				</div>
+				<div class="logos-slide">
+					<div class="items"> <img src={{ url_for('static', filename='img/brand/brand-1.png') }} alt="brand"></div>
+					<div class="items"><img src={{ url_for('static', filename='img/brand/brand-line-1.svg') }} alt="brand"></div>
+					<div class="items"><img src={{ url_for('static', filename='img/brand/brand-2.png') }} alt="brand"></div>
+					<div class="items"> <img src={{ url_for('static', filename='img/brand/brand-line-1.svg') }} alt="brand"></div>
+					<div class="items"><img src={{ url_for('static', filename='img/brand/brand-3.png') }} alt="brand"></div>
+					<div class="items"><img src={{ url_for('static', filename='img/brand/brand-line-1.svg') }} alt="brand"></div>
+				</div>
+			</div>
+			<!-- partners-section end -->
+
+			<!-- price-section start -->
+			<section class="price-section pt-90 pb-135 pb-lg-90">
+				<h2 class="wrapper-title text-center mb-60">Pricing For All</h2>
+				<div class="container">
+					<div class="row align-items-center justify-content-center">
+						<div class="col-lg-4 col-md-6">
+							<div class="plan text-center mb-45">
+								<div class="plan-header">
+									<h4>Basic</h4>
+									<img class="black-icon" src={{ url_for('static', filename='img/icon/icon-14.svg') }} alt="icon">
+									<img class="white-icon" src={{ url_for('static', filename='img/icon/icon-14w.svg') }} alt="icon">
+									<h3 class="price">$125.00</h3>
+									<p class="desc">For 24hr or Same day delivery</p>
+								</div>
+								<div class="plan-body">
+									<ul>
+										<li><span><i class="bi bi-chevron-right"></i></span> 01 Home Page</li>
+										<li><span><i class="bi bi-chevron-right"></i></span> 05 Section</li>
+										<li><span><i class="bi bi-chevron-right"></i></span> 03 Times Revision</li>
+										<li><span><i class="bi bi-chevron-right"></i></span> Responsive Design</li>
+										<li><span><i class="bi bi-chevron-right"></i></span> 24/7 Support</li>
+									</ul>
+								</div>
+								<div class="plan-footer">
+									<a class="ht_btn" href="contact.html">Get It Now</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-6">
+							<div class="plan text-center mb-45">
+								<div class="plan-header">
+									<h4>Professional</h4>
+									<img class="black-icon" src={{ url_for('static', filename='img/icon/icon-15.svg') }} alt="icon">
+									<img class="white-icon" src={{ url_for('static', filename='img/icon/icon-15w.svg') }} alt="icon">
+									<h3 class="price">$225.00</h3>
+									<p class="desc">For 24hr or Same day delivery</p>
+								</div>
+								<div class="plan-body">
+									<ul>
+										<li><span><i class="bi bi-chevron-right"></i></span> 01 Home Page</li>
+										<li><span><i class="bi bi-chevron-right"></i></span> 05 Section</li>
+										<li><span><i class="bi bi-chevron-right"></i></span> 03 Times Revision</li>
+										<li><span><i class="bi bi-chevron-right"></i></span> Responsive Design</li>
+										<li><span><i class="bi bi-chevron-right"></i></span> 24/7 Support</li>
+									</ul>
+								</div>
+								<div class="plan-footer">
+									<a class="ht_btn" href="contact.html">Get It Now</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-6">
+							<div class="plan text-center mb-45">
+								<div class="plan-header">
+									<h4>Premium</h4>
+									<img class="black-icon" src={{ url_for('static', filename='img/icon/icon-16.svg') }} alt="icon">
+									<img class="white-icon" src={{ url_for('static', filename='img/icon/icon-16w.svg') }} alt="icon">
+									<h3 class="price">$525.00</h3>
+									<p class="desc">For 24hr or Same day delivery</p>
+								</div>
+								<div class="plan-body">
+									<ul>
+										<li><span><i class="bi bi-chevron-right"></i></span> 01 Home Page</li>
+										<li><span><i class="bi bi-chevron-right"></i></span> 05 Section</li>
+										<li><span><i class="bi bi-chevron-right"></i></span> 03 Times Revision</li>
+										<li><span><i class="bi bi-chevron-right"></i></span> Responsive Design</li>
+										<li><span><i class="bi bi-chevron-right"></i></span> 24/7 Support</li>
+									</ul>
+								</div>
+								<div class="plan-footer">
+									<a class="ht_btn" href="contact.html">Get It Now</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- price-section end -->
+
+			<div class="black-bg logos-2 border-cta">
+				<div class="logos-slide-2">
+					<div class="items"> <img src={{ url_for('static', filename='img/brand/chat.svg') }} alt="brand"></div>
+					<div class="items"><img src={{ url_for('static', filename='img/brand/brand-line-2.svg') }} alt="brand"></div>
+					<div class="items"><img src={{ url_for('static', filename='img/brand/contact.svg') }} alt="brand"></div>
+					<div class="items"> <img src={{ url_for('static', filename='img/brand/brand-line-2.svg') }} alt="brand"></div>
+					<div class="items"><img src={{ url_for('static', filename='img/brand/connect.svg') }} alt="brand"></div>
+					<div class="items"><img src={{ url_for('static', filename='img/brand/brand-line-2.svg') }} alt="brand"></div>
+					<div class="items"> <img src={{ url_for('static', filename='img/brand/chat.svg') }} alt="brand"></div>
+					<div class="items"><img src={{ url_for('static', filename='img/brand/brand-line-2.svg') }} alt="brand"></div>
+					<div class="items"><img src={{ url_for('static', filename='img/brand/contact.svg') }} alt="brand"></div>
+					<div class="items"> <img src={{ url_for('static', filename='img/brand/brand-line-2.svg') }} alt="brand"></div>
+					<div class="items"><img src={{ url_for('static', filename='img/brand/connect.svg') }} alt="brand"></div>
+					<div class="items"><img src={{ url_for('static', filename='img/brand/brand-line-2.svg') }} alt="brand"></div>
+				</div>
+				<div class="logos-slide-2">
+					<div class="items"> <img src={{ url_for('static', filename='img/brand/chat.svg') }} alt="brand"></div>
+					<div class="items"><img src={{ url_for('static', filename='img/brand/brand-line-2.svg') }} alt="brand"></div>
+					<div class="items"><img src={{ url_for('static', filename='img/brand/contact.svg') }} alt="brand"></div>
+					<div class="items"> <img src={{ url_for('static', filename='img/brand/brand-line-2.svg') }} alt="brand"></div>
+					<div class="items"><img src={{ url_for('static', filename='img/brand/connect.svg') }} alt="brand"></div>
+					<div class="items"><img src={{ url_for('static', filename='img/brand/brand-line-2.svg') }} alt="brand"></div>
+					<div class="items"> <img src={{ url_for('static', filename='img/brand/chat.svg') }} alt="brand"></div>
+					<div class="items"><img src={{ url_for('static', filename='img/brand/brand-line-2.svg') }} alt="brand"></div>
+					<div class="items"><img src={{ url_for('static', filename='img/brand/contact.svg') }} alt="brand"></div>
+					<div class="items"> <img src={{ url_for('static', filename='img/brand/brand-line-2.svg') }} alt="brand"></div>
+					<div class="items"><img src={{ url_for('static', filename='img/brand/connect.svg') }} alt="brand"></div>
+					<div class="items"><img src={{ url_for('static', filename='img/brand/brand-line-2.svg') }} alt="brand"></div>
+				</div>
+			</div>
+
+			<!-- contact-section start -->
+			<section class="black-bg contact-section pb-80">
+				<img class="cta-shape" src={{ url_for('static', filename='img/shape/square-2.png') }} alt="shape">
+				<div class="container">
+					<div class="row align-items-center">
+						<div class="col-xl-10 col-lg-12 pt-100">
+							<h2 class="text-white wrapper-title mb-60">Get In Touch </h2>
+							<div class="main-form">
+								<form action="#" class="row">
+									<div class="col-lg-4 input-box">
+										<label>Name</label>
+										<input type="text" placeholder="Enter your first name">
+									</div>
+									<div class="col-lg-4 input-box">
+										<label>Email</label>
+										<input type="text" placeholder="Enter your e-mail">
+									</div>
+									<div class="col-lg-4 input-box">
+										<label>Messageme</label>
+										<textarea cols="30" rows="10" placeholder="Write you message"></textarea>
+									</div>
+								</form>
+							</div>
+						</div>
+						<div class="col-xl-2 col-lg-3 px-0">
+							<div class="button-2">
+								<a class="scroll-btn" href="#">
+									<img class="bg-round" src={{ url_for('static', filename='img/about/s-button-4.png') }} alt="shape">
+									<span class="icon">
+										<i class="bi bi-arrow-up-right"></i>
+									</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- contact-section end -->
+
+
+
+		</main>
+
+
+		<!--footer-area start-->
+		<footer class="black-bg footer-area-two">
+			<div class="footer-wrapper-one pt-75 pb-20">
+				<img src={{ url_for('static', filename='img/shape/star-5.png') }} alt="" class="shape-01">
+				<div class="container">
+					<div class="row justify-content-center">
+						<div class="col-lg-9 text-center">
+							<div class="mb-60">
+								<a class="d-block" href="index.html"><img src={{ url_for('static', filename='img/logo/header-logo-2.png') }}
+										alt="logo"></a>
+							</div>
+							<div class="social-media mb-60">
+								<a href="#"><i class="fab fa-facebook-f"></i></a>
+								<a href="#"><i class="fab fa-twitter"></i></a>
+								<a href="#"><i class="fab fa-instagram"></i></a>
+								<a href="#"><i class="fab fa-youtube"></i></a>
+							</div>
+							<div class="footer-widget mb-30">
+								<ul class="style-none">
+									<li>
+										<a href="about.html">About us</a>
+									</li>
+									<li>
+										<a href="contact.html">Contact </a>
+									</li>
+									<li>
+										<a href="blog.html">blog</a>
+									</li>
+									<li>
+										<a href="contact.html">Policy</a>
+									</li>
+									<li>
+										<a href="contact.html">Gallery</a>
+									</li>
+									<li>
+										<a href="contact.html">Sitemap</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="copyright-area-two pt-50 pb-20">
+				<div class="container">
+					<div class="row align-items-center">
+						<div class="col-lg-6 col-md-7 order-md-last">
+							<div class="copyright-text text-md-end text-center  mb-30">
+								<p class="text-white">
+									<a class="text-theme"
+										href="https://themeforest.net/user/pixel-eyez">Pixel-Eyez</a>
+									© 2024, All Rights Reserved</p>
+							</div>
+						</div>
+						<div class="col-lg-6 col-md-5 text-md-start text-center">
+							<div class="footer-menu mb-30">
+								<ul class="style-none">
+									<li>
+										<a href="about.html">About us</a>
+									</li>
+									<li>
+										<a href="contact.html">Contact </a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!--footer-area end-->
+
+		<!--scrollToTopBtn end-->
+		<a id="scrollToTopBtn" class="progress-wrap">
+			<i class="bi bi-arrow-up"></i>
+		</a>
+
+
+	</div>
+	<!-- main-page-wrapper end -->
+
+
+
+	<!-- JS here -->
+
+	<script src={{ url_for('static', filename='js/vendor/jquery-2.2.4.min.js') }}></script>
+	<script src={{ url_for('static', filename='js/vendor/popper.min.js') }}></script>
+	<script src={{ url_for('static', filename='js/vendor/bootstrap.min.js') }}></script>
+	<script src={{ url_for('static', filename='js/jquery.meanmenu.js') }}></script>
+	<script src={{ url_for('static', filename='js/slick.min.js') }}></script>
+	<script src={{ url_for('static', filename='js/jquery.easypiechart.min.js') }}></script>
+	<script src={{ url_for('static', filename='js/jquery.counterup.min.js') }}></script>
+	<script src={{ url_for('static', filename='js/jquery.magnific-popup.min.js') }}></script>
+	<script src={{ url_for('static', filename='js/metisMenu.min.js') }}></script>
+	<script src={{ url_for('static', filename='js/wow.min.js') }}></script>
+	<script src={{ url_for('static', filename='js/jquery.waypoints.min.js') }}></script>
+	<script src={{ url_for('static', filename='js/simpleParallax.min.js') }}></script>
+	<script src={{ url_for('static', filename='js/aos.js') }}></script>
+	<script src={{ url_for('static', filename='js/lenis.min.js') }}></script>
+	<script src={{ url_for('static', filename='js/jquery.nice-select.min.js') }}></script>
+
+
+	<!--Custom JS here -->
+	<script src={{ url_for('static', filename='js/main.js') }}></script>
+
+
+</body>
+
+</html>

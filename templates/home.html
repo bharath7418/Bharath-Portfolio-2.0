@@ -1,53 +1,316 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BB Event</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body class="bg-light">
-    <nav class="navbar navbar-dark bg-dark mb-4">
-        <div class="container">
-            <a class="navbar-brand font-weight-bold" href="#">BB Event</a>
-            <a href="/login" class="btn btn-outline-light btn-sm">Admin Access</a>
-        </div>
-    </nav>
+{% extends 'base.html' %}
+{% block content %}
 
-    <div class="container">
-        {% with messages = get_flashed_messages() %}
-          {% if messages %}{% for m in messages %}<div class="alert alert-success">{{ m }}</div>{% endfor %}{% endif %}
-        {% endwith %}
+<!-- theme-main-banner start -->
+<section class="theme-main-banner position-relative pt-100 mt-265 pb-165 mt-md-100 pb-md-10">
+	<div class="inner-content text-center pb-300 pb-md-10">
+		<h1><span class="title-one">I’m A Full-Stack</span></h1>
+	</div>
+	<div class="title-wrapper">
+		<div class="title-two" data-text="Developer">De<span class="clipping-text">velop</span>er</div>
+	</div>
+	<div class="author-thumb">
+		<img class="d-none d-lg-inline-block" src="{{ url_for('static', filename='img/hero/author-thumb-1.png') }}" alt="author" style="filter: hue-rotate(240deg);">
+		<img class="d-lg-none d-inline-block" src="{{ url_for('static', filename='img/hero/author-md.png') }}" alt="author" style="filter: hue-rotate(240deg);">
+	</div>
+	<img class="shape_01 d-none d-lg-inline-block" src="{{ url_for('static', filename='img/shape/star-1.svg') }}" alt="shape">
 
-        <div class="row">
-            <div class="col-md-8">
-                <h2 class="mb-4">Upcoming Events</h2>
-                {% for e in events %}
-                <div class="card mb-3 shadow-sm">
-                    <div class="card-body">
-                        <h4 class="card-title text-primary">{{ e.title }}</h4>
-                        <h6 class="card-subtitle mb-2 text-muted">{{ e.date }} | {{ e.location }}</h6>
-                        <p class="card-text">{{ e.description }}</p>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
+	<a class="scroll-btn" href="#bt-section">
+		<img class="bg-round" src="{{ url_for('static', filename='img/hero/sbutton.png') }}" alt="shape">
+		<div class="icon">
+			<i class="bi bi-mouse"></i>
+		</div>
+	</a>
+</section>
+<!-- theme-main-banner end -->
 
-            <div class="col-md-4">
-                <div class="card shadow-sm">
-                    <div class="card-body">
-                        <h4 class="mb-3">Contact Us</h4>
-                        <form action="/contact" method="POST">
-                            <input type="text" name="name" class="form-control mb-2" placeholder="Your Name" required>
-                            <input type="email" name="email" class="form-control mb-2" placeholder="Your Email" required>
-                            <textarea name="content" class="form-control mb-3" placeholder="How can we help?" rows="4" required></textarea>
-                            <button class="btn btn-primary w-100">Send Message</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</body>
-</html>
+<!-- about-section start -->
+<section id="bt-section" class="black-bg about-section black-soft-bg position-relative pt-285 pt-md-200 pt-xs-150">
+	<img class="shape-01" src="{{ url_for('static', filename='img/shape/star-2.svg') }}" alt="">
+	<img class="shape-02" src="{{ url_for('static', filename='img/shape/square.svg') }}" alt="shape">
+	<div class="container">
+		<div class="row align-items-center">
+			<div class="col-lg-6">
+				<div class="about-text-wrapper mb-30">
+					<div class="sub-title">Full-Stack & AI Engineer</div>
+					<h2 class="name-title mb-15">I’m Bharath R</h2>
+					<p style="color: #cbd5e1; font-size: 1.05rem; line-height: 1.8;">
+						High-performance Full-Stack Developer and AI & Data Science student with professional internship experience building scalable, production-ready web platforms. Adept at optimizing database architectures, engineering secure multi-user workflows, and delivering metrics-driven technical solutions.
+					</p>
+					<ul class="text-list">
+						<li><span>2+</span> Years Experience</li>
+						<li><span>6+</span> Key Deployed Apps</li>
+						<li><span>700+</span> Platform Active Users</li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-lg-6">
+				<div class="about-img-wrapper">
+					<img class="img-fluid" src="{{ url_for('static', filename='img/about/about-1.png') }}" alt="about" style="filter: hue-rotate(240deg);">
+					<img class="shape-03" src="{{ url_for('static', filename='img/shape/round-bg-1.svg') }}" alt="shape">
+					<img class="shape-04" src="{{ url_for('static', filename='img/shape/pattern-1.svg') }}" alt="shape">
+					<img class="shape-05" src="{{ url_for('static', filename='img/shape/pattern-2.svg') }}" alt="shape">
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- about-section end -->
+
+<!-- project-section start -->
+<section class="project-section pb-180 pt-160 pt-lg-100 pb-lg-100">
+	<h2 class="wrapper-title text-center mb-30">Recent Projects</h2>
+	<div class="container">
+		{% for project in projects %}
+		<div class="row portfolio-wrapper align-items-center mb-40">
+			<div class="col-xl-7 col-lg-6">
+				<div class="portfolio-name">
+					<span class="me-xl-4 me-1">0{{ loop.index }}.</span> {{ project.title }}
+				</div>
+			</div>
+			<div class="col-xl-5 col-lg-6">
+				<div class="skills-desc d-sm-flex justify-content-lg-end">
+					<p style="color: #cbd5e1;">{{ project.description[:100] }}...</p>
+					{% if project.link %}
+					<a class="ht-btn-two ms-sm-4" href="{{ project.link }}" target="_blank"><i class="bi bi-arrow-up-right"></i></a>
+					{% else %}
+					<a class="ht-btn-two ms-sm-4" href="/projects"><i class="bi bi-arrow-up-right"></i></a>
+					{% endif %}
+				</div>
+			</div>
+			<div class="col-12">
+				<div class="img-holder mt-40" style="background-image: url('/static/img/gallery/img-{{ (loop.index % 4) + 1 }}.jpg'); background-size: cover; background-position: center; height: 350px; border-radius: 8px;">
+				</div>
+			</div>
+		</div>
+		{% endfor %}
+		<div class="row">
+			<div class="col-12 mt-80 text-center">
+				<a class="ht_btn" href="/projects">View All Projects</a>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- project-section end -->
+
+<!-- qualifications-section start -->
+<section class="theme-bg qualifications-section pt-100 pb-90">
+	<h2 class="wrapper-title mb-60 text-center text-white">My Qualifications</h2>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6">
+				<div class="qualifications-wrapper mb-30">
+					<div class="header-sec mb-15">
+						<div class="icon">
+							<img src="{{ url_for('static', filename='img/icon/icon-2.svg') }}" alt="">
+						</div>
+						<h3>Education</h3>
+					</div>
+					<div class="body-list">
+						<div class="body-contents">
+							<h4>B.Tech in AI and Data Science</h4>
+							<h6>2023 - 2027</h6>
+							<p>Adhi College of Engineering and Technology (CGPA: 8.13 / 10.0)</p>
+						</div>
+						<a class="round-btn" href="#"><i class="bi bi-arrow-up-right"></i></a>
+					</div>
+					<div class="body-list">
+						<div class="body-contents">
+							<h4>Higher Secondary Certificate (HSC)</h4>
+							<h6>Graduation: 2023</h6>
+							<p>Govt Boys Higher Secondary School – Pernamallur, TN (Score: 76.83%)</p>
+						</div>
+						<a class="round-btn" href="#"><i class="bi bi-arrow-up-right"></i></a>
+					</div>
+				</div>
+			</div>
+
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, ab quidem. Minima tempore facilis fugiat! Explicabo minus illum fugiat? Voluptas delectus nihil animi! Quas neque tempore ipsum suscipit iste! Autem vel tenetur alias nesciunt velit aut impedit? Error maiores vel maxime quam aliquid voluptatum tempore, explicabo repellendus nulla quas voluptate molestias ipsam officia quia eius esse. Aperiam perspiciatis iste minima minus officia, aut incidunt qui excepturi totam numquam recusandae, ea harum suscipit eius earum alias voluptatum molestias? Excepturi nemo, consequatur ea illo, perferendis corrupti iste similique molestias recusandae earum vel, velit obcaecati architecto laborum perspiciatis laboriosam itaque aspernatur incidunt assumenda.
+
+
+
+			<div class="col-lg-6">
+				<div class="qualifications-wrapper mb-30">
+					<div class="header-sec mb-15">
+						<div class="icon">
+							<img src="{{ url_for('static', filename='img/icon/icon-3.svg') }}" alt="">
+						</div>
+						<h3>Experiences</h3>
+					</div>
+					<div class="body-list">
+						<div class="body-contents">
+							<h4>Full-Stack Intern (API & Flow)</h4>
+							<h6>4 Months</h6>
+							<p>Book Buddy Organization (Remote & On-Site Framework Deployments)</p>
+						</div>
+						<a class="round-btn" href="#"><i class="bi bi-arrow-up-right"></i></a>
+					</div>
+					<div class="body-list">
+						<div class="body-contents">
+							<h4>Graphic Designer & DTP Operator</h4>
+							<h6>2+ Years Experience</h6>
+							<p>Mano Printing Press (Tiruvannamalai, TN - Client Collaterals & Graphic Assets)</p>
+						</div>
+						<a class="round-btn" href="#"><i class="bi bi-arrow-up-right"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- qualifications-section end -->
+
+<!-- skills-section start -->
+<section class="black-bg skills-secion black-soft-bg position-relative pt-100 pb-120">
+	<img class="shape-1a" src="{{ url_for('static', filename='img/shape/star-5.png') }}" alt="shape">
+	<img class="shape-2a" src="{{ url_for('static', filename='img/shape/square.svg') }}" alt="shape">
+	<div class="container">
+		<h2 class="wrapper-title text-white mb-60 text-center">My Expertise</h2>
+		<div class="row skills-wrapper align-items-center">
+			<div class="col-lg-7">
+				<div class="skills-name">
+					<div class="img-holder">
+						<img src="{{ url_for('static', filename='img/gallery/img-5.png') }}" alt="gallery" style="filter: hue-rotate(240deg);">
+					</div>
+					<span class="me-md-4">01.</span> Backend APIs & Scripting
+				</div>
+			</div>
+			<div class="col-lg-5">
+				<div class="skills-desc d-sm-flex justify-content-between">
+					<p class="ms-xl-5" style="color: #cbd5e1;">Python (Advanced), Flask, Jinja2, SQL, SQLAlchemy, Java, C</p>
+					<a class="ht-btn-two ms-sm-4" href="/about"><i class="bi bi-arrow-up-right"></i></a>
+				</div>
+			</div>
+		</div>
+		<div class="row skills-wrapper align-items-center">
+			<div class="col-lg-7">
+				<div class="skills-name">
+					<div class="img-holder">
+						<img src="{{ url_for('static', filename='img/gallery/img-5.png') }}" alt="gallery" style="filter: hue-rotate(240deg);">
+					</div>
+					<span class="me-md-4">02.</span> AI & Data Pipeline Processing
+				</div>
+			</div>
+			<div class="col-lg-5">
+				<div class="skills-desc d-sm-flex justify-content-between">
+					<p class="ms-xl-5" style="color: #cbd5e1;">NumPy, Pandas, Matplotlib, and Machine Learning Fundamentals</p>
+					<a class="ht-btn-two ms-sm-4" href="/about"><i class="bi bi-arrow-up-right"></i></a>
+				</div>
+			</div>
+		</div>
+		<div class="row skills-wrapper align-items-center">
+			<div class="col-lg-7">
+				<div class="skills-name">
+					<div class="img-holder">
+						<img src="{{ url_for('static', filename='img/gallery/img-5.png') }}" alt="gallery" style="filter: hue-rotate(240deg);">
+					</div>
+					<span class="me-md-4">03.</span> Databases & Deployment Pipelines
+				</div>
+			</div>
+			<div class="col-lg-5">
+				<div class="skills-desc d-sm-flex justify-content-between">
+					<p class="ms-xl-5" style="color: #cbd5e1;">MySQL, SQLite, Git, GitHub, and Vercel Hosting Environments</p>
+					<a class="ht-btn-two ms-sm-4" href="/about"><i class="bi bi-arrow-up-right"></i></a>
+				</div>
+			</div>
+		</div>
+		<div class="row skills-wrapper align-items-center">
+			<div class="col-lg-7">
+				<div class="skills-name">
+					<div class="img-holder">
+						<img src="{{ url_for('static', filename='img/gallery/img-5.png') }}" alt="gallery" style="filter: hue-rotate(240deg);">
+					</div>
+					<span class="me-md-4">04.</span> Graphic Design & Media Styling
+				</div>
+			</div>
+			<div class="col-lg-5">
+				<div class="skills-desc d-sm-flex justify-content-between">
+					<p class="ms-xl-5" style="color: #cbd5e1;">Photoshop, CorelDRAW, print workflows, HTML5, CSS3, JavaScript</p>
+					<a class="ht-btn-two ms-sm-4" href="/about"><i class="bi bi-arrow-up-right"></i></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- skills-section end -->
+
+<!-- achievements-section start -->
+<section class="feedback-section position-relative pt-70 pb-120">
+	<div class="container">
+		<h2 class="wrapper-title text-center mb-60">Key Achievements</h2>
+		<div class="row">
+			<div class="col-md-6 mb-30">
+				<div class="card h-100">
+					<i class="bi bi-code-slash" style="font-size: 2.5rem; color: #913BFF;"></i>
+					<h3 class="mt-3">70-Day LeetCode Streak</h3>
+					<p style="color: #94a3b8;">Maintained a consistent 70-day algorithmic problem-solving streak on LeetCode, optimizing complex structures daily.</p>
+				</div>
+			</div>
+			<div class="col-md-6 mb-30">
+				<div class="card h-100">
+					<i class="bi bi-keyboard" style="font-size: 2.5rem; color: #913BFF;"></i>
+					<h3 class="mt-3">Senior Typewriting Speed</h3>
+					<p style="color: #94a3b8;">Certified Senior Grade in English and Tamil Typewriting with a verified speed of 62 Words Per Minute (WPM).</p>
+				</div>
+			</div>
+			<div class="col-md-6 mb-30">
+				<div class="card h-100">
+					<i class="bi bi-people" style="font-size: 2.5rem; color: #913BFF;"></i>
+					<h3 class="mt-3">Leadership & Operations</h3>
+					<p style="color: #94a3b8;">Elected Student Coordinator for College Institution's Innovation Council (IIC). Formerly School Pupil Leader (SPL) and NSS Leader.</p>
+				</div>
+			</div>
+			<div class="col-md-6 mb-30">
+				<div class="card h-100">
+					<i class="bi bi-trophy" style="font-size: 2.5rem; color: #913BFF;"></i>
+					<h3 class="mt-3">Chess & Sports Captain</h3>
+					<p style="color: #94a3b8;">Competed as a District-level chess player and served as the elected Team Captain of the school Football Team.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- achievements-section end -->
+
+<!-- contact-section start -->
+<section class="contact-section pt-100 pb-160">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6">
+				<div class="contact-text mb-30">
+					<h2 class="wrapper-title mb-30">Let's Connect!</h2>
+					<p style="color: #cbd5e1; font-size: 1.05rem;">
+						Whether you want to discuss a software project, hire me for full-stack API integration, or talk about AI-driven datasets, feel free to reach out.
+					</p>
+					<ul style="list-style: none; padding-left: 0; margin-top: 30px; font-size: 1.1rem;">
+						<li style="margin-bottom: 15px;"><i class="bi bi-envelope-fill" style="color: #913BFF; margin-right: 10px;"></i> bharatharasan7418@gmail.com</li>
+						<li style="margin-bottom: 15px;"><i class="bi bi-telephone-fill" style="color: #913BFF; margin-right: 10px;"></i> +91 7418771913</li>
+						<li style="margin-bottom: 15px;"><i class="bi bi-geo-alt-fill" style="color: #913BFF; margin-right: 10px;"></i> Tiruvannamalai, Tamil Nadu, India</li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-lg-6">
+				<div class="contact-form mb-30" style="background: #130a2a; padding: 40px; border-radius: 12px; border: 1px solid #3c1e75;">
+					<form action="/contact" method="POST">
+						<div class="mb-3">
+							<label for="name" class="form-label">Full Name</label>
+							<input type="text" class="form-control" id="name" name="name" required style="background: #1a103c; color: white; border: 1px solid #3c1e75;">
+						</div>
+						<div class="mb-3">
+							<label for="email" class="form-label">Email Address</label>
+							<input type="email" class="form-control" id="email" name="email" required style="background: #1a103c; color: white; border: 1px solid #3c1e75;">
+						</div>
+						<div class="mb-3">
+							<label for="message" class="form-label">Message</label>
+							<textarea class="form-control" id="message" name="message" rows="5" required style="background: #1a103c; color: white; border: 1px solid #3c1e75;"></textarea>
+						</div>
+						<button type="submit" class="btn w-100">Send Message</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- contact-section end -->
+
+{% endblock %}

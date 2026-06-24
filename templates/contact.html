@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!--page-title-area start-->
+<div class="page-title-area pt-215 pb-30">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-9">
+                <div class="page-title-wrapper text-lg-start text-center mb-40">
+                    <h2 class="page-title mb-10" style="color: white;">Contact Me</h2>
+                    <p style="color: #94a3b8; font-size: 1.1rem;">Get in touch for consultations, projects, or professional opportunities.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--page-title-area end-->
+
+<!-- contact-section start -->
+<section class="contact-section pt-40 pb-160">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="contact-text mb-30">
+                    <h3 style="color: white; margin-bottom: 20px;">Let's Collaborate</h3>
+                    <p style="color: #cbd5e1; font-size: 1.05rem; line-height: 1.8; margin-bottom: 30px;">
+                        I am open to full-time opportunities, consulting roles, or technical partnerships. Send me a message, and let's build something exceptional together.
+					</p>
+					<ul style="list-style: none; padding-left: 0; font-size: 1.1rem;">
+						<li style="margin-bottom: 18px; color: #cbd5e1; display: flex; align-items: center;"><i class="bi bi-envelope-fill" style="color: #913BFF; margin-right: 15px; font-size: 1.25rem;"></i> bharatharasan7418@gmail.com</li>
+						<li style="margin-bottom: 18px; color: #cbd5e1; display: flex; align-items: center;"><i class="bi bi-telephone-fill" style="color: #913BFF; margin-right: 15px; font-size: 1.25rem;"></i> +91 7418771913</li>
+						<li style="margin-bottom: 18px; color: #cbd5e1; display: flex; align-items: center;"><i class="bi bi-geo-alt-fill" style="color: #913BFF; margin-right: 15px; font-size: 1.25rem;"></i> Tiruvannamalai, Tamil Nadu, India</li>
+                        <li style="margin-bottom: 18px; color: #cbd5e1; display: flex; align-items: center;"><i class="bi bi-linkedin" style="color: #913BFF; margin-right: 15px; font-size: 1.25rem;"></i> <a href="https://linkedin.com/in/bharath-r-22a4482a0" target="_blank" style="color: #cbd5e1;">linkedin.com/in/bharath-r-22a4482a0</a></li>
+                        <li style="margin-bottom: 18px; color: #cbd5e1; display: flex; align-items: center;"><i class="bi bi-github" style="color: #913BFF; margin-right: 15px; font-size: 1.25rem;"></i> <a href="https://github.com/bharath7418" target="_blank" style="color: #cbd5e1;">github.com/bharath7418</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-lg-6">
+				<div class="contact-form mb-30" style="background: #130a2a; padding: 40px; border-radius: 12px; border: 1px solid #3c1e75; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);">
+					<form action="/contact" method="POST">
+						<div class="mb-4">
+							<label for="name">Full Name</label>
+							<input type="text" class="form-control" id="name" name="name" required style="background: #1a103c; color: white; border: 1px solid #3c1e75; padding: 0.75rem 1rem;">
+						</div>
+						<div class="mb-4">
+							<label for="email">Email Address</label>
+							<input type="email" class="form-control" id="email" name="email" required style="background: #1a103c; color: white; border: 1px solid #3c1e75; padding: 0.75rem 1rem;">
+						</div>
+						<div class="mb-4">
+							<label for="message">Your Message</label>
+							<textarea class="form-control" id="message" name="message" rows="5" required style="background: #1a103c; color: white; border: 1px solid #3c1e75; padding: 0.75rem 1rem;"></textarea>
+						</div>
+						<button type="submit" class="btn w-100" style="padding: 0.85rem; font-size: 1.05rem;">Send Message</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- contact-section end -->
+
+{% endblock %}

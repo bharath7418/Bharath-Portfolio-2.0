@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="x-ua-compatible" content="ie=edge" />
+	<meta name="keywords"
+		content="agency, photography, business, company, consulting, corporate, creative, designer, digital marketing, elementor, industry, portfolio, studio, web design">
+	<meta name="description"
+		content="Qurifolio - Personal Portfolio Flask Template for all kinds of business, modern, multipurpose, personal, marketing, portfolio, online bussines, Ecommerce, Shop,website">
+	<title>Qurifolio - Personal Portfolio Flask Template</title>
+	<meta property="og:site_name" content="Portfolio">
+	<meta property="og:url" content="">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Qurifolio - Personal Portfolio Flask Template">
+	<meta name='og:image' content='images/assets/ogg.png'>
+	<!-- For IE -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- For Resposive Device -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- For Window Tab Color -->
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#913BFF">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#913BFF">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#913BFF">
+
+	<!-- <link rel="manifest" href="site.webmanifest" /> -->
+	<link rel="shortcut icon" type="image/x-icon" href={{ url_for('static', filename='/img/favicon.png') }} />
+	<!-- Place favicon.ico in the root directory -->
+
+	<!-- CSS here -->
+	<link rel="stylesheet" href={{ url_for('static', filename='css/bootstrap.min.css') }} />
+	<link rel="stylesheet" href={{ url_for('static', filename='fonts/bootstrap-icons/font-css.css') }} />
+	<link rel="stylesheet" href={{ url_for('static', filename='css/animate.min.css') }} />
+	<link rel="stylesheet" href={{ url_for('static', filename='css/slick.css') }} />
+	<link rel="stylesheet" href={{ url_for('static', filename='css/all.min.css') }} />
+	<link rel="stylesheet" href={{ url_for('static', filename='css/nice-select.css') }} />
+	<link rel="stylesheet" href={{ url_for('static', filename='css/magnific-popup.css') }} />
+	<link rel="stylesheet" href={{ url_for('static', filename='css/metisMenu.css') }} />
+	<link rel="stylesheet" href={{ url_for('static', filename='css/aos.css') }} />
+	<link rel="stylesheet" href={{ url_for('static', filename='css/spacing.css') }} />
+	<link rel="stylesheet" href={{ url_for('static', filename='css/main.css') }} />
+</head>
+
+<body class="light-bg">
+	<!-- main-page-wrapper start -->
+	<div class="main-page-wrapper">
+		<!--[if lte IE 9]> <p class="browserupgrade"> You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security. </p> <![endif]-->
+
+		<!-- Add your site or application content here -->
+		<!-- preloader -->
+		<div id="preloader" class="preloader-main">
+			<div class="loader-wrapper">
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+		</div>
+		<!-- preloader end  -->
+
+
+		<!-- offcanvas start  -->
+		<div class="offcanvas offcanvas-top theme-bg" tabindex="-1" id="offcanvasTop">
+			<div class="offcanvas-header">
+				<a data-bs-dismiss="offcanvas" aria-label="Close">
+					<i class="fas fa-times search-close" id="search-close"></i>
+				</a>
+			</div>
+			<div class="offcanvas-body">
+				<!-- Fullscreen search -->
+				<div class="search-wrap">
+					<form method="get">
+						<input type="search" class="main-search-input" placeholder="Search Your Keyword...">
+					</form>
+				</div>
+				<!-- end fullscreen search -->
+			</div>
+		</div>
+		<!-- offcanvas end  -->
+
+
+		<!-- header-area start -->
+		<header class="theme-main-menu theme-menu-one pt-35 pb-30">
+			<div class="main-header-area">
+				<div class="container-fluid">
+					<div class="row align-items-center">
+						<div class="col-xl-3 col-lg-2 col-6">
+							<div class="logo-area">
+								<a class="front" href="index.html"><img src={{ url_for('static', filename='img/logo/header-logo-1.png') }}
+										alt="Header-logo"></a>
+							</div>
+						</div>
+						<div class="col-xl-7 col-lg-7 col-6 d-none d-lg-block">
+							<div class="main-menu d-none d-lg-block ps-xxl-5">
+								<nav id="mobile-menu">
+									<ul class="menu-list ps-0">
+										<li>
+											<a href="#">
+												Home
+											</a>
+											<ul class="sub-menu">
+												<li>
+													<a href="index.html">Home Style 1</a>
+												</li>
+												<li>
+													<a href="index-2.html">Home Style 2</a>
+												</li>
+												<li>
+													<a href="index-3.html">Home Style 3</a>
+												</li>
+											</ul>
+										</li>
+										<li>
+											<a href="about.html">About Us</a>
+										</li>
+										<li>
+											<a href="#">Services</a>
+											<ul class="sub-menu">
+												<li>
+													<a href="service.html">Services</a>
+												</li>
+												<li>
+													<a href="service-details.html">Services Details</a>
+												</li>
+											</ul>
+										</li>
+										<li>
+											<a href="#">Project</a>
+											<ul class="sub-menu">
+												<li>
+													<a href="portfolio.html">Project</a>
+												</li>
+												<li>
+													<a href="project-details.html">Project
+														Details</a>
+												</li>
+											</ul>
+										</li>
+										<li>
+											<a href="#">Blog</a>
+											<ul class="sub-menu">
+												<li>
+													<a href="blog-list.html">Blog</a>
+												</li>
+												<li>
+													<a href="blog-details.html">Blog Details</a>
+												</li>
+											</ul>
+										</li>
+										<li>
+											<a href="contact.html">contact</a>
+										</li>
+									</ul>
+								</nav>
+							</div>
+						</div>
+						<div class="col-xl-2 col-lg-3 col-6">
+							<div class="right-nav d-flex align-items-center justify-content-end">
+								<div class="quote__btn d-none d-sm-inline-block">
+									<a href="#" class="ht_btn">Download CV</a>
+								</div>
+								<div class="hamburger-menu d-lg-none d-md-inline-block ms-3">
+									<a class="round-menu" href="javascript:void(0);">
+										<span class="line"></span>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /.theme-main-menu -->
+		</header>
+		<!-- header-area end -->
+
+		<!-- slide-bar start -->
+		<aside class="slide-bar">
+			<div class="close-mobile-menu">
+				<a href="javascript:void(0);">
+					<i class="fas fa-times"></i>
+				</a>
+			</div>
+			<!-- offset-sidebar start -->
+			<div class="offset-sidebar">
+				<div class="offset-widget offset-logo mb-30">
+					<a href="index.html">
+						<img src={{ url_for('static', filename='img/logo/header-logo-2.png') }} alt="logo">
+					</a>
+				</div>
+				<div class="mobile-menu"></div>
+				<div class="offset-widget mb-40">
+					<div class="info-widget">
+						<h4 class="offset-title mb-20">About Us</h4>
+						<p class="mb-30">
+							But I must explain to you how all this mistaken idea of denouncing pleasure and
+							praising pain was born and will give you a complete account of the system and
+							expound the actual teachings of the great explore
+						</p>
+					</div>
+				</div>
+				<div class="offset-widget mb-30 pr-10">
+					<div class="info-widget info-widget2">
+						<h4 class="offset-title mb-20">Contact Info</h4>
+						<p>
+							<i class="fal fa-address-book"></i>
+							23/A, Miranda City Likaoli Prikano, Dope</p>
+						<p>
+							<i class="fal fa-phone"></i>
+							+0989 7876 9865 9
+						</p>
+						<p>
+							<i class="fal fa-envelope-open"></i>
+							info@example.com
+						</p>
+					</div>
+				</div>
+				<!-- <div class="login-btn text-center">
+					<a class="ht_btn w-100" href="login.html">Login</a>
+				</div> -->
+			</div>
+			<!-- offset-sidebar end -->
+
+		</aside>
+		<div class="body-overlay"></div>
+		<!-- slide-bar end -->
+
+		<main>
+			<!--page-title-area start-->
+			<div class="page-title-area pt-215 pb-md-60">
+				<div class="container">
+					<div class="row align-items-center">
+						<div class="col-lg-9">
+							<div class="page-title-wrapper text-lg-start text-center mb-40">
+								<h2 class="page-title mb-10">Service</h2>
+								<nav class="d-none" aria-label="breadcrumb">
+									<ul class="breadcrumb list-none justify-content-center justify-content-md-start">
+										<li><a href="index.html">Home</a></li>
+										<li><a href="#">Pages</a></li>
+										<li class="active" aria-current="page">Service</li>
+									</ul>
+								</nav>
+							</div>
+						</div>
+						<div class="col-lg-3 d-none d-lg-inline-block">
+							<div class="page-title-btn text-center mb-40">
+								<div class="button-2">
+									<a class="scroll-btn" href="#">
+										<img class="bg-round" src={{ url_for('static', filename='img/about/s-button-5.png') }} alt="shape">
+										<span class="icon">
+											<i class="bi bi-arrow-up-right"></i>
+										</span>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--page-title-area end-->
+
+
+			<!-- about-section start -->
+			<section class="about-section pt-40">
+				<div class="container">
+					<div class="row align-items-center">
+						<div class="col-lg-6">
+							<div class="about-text-wrapper-4 mb-30">
+								<div class="upper-title-2 mb-30">Service</div>
+								<h2 class="about-title mb-15">Designing Digital Delights: John's Portfolio</h2>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="about-img-wrapper mb-30">
+								<img class="img-fluid" src={{ url_for('static', filename='img/about/img-3.jpg') }} alt="about">
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- about-section end -->
+
+			<!-- partners-section start -->
+			<div class="theme-bg logos brand-padding mt-90">
+				<div class="partners-two logos-slide">
+					<div class="items"> <img src={{ url_for('static', filename='img/brand/brand-12.png') }} alt="brand"></div>
+					<div class="items"><img src={{ url_for('static', filename='img/icon/icon-1.svg') }} alt="brand"></div>
+					<div class="items"> <img src={{ url_for('static', filename='img/brand/brand-13.png') }} alt="brand"></div>
+					<div class="items"><img src={{ url_for('static', filename='img/icon/icon-1.svg') }} alt="brand"></div>
+					<div class="items"> <img src={{ url_for('static', filename='img/brand/brand-14.png') }} alt="brand"></div>
+					<div class="items"><img src={{ url_for('static', filename='img/icon/icon-1.svg') }} alt="brand"></div>
+					<div class="items"> <img src={{ url_for('static', filename='img/brand/brand-15.png') }} alt="brand"></div>
+					<div class="items"><img src={{ url_for('static', filename='img/icon/icon-1.svg') }} alt="brand"></div>
+					<div class="items"> <img src={{ url_for('static', filename='img/brand/brand-16.png') }} alt="brand"></div>
+					<div class="items"><img src={{ url_for('static', filename='img/icon/icon-1.svg') }} alt="brand"></div>
+					<div class="items"> <img src={{ url_for('static', filename='img/brand/brand-17.png') }} alt="brand"></div>
+					<div class="items"><img src={{ url_for('static', filename='img/icon/icon-1.svg') }} alt="brand"></div>
+				</div>
+				<div class="partners-two logos-slide">
+					<div class="items"> <img src={{ url_for('static', filename='img/brand/brand-12.png') }} alt="brand"></div>
+					<div class="items"><img src={{ url_for('static', filename='img/icon/icon-1.svg') }} alt="brand"></div>
+					<div class="items"> <img src={{ url_for('static', filename='img/brand/brand-13.png') }} alt="brand"></div>
+					<div class="items"><img src={{ url_for('static', filename='img/icon/icon-1.svg') }} alt="brand"></div>
+					<div class="items"> <img src={{ url_for('static', filename='img/brand/brand-14.png') }} alt="brand"></div>
+					<div class="items"><img src={{ url_for('static', filename='img/icon/icon-1.svg') }} alt="brand"></div>
+					<div class="items"> <img src={{ url_for('static', filename='img/brand/brand-15.png') }} alt="brand"></div>
+					<div class="items"><img src={{ url_for('static', filename='img/icon/icon-1.svg') }} alt="brand"></div>
+					<div class="items"> <img src={{ url_for('static', filename='img/brand/brand-16.png') }} alt="brand"></div>
+					<div class="items"><img src={{ url_for('static', filename='img/icon/icon-1.svg') }} alt="brand"></div>
+					<div class="items"> <img src={{ url_for('static', filename='img/brand/brand-17.png') }} alt="brand"></div>
+					<div class="items"><img src={{ url_for('static', filename='img/icon/icon-1.svg') }} alt="brand"></div>
+				</div>
+			</div>
+			<!-- partners-section end -->
+
+			<!-- skills-section start -->
+			<section class="skills-section pt-160 pb-135 pt-lg-110 pb-lg-75">
+				<h2 class="wrapper-title text-center mb-60">My Expertise</h2>
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-4 col-md-6">
+							<div class="box-style-one mb-45">
+								<div class="icon mb-20"><img src={{ url_for('static', filename='img/icon/icon-8.svg') }} alt="icon"></div>
+								<h3>UI/UX Design</h3>
+								<p>Interactively deliver front-end customer service after bricks & click total linkage.
+								</p>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-6">
+							<div class="box-style-one mb-45">
+								<div class="icon mb-20"><img src={{ url_for('static', filename='img/icon/icon-9.svg') }} alt="icon"></div>
+								<h3>Web Development</h3>
+								<p>Interactively deliver front-end customer service after bricks & click total linkage.
+								</p>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-6">
+							<div class="box-style-one mb-45">
+								<div class="icon mb-20"><img src={{ url_for('static', filename='img/icon/icon-10.svg') }} alt="icon"></div>
+								<h3>Branding Identity</h3>
+								<p>Interactively deliver front-end customer service after bricks & click total linkage.
+								</p>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-6">
+							<div class="box-style-one mb-45">
+								<div class="icon mb-20"><img src={{ url_for('static', filename='img/icon/icon-11.svg') }} alt="icon"></div>
+								<h3>Digital Marketing</h3>
+								<p>Interactively deliver front-end customer service after bricks & click total linkage.
+								</p>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-6">
+							<div class="box-style-one mb-45">
+								<div class="icon mb-20"><img src={{ url_for('static', filename='img/icon/icon-12.svg') }} alt="icon"></div>
+								<h3>Communication</h3>
+								<p>Interactively deliver front-end customer service after bricks & click total linkage.
+								</p>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-6">
+							<div class="box-style-one mb-45">
+								<div class="icon mb-20"><img src={{ url_for('static', filename='img/icon/icon-13.svg') }} alt="icon"></div>
+								<h3>Motion Graphics</h3>
+								<p>Interactively deliver front-end customer service after bricks & click total linkage.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- skills-section end -->
+
+			<!-- partners-section start -->
+			<div class="white-bg partners-section">
+				<div class="logos">
+					<div class="logos-slide">
+						<div class="items"> <img src={{ url_for('static', filename='img/brand/brand-1.png') }} alt="brand"></div>
+						<div class="items"><img src={{ url_for('static', filename='img/brand/brand-line-1.svg') }} alt="brand"></div>
+						<div class="items"><img src={{ url_for('static', filename='img/brand/brand-2.png') }} alt="brand"></div>
+						<div class="items"> <img src={{ url_for('static', filename='img/brand/brand-line-1.svg') }} alt="brand"></div>
+						<div class="items"><img src={{ url_for('static', filename='img/brand/brand-3.png') }} alt="brand"></div>
+						<div class="items"><img src={{ url_for('static', filename='img/brand/brand-line-1.svg') }} alt="brand"></div>
+					</div>
+					<div class="logos-slide">
+						<div class="items"> <img src={{ url_for('static', filename='img/brand/brand-1.png') }} alt="brand"></div>
+						<div class="items"><img src={{ url_for('static', filename='img/brand/brand-line-1.svg') }} alt="brand"></div>
+						<div class="items"><img src={{ url_for('static', filename='img/brand/brand-2.png') }} alt="brand"></div>
+						<div class="items"> <img src={{ url_for('static', filename='img/brand/brand-line-1.svg') }} alt="brand"></div>
+						<div class="items"><img src={{ url_for('static', filename='img/brand/brand-3.png') }} alt="brand"></div>
+						<div class="items"><img src={{ url_for('static', filename='img/brand/brand-line-1.svg') }} alt="brand"></div>
+					</div>
+				</div>
+			</div>
+			<!-- partners-section end -->
+
+			<!-- contact-section start -->
+			<section class="black-bg contact-section pt-100 pb-100 pb-lg-30">
+				<h2 class="wrapper-title text-white text-center mb-150 mb-lg-50">Book A Call</h2>
+				<div class="left-img">
+					<img class="w-100" src={{ url_for('static', filename='img/media/img-2.jpg') }} alt="author">
+				</div>
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-6 offset-lg-6">
+							<div class="main-form ms-xl-5">
+								<form action="#" class="ps-xl-4">
+									<label>Name</label>
+									<input type="text" placeholder="Enter your first name">
+									<label>Email</label>
+									<input type="text" placeholder="Enter your e-mail">
+									<label>I’m Interested In</label>
+									<input type="text" placeholder="Enter your first name">
+									<label>Messageme</label>
+									<textarea cols="30" rows="10" placeholder="Write you message"></textarea>
+									<button class="ht-btn-four" type="submit"><i class="bi bi-send"></i> Send
+										Now</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- contact-section end -->
+		</main>
+
+
+		<!--footer-area start-->
+		<footer class="black-bg footer-area-one position-relative ">
+			<div class="footer-wrapper-one pt-75 pb-20">
+				<img src={{ url_for('static', filename='img/shape/star-5.png') }} alt="" class="shape-01s">
+				<div class="container">
+					<div class="row">
+						<div class="col-xl-5 col-lg-5 col-md-8">
+							<div class="footer-widget mb-30">
+								<p class="footer-desc">Phosflu orescently redefine cross the functional data through
+									enabled mind
+									share.ess
+									products</p>
+								<a class="chatbot" href="contact.html">Let’s Chat <i
+										class="bi bi-arrow-up-right"></i></a>
+							</div>
+						</div>
+						<div class="col-xl-3 col-lg-3 col-md-4">
+							<div class="footer-widget ps-xxl-5 ms-xxl-5 mb-30">
+								<ul class="style-none">
+									<li>
+										<a href="about.html">About us</a>
+									</li>
+									<li>
+										<a href="contact.html">Contact </a>
+									</li>
+									<li>
+										<a href="blog.html">blog</a>
+									</li>
+									<li>
+										<a href="contact.html">Policy</a>
+									</li>
+									<li>
+										<a href="contact.html">Refund</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-xl-4 col-lg-4 col-md-6">
+							<div class="footer-widget mb-30 ms-xl-5 ps-xl-4">
+								<a class="mail d-block mb-30" href="mailto:Qurifolio@example.com"><span
+										class="text-theme">Qurifolio</span>@example.com</a>
+								<address>4517 Washington Ave. Manchester,
+									Kentucky 39495</address>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="copyright-area pt-50 pb-25">
+				<div class="container">
+					<div class="row align-items-center">
+						<div class="col-xl-6 col-lg-6 text-lg-start text-center">
+							<div class="copyright-text mb-30">
+								<p>
+									<a href="https://themeforest.net/user/pixel-eyez" target="_blank">Pixel-Eyez</a>
+									© 2024, All Rights Reserved</p>
+							</div>
+						</div>
+						<div class="col-xl-6 col-lg-6 text-lg-end text-center">
+							<div class="social-media mb-30">
+								<a href="#"><i class="fab fa-facebook-f"></i></a>
+								<a href="#"><i class="fab fa-twitter"></i></a>
+								<a href="#"><i class="fab fa-instagram"></i></a>
+								<a href="#"><i class="fab fa-youtube"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!--footer-area end-->
+
+		<!--scrollToTopBtn end-->
+		<a id="scrollToTopBtn" class="progress-wrap">
+			<i class="bi bi-arrow-up"></i>
+		</a>
+
+
+	</div>
+	<!-- main-page-wrapper end -->
+
+
+
+	<!-- JS here -->
+
+	<script src={{ url_for('static', filename='js/vendor/jquery-2.2.4.min.js') }}></script>
+	<script src={{ url_for('static', filename='js/vendor/popper.min.js') }}></script>
+	<script src={{ url_for('static', filename='js/vendor/bootstrap.min.js') }}></script>
+	<script src={{ url_for('static', filename='js/jquery.meanmenu.js') }}></script>
+	<script src={{ url_for('static', filename='js/slick.min.js') }}></script>
+	<script src={{ url_for('static', filename='js/jquery.easypiechart.min.js') }}></script>
+	<script src={{ url_for('static', filename='js/jquery.counterup.min.js') }}></script>
+	<script src={{ url_for('static', filename='js/jquery.magnific-popup.min.js') }}></script>
+	<script src={{ url_for('static', filename='js/metisMenu.min.js') }}></script>
+	<script src={{ url_for('static', filename='js/wow.min.js') }}></script>
+	<script src={{ url_for('static', filename='js/jquery.waypoints.min.js') }}></script>
+	<script src={{ url_for('static', filename='js/simpleParallax.min.js') }}></script>
+	<script src={{ url_for('static', filename='js/aos.js') }}></script>
+	<script src={{ url_for('static', filename='js/lenis.min.js') }}></script>
+	<script src={{ url_for('static', filename='js/jquery.nice-select.min.js') }}></script>
+
+
+	<!--Custom JS here -->
+	<script src={{ url_for('static', filename='js/main.js') }}></script>
+
+
+</body>
+
+</html>
