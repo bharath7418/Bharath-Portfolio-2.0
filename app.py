@@ -5,7 +5,7 @@ from flask import Flask, render_template, redirect, session, request, url_for, f
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, login_user, login_required, logout_user, current_user, UserMixin
 from werkzeug.security import generate_password_hash, check_password_hash
-
+import re
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.getenv('SECRET_KEY', 'pro_secret_key_99_bharath')
 
@@ -200,23 +200,23 @@ with app.app_context():
         
     # Check if Project table is empty; if so, populate with user's projects
     if not Project.query.first():
-        project= Project(
-                name="COPACK",
-                title="Student Compiler & Placement Platform",
-                tools="Flask, HTML, CSS, JS",
-                problem_statement="Lorem100 Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, ab quidem. Minima tempore facilis fugiat! Explicabo minus illum fugiat? Voluptas delectus nihil animi! Quas neque tempore ipsum suscipit iste! Autem vel tenetur alias nesciunt velit aut impedit? Error maiores vel maxime quam aliquid voluptatum tempore, explicabo repellendus nulla quas voluptate molestias ipsam officia quia eius esse. Aperiam perspiciatis iste minima minus officia, aut incidunt qui excepturi totam numquam recusandae, ea harum suscipit eius earum alias voluptatum molestias? Excepturi nemo, consequatur ea illo, perferendis corrupti iste similique molestias recusandae earum vel, velit obcaecati architecto laborum perspiciatis laboriosam itaque aspernatur incidunt assumenda.",
-                description="Developed a scalable platform to manage coding tests and automate performance tracking for 700+ users. Engineered secure anti-cheating features and streamlined the evaluation workflow to eliminate manual code sharing.",
-                filename1="D:\Projects\Bharath Portfolio 2.0\uploads\filename (1).jpg",
-                filename2="D:\Projects\Bharath Portfolio 2.0\uploads\filename (2).jpg",
-                filename3="D:\Projects\Bharath Portfolio 2.0\uploads\filename (3).jpg",
-                filename4="D:\Projects\Bharath Portfolio 2.0\uploads\filename (4).jpg",
-                solution="Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, ab quidem. Minima tempore facilis fugiat! Explicabo minus illum fugiat? Voluptas delectus nihil animi! Quas neque tempore ipsum suscipit iste! Autem vel tenetur alias nesciunt velit aut impedit? Error maiores vel maxime quam aliquid voluptatum tempore, explicabo repellendus nulla quas voluptate molestias ipsam officia quia eius esse. Aperiam perspiciatis iste minima minus officia, aut incidunt qui excepturi totam numquam recusandae, ea harum suscipit eius earum alias voluptatum molestias? Excepturi nemo, consequatur ea illo, perferendis corrupti iste similique molestias recusandae earum vel, velit obcaecati architecto laborum perspiciatis laboriosam itaque aspernatur incidunt assumenda.",
-                project_link = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, ab quidem.",
-                project_report="Lorem aksjdfkjfkjdskfjk fjfklsdjfkdjfk dfkjdkfjkjfak fjdkfjakjfkdfkas kfjkdf ajfkjd",
-                insta_link="aksjdfkjkdsjfkf fkajskdf",
-                youtube_link="sjakfjkjfksajdfkljffasf",
-                feedback="akjdk kdj akjsdaf ksjafkj jaksdjf"
-            )
+        project = Project(
+            name="COPACK",
+            title="Student Compiler & Placement Platform",
+            tools="Flask, HTML, CSS, JS",
+            problem_statement="Lorem100 Lorem ipsum dolor sit amet consectetur adipisicing elit...",
+            description="Developed a scalable platform to manage coding tests and automate performance tracking for 700+ users. Engineered secure anti-cheating features and streamlined the evaluation workflow to eliminate manual code sharing.",
+            filename1=r"D:\Projects\Bharath Portfolio 2.0\uploads\filename (1).jpg",
+            filename2=r"D:\Projects\Bharath Portfolio 2.0\uploads\filename (2).jpg",
+            filename3=r"D:\Projects\Bharath Portfolio 2.0\uploads\filename (3).jpg",
+            filename4=r"D:\Projects\Bharath Portfolio 2.0\uploads\filename (4).jpg",
+            solution="Lorem ipsum dolor sit amet consectetur adipisicing elit...",
+            project_link="Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+            project_report="Lorem aksjdfkjfkjdskfjk fjfklsdjfkdjfk dfkjdkfjkjfak fjdkfjakjfkdfkas kfjkdf ajfkjd",
+            insta_link="aksjdfkjkdsjfkf fkajskdf",
+            youtube_link="sjakfjkjfksajdfkljffasf",
+            feedback="akjdk kdj akjsdaf ksjafkj jaksdjf"
+        )
         db.session.add(project)
         db.session.commit()
 
