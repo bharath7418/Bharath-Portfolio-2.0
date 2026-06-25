@@ -50,6 +50,7 @@ class Project(db.Model):
     project_report = db.Column(db.String(200),default=None)
     insta_link = db.Column(db.String(200),default=None)
     youtube_link = db.Column(db.String(200),default=None)
+    linkdin_link = db.Column(db.String(200),default=None)
     feedback = db.Column(db.String(200),default=None)
 
     
@@ -73,9 +74,7 @@ def load_user(user_id):
 
 @app.route('/')
 def home():
-    # Pass major projects to display in the hero/featured section
-    major_projects = Project.query.filter_by(project_type='Major').limit(3).all()
-    return render_template('home.html', projects=major_projects)
+    return render_template('home.html')
 
 @app.route('/about')
 def about():
@@ -83,8 +82,8 @@ def about():
 
 @app.route('/projects')
 def projects():
-    major_projects = Project.query.filter_by(project_type='Major').all()
-    return render_template('projects.html', projects=major_projects)
+    projects = Project.query.all()
+    return render_template('projects.html', projects=projects)
 
 @app.route('/miniprojects')
 def miniprojects():
@@ -215,6 +214,7 @@ with app.app_context():
             project_report="Lorem aksjdfkjfkjdskfjk fjfklsdjfkdjfk dfkjdkfjkjfak fjdkfjakjfkdfkas kfjkdf ajfkjd",
             insta_link="aksjdfkjkdsjfkf fkajskdf",
             youtube_link="sjakfjkjfksajdfkljffasf",
+            linkdin="adsjkfj",
             feedback="akjdk kdj akjsdaf ksjafkj jaksdjf"
         )
         db.session.add(project)
