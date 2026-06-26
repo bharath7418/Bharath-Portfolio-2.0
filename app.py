@@ -5,7 +5,9 @@ from flask import Flask, render_template, redirect, session, request, url_for, f
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, login_user, login_required, logout_user, current_user, UserMixin
 from werkzeug.security import generate_password_hash, check_password_hash
-import re
+from werkzeug.utils import secure_filename
+from flask import send_from_directory
+
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.getenv('SECRET_KEY', 'pro_secret_key_99_bharath')
 
@@ -21,6 +23,9 @@ else:
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['UPLOAD_FOLDER'] = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'uploads')
+app.config['ALLOWED_EXTENSIONS'] = {'png', 'jpg', 'jpeg', 'gif', 'pdf'}
+app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB Upload Limit
 
 db = SQLAlchemy(app)
 login_manager = LoginManager(app)
@@ -66,6 +71,11 @@ class Blog(db.Model):
     content = db.Column(db.Text, nullable=False)
     date_posted = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
 
+
+# Helper function to check allowed file extensions
+def allowed_file(filename):
+    return '.' in filename and filename.rsplit('.', 1)[1].lower() in app.config['ALLOWED_EXTENSIONS']
+
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(int(user_id))
@@ -89,6 +99,12 @@ def projects():
 def miniprojects():
     mini_projects = Project.query.filter_by(project_type='Mini').all()
     return render_template('miniprojects.html', projects=mini_projects)
+
+@app.route('/uploads/<filename>')
+def uploaded_file(filename):
+    from flask import send_from_directory
+    return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
+
 
 @app.route('/services')
 def services():
@@ -205,16 +221,16 @@ with app.app_context():
             tools="Flask, HTML, CSS, JS",
             problem_statement="Lorem100 Lorem ipsum dolor sit amet consectetur adipisicing elit...",
             description="Developed a scalable platform to manage coding tests and automate performance tracking for 700+ users. Engineered secure anti-cheating features and streamlined the evaluation workflow to eliminate manual code sharing.",
-            filename1=r"D:\Projects\Bharath Portfolio 2.0\uploads\filename (1).jpg",
-            filename2=r"D:\Projects\Bharath Portfolio 2.0\uploads\filename (2).jpg",
-            filename3=r"D:\Projects\Bharath Portfolio 2.0\uploads\filename (3).jpg",
-            filename4=r"D:\Projects\Bharath Portfolio 2.0\uploads\filename (4).jpg",
+            filename1="filename (1).jpg",
+            filename2="filename (2).jpg",
+            filename3="filename (3).jpg",
+            filename4="filename (4).jpg",
             solution="Lorem ipsum dolor sit amet consectetur adipisicing elit...",
             project_link="Lorem ipsum dolor sit amet consectetur adipisicing elit.",
             project_report="Lorem aksjdfkjfkjdskfjk fjfklsdjfkdjfk dfkjdkfjkjfak fjdkfjakjfkdfkas kfjkdf ajfkjd",
             insta_link="aksjdfkjkdsjfkf fkajskdf",
             youtube_link="sjakfjkjfksajdfkljffasf",
-            linkdin="adsjkfj",
+            linkdin_link="adsjkfj",
             feedback="akjdk kdj akjsdaf ksjafkj jaksdjf"
         )
         db.session.add(project)

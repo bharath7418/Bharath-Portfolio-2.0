@@ -25,20 +25,43 @@
 
 {% for project in projects %}
 
-{{ project.name }}
-{{ project.title }}
-{{ project.project_link }}
-{{ project.project_report }}
-{{ project.insta_link }}
-{{ project.youtube_link }}
-{{ project.linkdin_link }}
-{{ feedback }}
+{{ project.name }} <br>
+{{ project.title }} <br>
+{{ project.project_link }} <br>
+{{ project.project_report }} <br>
+{{ project.insta_link }} <br>
+
+{{ project.youtube_link }} <br>
+{{ project.linkdin_link }} <br>
+{{ project.feedback }} <br>
+<img src="{{ url_for('uploaded_file', filename=project.filename1) }}" class="card-img-top" alt="{{ project.title }}" style="object-fit: cover;">
+<img src="{{ project.filename1 }}" alt="Check the Image">
 
 
 
 
 {% endfor %}
 
+
+rought
+{% for project in projects %}
+
+{{ project.name }} <br>
+{{ project.title }} <br>
+{{ project.project_link }} <br>
+{{ project.project_report }} <br>
+{{ project.insta_link }} <br>
+
+{{ project.youtube_link }} <br>
+{{ project.linkdin_link }} <br>
+{{ project.feedback }} <br>
+<img src="{{ url_for('uploaded_file', filename=project.filename1) }}" class="card-img-top" alt="{{ project.title }}" style="object-fit: cover;">
+<img src="{{ project.filename1 }}" alt="Check the Image">
+
+
+
+
+{% endfor %}
 
 
 
