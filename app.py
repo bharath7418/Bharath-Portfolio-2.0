@@ -34,7 +34,7 @@ login_manager.login_message_category = 'info'
 
 # --- DATABASE MODELS ---
 
-class User(UserMixin, db.Model):
+class Admin(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(50), unique=True, nullable=False)
     password = db.Column(db.String(255), nullable=False) # Hashed password storage
@@ -58,7 +58,6 @@ class Project(db.Model):
     linkdin_link = db.Column(db.String(200),default=None)
     feedback = db.Column(db.String(200),default=None)
 
-    
 class Service(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100), nullable=False)
@@ -78,7 +77,7 @@ def allowed_file(filename):
 
 @login_manager.user_loader
 def load_user(user_id):
-    return User.query.get(int(user_id))
+    return Admin.query.get(int(user_id))
 
 # --- PUBLIC ROUTING ---
 
@@ -94,6 +93,13 @@ def about():
 def projects():
     projects = Project.query.all()
     return render_template('projects.html', projects=projects)
+
+
+
+@app.route('/project_details')
+def project_details():
+    projects = Project.query.all()
+    return render_template("project_details.html",projects=projects)
 
 @app.route('/miniprojects')
 def miniprojects():
@@ -132,7 +138,7 @@ def admin_login():
     if request.method == 'POST':
         username = request.form.get('username')
         password = request.form.get('password')
-        user = User.query.filter_by(username=username).first()
+        user = Admin.query.filter_by(username=username).first()
         if user and check_password_hash(user.password, password):
             login_user(user)
             flash('Admin authentication successful.', 'success')
@@ -208,9 +214,9 @@ def add_blog():
 with app.app_context():
     db.create_all()
     # Check if admin configuration exists; if not, provision default securely.
-    if not User.query.filter_by(username='admin').first():
-        hashed_password = generate_password_hash('user123')
-        db.session.add(User(username='admin', password=hashed_password))
+    if not Admin.query.filter_by(username='creater').first():
+        hashed_password = generate_password_hash('creater099')
+        db.session.add(Admin(username='creater', password=hashed_password))
         db.session.commit()
         
     # Check if Project table is empty; if so, populate with user's projects

@@ -27,21 +27,21 @@
 	<meta name="apple-mobile-web-app-status-bar-style" content="#913BFF">
 
 	<!-- <link rel="manifest" href="site.webmanifest" /> -->
-	<link rel="shortcut icon" type="image/x-icon" href={{ url_for('static', filename='img/favicon.png') }} />
+	<link rel="shortcut icon" type="image/x-icon" href={{ url_for('static', filename='img/favicon.png' ) }} />
 	<!-- Place favicon.ico in the root directory -->
 
 	<!-- CSS here -->
-	<link rel="stylesheet" href={{ url_for('static', filename='css/bootstrap.min.css') }} />
-	<link rel="stylesheet" href={{ url_for('static', filename='fonts/bootstrap-icons/font-css.css') }} />
-	<link rel="stylesheet" href={{ url_for('static', filename='css/animate.min.css') }} />
-	<link rel="stylesheet" href={{ url_for('static', filename='css/slick.css') }} />
-	<link rel="stylesheet" href={{ url_for('static', filename='css/all.min.css') }} />
-	<link rel="stylesheet" href={{ url_for('static', filename='css/nice-select.css') }} />
-	<link rel="stylesheet" href={{ url_for('static', filename='css/magnific-popup.css') }} />
-	<link rel="stylesheet" href={{ url_for('static', filename='css/metisMenu.css') }} />
-	<link rel="stylesheet" href={{ url_for('static', filename='css/aos.css') }} />
-	<link rel="stylesheet" href={{ url_for('static', filename='css/spacing.css') }} />
-	<link rel="stylesheet" href={{ url_for('static', filename='css/main.css') }} />
+	<link rel="stylesheet" href={{ url_for('static', filename='css/bootstrap.min.css' ) }} />
+	<link rel="stylesheet" href={{ url_for('static', filename='fonts/bootstrap-icons/font-css.css' ) }} />
+	<link rel="stylesheet" href={{ url_for('static', filename='css/animate.min.css' ) }} />
+	<link rel="stylesheet" href={{ url_for('static', filename='css/slick.css' ) }} />
+	<link rel="stylesheet" href={{ url_for('static', filename='css/all.min.css' ) }} />
+	<link rel="stylesheet" href={{ url_for('static', filename='css/nice-select.css' ) }} />
+	<link rel="stylesheet" href={{ url_for('static', filename='css/magnific-popup.css' ) }} />
+	<link rel="stylesheet" href={{ url_for('static', filename='css/metisMenu.css' ) }} />
+	<link rel="stylesheet" href={{ url_for('static', filename='css/aos.css' ) }} />
+	<link rel="stylesheet" href={{ url_for('static', filename='css/spacing.css' ) }} />
+	<link rel="stylesheet" href={{ url_for('static', filename='css/main.css' ) }} />
 </head>
 
 <body class="light-bg">
@@ -89,8 +89,8 @@
 					<div class="row align-items-center">
 						<div class="col-xl-3 col-lg-2 col-6">
 							<div class="logo-area">
-								<a class="front" href="index.html"><img src={{ url_for('static', filename='img/logo/header-logo-1.png') }}
-										alt="Header-logo"></a>
+								<a class="front" href="index.html"><img src={{ url_for('static',
+										filename='img/logo/header-logo-1.png' ) }} alt="Header-logo"></a>
 							</div>
 						</div>
 						<div class="col-xl-7 col-lg-7 col-6 d-none d-lg-block">
@@ -184,10 +184,11 @@
 				</a>
 			</div>
 			<!-- offset-sidebar start -->
+
 			<div class="offset-sidebar">
 				<div class="offset-widget offset-logo mb-30">
 					<a href="index.html">
-						<img src={{ url_for('static', filename='img/logo/header-logo-2.png') }} alt="logo">
+						<img src={{ url_for('static', filename='img/logo/header-logo-2.png' ) }} alt="logo">
 					</a>
 				</div>
 				<div class="mobile-menu"></div>
@@ -206,7 +207,8 @@
 						<h4 class="offset-title mb-20">Contact Info</h4>
 						<p>
 							<i class="fal fa-address-book"></i>
-							23/A, Miranda City Likaoli Prikano, Dope</p>
+							23/A, Miranda City Likaoli Prikano, Dope
+						</p>
 						<p>
 							<i class="fal fa-phone"></i>
 							+0989 7876 9865 9
@@ -249,7 +251,8 @@
 							<div class="page-title-btn text-center mb-40">
 								<div class="button-2">
 									<a class="scroll-btn" href="#">
-										<img class="bg-round" src={{ url_for('static', filename='img/about/s-button-5.png') }} alt="shape">
+										<img class="bg-round" src={{ url_for('static',
+											filename='img/about/s-button-5.png' ) }} alt="shape">
 										<span class="icon">
 											<i class="bi bi-arrow-up-right"></i>
 										</span>
@@ -263,6 +266,7 @@
 			<!--page-title-area end-->
 
 			<!-- project-section start -->
+			{% for project in projects %}
 			<section class="project-section pt-120 pb-40 pt-lg-100 pb-lg-100">
 				<div class="container">
 					<div class="text-wrapper white-bg pt-65">
@@ -270,16 +274,39 @@
 							<div class="col-xl-5 col-lg-6">
 								<div class="text-wrapper-one ps-3 ps-lg-5 ms-xl-4 mb-30">
 									<div class="upper-title mb-25">Web Design</div>
-									<h2 class="section-title mb-20">FODO - Restaurant Website Design</h2>
-									<p>Holisticly fabricate opencatalyst to after top-line catalysts for change.
-										Synergisti communicate installed base.</p>
-									<a class="ht-btn-two" href="project-details.html"><i
+									<h2 class="section-title mb-20">{{ project.name }}</h2>
+									<p>{{ project.title }}</p>
+									<p>
+										<a href="{{ project.project_report }}" class="btn btn-secondary"
+											target="_blank">Project Document</a>
+										{% if project.project_link %}
+										<a href="{{ project.project_link }}" target="_blank">🔗</a>
+										{% endif %}
+
+										{% if project.linkdin_link %}
+										<a href="{{ project.linkdin_link }}" target="_blank" title="LinkedIn">🔗
+											LinkedIn</a>
+										{% endif %}
+										{% if project.insta_link %}
+										<a href="{{ project.insta_link }}" target="_blank" title="Instagram">📸
+											Instagram</a>
+										{% endif %}
+										{% if project.youtube_link %}
+										<a href="{{ project.youtube_link }}" target="_blank" title="YouTube">📺
+											YouTube</a>
+										{% endif %}
+									</p>
+									<p>Feedback</p>
+									<P>{{ project.feedback }}</P>
+
+
+									<a class="ht-btn-two" href="project.project_link"><i
 											class="bi bi-arrow-up-right"></i></a>
 								</div>
 							</div>
 							<div class="col-xl-7 col-lg-6">
 								<div class="text-img">
-									<img class="webdesign" src={{ url_for('static', filename='img/gallery/img-2.png') }} alt="gallery">
+									<img class="webdesign" src="{{ url_for('uploaded_file', filename=project.filename1) }}" alt="gallery">
 								</div>
 							</div>
 						</div>
@@ -357,51 +384,43 @@
 						<div class="col-xl-8 col-lg-7">
 							<div class="text-wrapper-one ps-xl-5 mb-50">
 								<div class="upper-title mb-25">Web Design</div>
-								<h2 class="section-title mb-20">FODO - Restaurant Website Design</h2>
-								<p>Competently seize sustainable relationships rather than client-centered paradigms.
-									Assertively scale stand-alone action items whereas timely e-markets. Seamlessly
-									deliver world-class metrics for granular infrastructures. Proactively formulate
-									excellent infrastructures vis-a-vis maintainable materials. Uniquely incentivize
-									revolutionary products through covalent total linkage.
-								</p>
-								<p>Competently seize sustainable relationships rather than client-centered paradigms.
-									Assertively scale stand-alone action items whereas timely e-markets. Seamlessly
-									deliver world-class metrics for granular infrastructures. Proactively formulate
-									excellent infrastructures vis-a-vis maintainable materials.</p>
+								
+								<h2 class="section-title mb-20">{{ project.name }}</h2>
+								<h4>Project Description</h4>
+								<p>{{ project.description }}</p>
+								<h4>Problem Statement</h4>
+								<p>{{ project.problem_statement }}</p>
+								
 							</div>
 						</div>
 					</div>
 					<div class="row justify-content-between mb-20">
 						<div class="col-xl-4 col-lg-5 pe-xl-0">
-							<h2 class="section-title mb-40">Ui/UX Design</h2>
-							<p>Competently seize sustainable relationships rather than client-centered paradigms.
-								Assertively scale stand-alone action items whereas timely e-markets. Seamlessly deliver
-								world-class metrics for granular infrastructures. Proactively formulate excellent
-								infrastructures vis-a-vis maintainable materials. Uniquely incentivize revolutionary
-								products through covalent total linkage.
+							<h2 class="section-title mb-40">Probelm Solution</h2>
+							<p>{{ project.solution }}
 							</p>
-							<p>Competently seize sustainable relationships rather than client-centered paradigms.</p>
+							<p>{{ project.tools }}</p>
 						</div>
 						<div class="col-xl-8 col-lg-7">
 							<div class="text-center service-thumb mb-45">
-								<img class="img-fluid" src={{ url_for('static', filename='img/media/img-14.jpg') }} alt="thumg">
+								<img class="webdesign" src="{{ url_for('uploaded_file', filename=project.filename1) }}" alt="gallery">
 							</div>
 						</div>
 					</div>
 					<div class="row mb-25">
 						<div class="col-md-4">
 							<div class="service-thumb mb-45">
-								<img class="img-fluid" src={{ url_for('static', filename='img/media/img-15.jpg') }} alt="thumg">
+								<img class="webdesign" src="{{ url_for('uploaded_file', filename=project.filename4) }}" alt="gallery">
 							</div>
 						</div>
 						<div class="col-md-4">
 							<div class="service-thumb mb-45">
-								<img class="img-fluid" src={{ url_for('static', filename='img/media/img-16.jpg') }} alt="thumg">
+								<img class="webdesign" src="{{ url_for('uploaded_file', filename=project.filename2) }}" alt="gallery">
 							</div>
 						</div>
 						<div class="col-md-4">
 							<div class="service-thumb mb-45">
-								<img class="img-fluid" src={{ url_for('static', filename='img/media/img-17.jpg') }} alt="thumg">
+								<img class="webdesign" src="{{ url_for('uploaded_file', filename=project.filename3) }}" alt="gallery">
 							</div>
 						</div>
 					</div>
@@ -413,20 +432,32 @@
 			<div class="white-bg partners-section">
 				<div class="logos">
 					<div class="logos-slide">
-						<div class="items"> <img src={{ url_for('static', filename='img/brand/brand-1.png') }} alt="brand"></div>
-						<div class="items"><img src={{ url_for('static', filename='img/brand/brand-line-1.svg') }} alt="brand"></div>
-						<div class="items"><img src={{ url_for('static', filename='img/brand/brand-2.png') }} alt="brand"></div>
-						<div class="items"> <img src={{ url_for('static', filename='img/brand/brand-line-1.svg') }} alt="brand"></div>
-						<div class="items"><img src={{ url_for('static', filename='img/brand/brand-3.png') }} alt="brand"></div>
-						<div class="items"><img src={{ url_for('static', filename='img/brand/brand-line-1.svg') }} alt="brand"></div>
+						<div class="items"> <img src={{ url_for('static', filename='img/brand/brand-1.png' ) }}
+								alt="brand"></div>
+						<div class="items"><img src={{ url_for('static', filename='img/brand/brand-line-1.svg' ) }}
+								alt="brand"></div>
+						<div class="items"><img src={{ url_for('static', filename='img/brand/brand-2.png' ) }}
+								alt="brand"></div>
+						<div class="items"> <img src={{ url_for('static', filename='img/brand/brand-line-1.svg' ) }}
+								alt="brand"></div>
+						<div class="items"><img src={{ url_for('static', filename='img/brand/brand-3.png' ) }}
+								alt="brand"></div>
+						<div class="items"><img src={{ url_for('static', filename='img/brand/brand-line-1.svg' ) }}
+								alt="brand"></div>
 					</div>
 					<div class="logos-slide">
-						<div class="items"> <img src={{ url_for('static', filename='img/brand/brand-1.png') }} alt="brand"></div>
-						<div class="items"><img src={{ url_for('static', filename='img/brand/brand-line-1.svg') }} alt="brand"></div>
-						<div class="items"><img src={{ url_for('static', filename='img/brand/brand-2.png') }} alt="brand"></div>
-						<div class="items"> <img src={{ url_for('static', filename='img/brand/brand-line-1.svg') }} alt="brand"></div>
-						<div class="items"><img src={{ url_for('static', filename='img/brand/brand-3.png') }} alt="brand"></div>
-						<div class="items"><img src={{ url_for('static', filename='img/brand/brand-line-1.svg') }} alt="brand"></div>
+						<div class="items"> <img src={{ url_for('static', filename='img/brand/brand-1.png' ) }}
+								alt="brand"></div>
+						<div class="items"><img src={{ url_for('static', filename='img/brand/brand-line-1.svg' ) }}
+								alt="brand"></div>
+						<div class="items"><img src={{ url_for('static', filename='img/brand/brand-2.png' ) }}
+								alt="brand"></div>
+						<div class="items"> <img src={{ url_for('static', filename='img/brand/brand-line-1.svg' ) }}
+								alt="brand"></div>
+						<div class="items"><img src={{ url_for('static', filename='img/brand/brand-3.png' ) }}
+								alt="brand"></div>
+						<div class="items"><img src={{ url_for('static', filename='img/brand/brand-line-1.svg' ) }}
+								alt="brand"></div>
 					</div>
 				</div>
 			</div>
@@ -436,7 +467,7 @@
 			<section class="black-bg contact-section pt-100 pb-100 pb-lg-30">
 				<h2 class="wrapper-title text-white text-center mb-150 mb-lg-50">Book A Call</h2>
 				<div class="left-img">
-					<img class="w-100" src={{ url_for('static', filename='img/media/img-2.jpg') }} alt="author">
+					<img class="w-100" src={{ url_for('static', filename='img/media/img-2.jpg' ) }} alt="author">
 				</div>
 				<div class="container">
 					<div class="row">
@@ -460,13 +491,15 @@
 				</div>
 			</section>
 			<!-- contact-section end -->
+			{% endfor %}
 		</main>
+
 
 
 		<!--footer-area start-->
 		<footer class="black-bg footer-area-one position-relative">
 			<div class="footer-wrapper-one pt-75 pb-20">
-				<img src={{ url_for('static', filename='img/shape/star-5.png') }} alt="" class="shape-01s">
+				<img src={{ url_for('static', filename='img/shape/star-5.png' ) }} alt="" class="shape-01s">
 				<div class="container">
 					<div class="row">
 						<div class="col-xl-5 col-lg-5 col-md-8">
@@ -518,7 +551,8 @@
 							<div class="copyright-text mb-30">
 								<p>
 									<a href="https://themeforest.net/user/pixel-eyez" target="_blank">Pixel-Eyez</a>
-									© 2024, All Rights Reserved</p>
+									© 2024, All Rights Reserved
+								</p>
 							</div>
 						</div>
 						<div class="col-xl-6 col-lg-6 text-lg-end text-center">
@@ -548,25 +582,25 @@
 
 	<!-- JS here -->
 
-	<script src={{ url_for('static', filename='js/vendor/jquery-2.2.4.min.js') }}></script>
-	<script src={{ url_for('static', filename='js/vendor/popper.min.js') }}></script>
-	<script src={{ url_for('static', filename='js/vendor/bootstrap.min.js') }}></script>
-	<script src={{ url_for('static', filename='js/jquery.meanmenu.js') }}></script>
-	<script src={{ url_for('static', filename='js/slick.min.js') }}></script>
-	<script src={{ url_for('static', filename='js/jquery.easypiechart.min.js') }}></script>
-	<script src={{ url_for('static', filename='js/jquery.counterup.min.js') }}></script>
-	<script src={{ url_for('static', filename='js/jquery.magnific-popup.min.js') }}></script>
-	<script src={{ url_for('static', filename='js/metisMenu.min.js') }}></script>
-	<script src={{ url_for('static', filename='js/wow.min.js') }}></script>
-	<script src={{ url_for('static', filename='js/jquery.waypoints.min.js') }}></script>
-	<script src={{ url_for('static', filename='js/simpleParallax.min.js') }}></script>
-	<script src={{ url_for('static', filename='js/aos.js') }}></script>
-	<script src={{ url_for('static', filename='js/lenis.min.js') }}></script>
-	<script src={{ url_for('static', filename='js/jquery.nice-select.min.js') }}></script>
+	<script src={{ url_for('static', filename='js/vendor/jquery-2.2.4.min.js' ) }}></script>
+	<script src={{ url_for('static', filename='js/vendor/popper.min.js' ) }}></script>
+	<script src={{ url_for('static', filename='js/vendor/bootstrap.min.js' ) }}></script>
+	<script src={{ url_for('static', filename='js/jquery.meanmenu.js' ) }}></script>
+	<script src={{ url_for('static', filename='js/slick.min.js' ) }}></script>
+	<script src={{ url_for('static', filename='js/jquery.easypiechart.min.js' ) }}></script>
+	<script src={{ url_for('static', filename='js/jquery.counterup.min.js' ) }}></script>
+	<script src={{ url_for('static', filename='js/jquery.magnific-popup.min.js' ) }}></script>
+	<script src={{ url_for('static', filename='js/metisMenu.min.js' ) }}></script>
+	<script src={{ url_for('static', filename='js/wow.min.js' ) }}></script>
+	<script src={{ url_for('static', filename='js/jquery.waypoints.min.js' ) }}></script>
+	<script src={{ url_for('static', filename='js/simpleParallax.min.js' ) }}></script>
+	<script src={{ url_for('static', filename='js/aos.js' ) }}></script>
+	<script src={{ url_for('static', filename='js/lenis.min.js' ) }}></script>
+	<script src={{ url_for('static', filename='js/jquery.nice-select.min.js' ) }}></script>
 
 
 	<!--Custom JS here -->
-	<script src={{ url_for('static', filename='js/main.js') }}></script>
+	<script src={{ url_for('static', filename='js/main.js' ) }}></script>
 
 
 </body>
