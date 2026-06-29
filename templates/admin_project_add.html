@@ -1,12 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
+
+    <form action="/admin_project_add" method="post" enctype="multipart/form-data">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" placeholder="Name (Max Content 20)" maxlength="20">
     
+    <label for="title">Title</label>
+    <input type="text" id="title" name="title" placeholder="Title (Max Content 20)" maxlength="20">
     
+    <label for="problem_statement">Problem Statement</label>
+    <input type="text" id="problem_statement" name="problem_statement" placeholder="Problem Statement (Max Content 200)" maxlength="200">
+    
+    <label for="description">Description</label>
+    <input type="text" id="description" name="description" placeholder="Description (Max Content 200)" maxlength="200">
+    
+    <label for="tools">Tools</label>
+    <input type="text" id="tools" name="tools" placeholder="Tools Name">
+
+    <div class="col-md-5">
+        <label class="form-label">Choose Image 1</label>
+        <input type="file" name="file1" class="form-control" accept="image/*" required>
+    </div>
+    <div class="col-md-5">
+        <label class="form-label">Choose Image 2</label>
+        <input type="file" name="file2" class="form-control" accept="image/*" required>
+    </div>
+    <div class="col-md-5">
+        <label class="form-label">Choose Image 3</label>
+        <input type="file" name="file3" class="form-control" accept="image/*" required>
+    </div>
+    <div class="col-md-5">
+        <label class="form-label">Choose Image 4</label>
+        <input type="file" name="file4" class="form-control" accept="image/*" required>
+    </div>
+    <div class="col-md-5">
+        <label class="form-label">Choose Image 5</label>
+        <input type="file" name="file5" class="form-control" accept="image/*" required>
+    </div>
+
+    <label for="solution">Solution</label>
+    <input type="text" id="solution" name="solution" placeholder="Solution(Max Count 100)" maxlength="100">
+    
+    <label for="project_link">Project Link</label>
+    <input type="text" id="project_link" name="project_link" placeholder="Project Link">
+    
+    <label for="project_document">Project Document</label>
+    <input type="text" id="project_document" name="project_document" placeholder="Project Report Link">
+    
+    <label for="instagram_link">Instagram Link</label>
+    <input type="text" id="instagram_link" name="instagram_link" placeholder="Instagram Link">
+    
+    <label for="youtube_link">Youtube Link</label>
+    <input type="text" id="youtube_link" name="youtube_link" placeholder="Youtube Link">
+    
+    <label for="linkedin_link">LinkedIn Link</label>
+    <input type="text" id="linkedin_link" name="linkedin_link" placeholder="LinkedIn Link">
+    
+    <label for="feedback">Feedback</label>
+    <input type="text" id="feedback" name="feedback" placeholder="Feedback">
+    
+    <div class="col-md-2">
+        <button type="submit" class="btn btn-primary w-100">Upload</button>
+    </div>
+</form>
+
 </body>
+
 </html>

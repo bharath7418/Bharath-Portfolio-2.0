@@ -50,6 +50,7 @@ class Project(db.Model):
     filename2 = db.Column(db.String(100))
     filename3 = db.Column(db.String(100))
     filename4 = db.Column(db.String(100))
+    filename5 = db.Column(db.String(100))
     solution = db.Column(db.String(200))
     project_link = db.Column(db.String(200),default=None)
     project_report = db.Column(db.String(200),default=None)
@@ -160,6 +161,85 @@ def logout():
 def admin_dashboard():
     all_projects = Project.query.all()
     return render_template('admin.html', projects=all_projects)
+@app.route('/admin_project_add', methods=['POST'])
+def upload_photo():
+    # 1. Fetch all text data from the HTML form
+    name = request.form.get('name')
+    title = request.form.get('title')
+    problem_statement = request.form.get('problem_statement')
+    description = request.form.get('description')
+    tools = request.form.get('tools')
+    solution = request.form.get('solution')
+    project_link = request.form.get('project_link')
+    project_document = request.form.get('project_document')
+    instagram_link = request.form.get('instagram_link')
+    youtube_link = request.form.get('youtube_link')
+    linkedin_link = request.form.get('linkedin_link')
+    feedback = request.form.get('feedback')
+
+    # Validation: Ensure critical text fields are present
+    if not title or not name:
+        flash("Name and Title are required!", "danger")
+        return redirect(url_for('admin'))
+
+    # 2. Process all 5 image files dynamically
+    filenames = {}
+    for i in range(1, 6):
+        file_key = f'file{i}'
+        file = request.files.get(file_key)
+        
+        # Check if file exists and is valid
+        if file and file.filename != '':
+            if allowed_file(file.filename):
+                filename = secure_filename(file.filename)
+                
+                # Save the physical file to your upload folder
+                file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+                
+                # Keep track of the filename to store in the DB
+                filenames[file_key] = filename
+            else:
+                flash(f"Invalid file type for Image {i}. Allowed formats: PNG, JPG, JPEG, GIF", "danger")
+                return redirect(url_for('admin'))
+        else:
+            # Your HTML form has 'required' attributes on all 5 files.
+            # If one is genuinely missing, we throw an error.
+            flash(f"Image {i} is required!", "danger")
+            return redirect(url_for('admin'))
+
+    # 3. Save everything to the Database
+    try:
+        new_project = Project(
+            name=name,
+            title=title,
+            problem_statement=problem_statement,
+            description=description,
+            tools=tools,
+            solution=solution,
+            project_link=project_link,
+            project_document=project_document,
+            instagram_link=instagram_link,
+            youtube_link=youtube_link,
+            linkedin_link=linkedin_link,
+            feedback=feedback,
+            # Assigning the 5 distinct file names saved in our dictionary
+            file1=filenames.get('file1'),
+            file2=filenames.get('file2'),
+            file3=filenames.get('file3'),
+            file4=filenames.get('file4'),
+            file5=filenames.get('file5')
+        )
+        
+        db.session.add(new_project)
+        db.session.commit()
+        flash("Project and all 5 photos uploaded successfully!", "success")
+        
+    except Exception as e:
+        db.session.rollback()
+        flash(f"An error occurred while saving to the database: {str(e)}", "danger")
+
+    return redirect(url_for('admin'))
+
 
 @app.route('/admin/project/add', methods=['POST'])
 @login_required
@@ -223,7 +303,7 @@ with app.app_context():
     if not Project.query.first():
         project = Project(
             name="COPACK",
-            title="Student Compiler & Placement Platform",
+            title="Student Compiler & Placement",
             tools="Flask, HTML, CSS, JS",
             problem_statement="Lorem100 Lorem ipsum dolor sit amet consectetur adipisicing elit...",
             description="Developed a scalable platform to manage coding tests and automate performance tracking for 700+ users. Engineered secure anti-cheating features and streamlined the evaluation workflow to eliminate manual code sharing.",
