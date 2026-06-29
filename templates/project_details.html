@@ -266,7 +266,6 @@
 			<!--page-title-area end-->
 
 			<!-- project-section start -->
-			{% for project in projects %}
 			<section class="project-section pt-120 pb-40 pt-lg-100 pb-lg-100">
 				<div class="container">
 					<div class="text-wrapper white-bg pt-65">
@@ -306,7 +305,7 @@
 							</div>
 							<div class="col-xl-7 col-lg-6">
 								<div class="text-img">
-									<img class="webdesign" src="{{ url_for('uploaded_file', filename=project.filename1) }}" alt="gallery">
+									        <img src="{{ url_for('uploaded_file', filename=project.filename1) }}" class="card-img" alt="{{ project.title }}">
 								</div>
 							</div>
 						</div>
@@ -326,58 +325,26 @@
 									<li>
 										<div class="project-info-box">
 											<span class="info-label">Client</span>
-											<h5 class="info-title">ShopUp Ltd.</h5>
+											<h5 class="info-title">{{ project.client }}</h5>
 										</div>
 									</li>
 									<li>
 										<div class="project-info-box">
 											<span class="info-label">Project type</span>
-											<h5 class="info-title">Delivery System</h5>
+											<h5 class="info-title">{{ project.title }}</h5>
 										</div>
 									</li>
 									<li>
 										<div class="project-info-box">
 											<span class="info-label">Date</span>
-											<h5 class="info-title">21 Jan 2023</h5>
+											<h5 class="info-title">{{ project.date }}</h5>
 										</div>
 									</li>
-									<li>
-										<div class="project-info-box">
-											<span class="info-label">Location</span>
-											<h5 class="info-title">New York , USA</h5>
-										</div>
-									</li>
-									<li>
-										<div class="project-info-box">
-											<span class="info-label">Client</span>
-											<h5 class="info-title">ShopUp Ltd.</h5>
-										</div>
-									</li>
-									<li>
-										<div class="project-info-box">
-											<span class="info-label">Project type</span>
-											<h5 class="info-title">Delivery System</h5>
-										</div>
-									</li>
-									<li>
-										<div class="project-info-box">
-											<span class="info-label">Date</span>
-											<h5 class="info-title">21 Jan 2023</h5>
-										</div>
-									</li>
-									<li>
-										<div class="project-info-box">
-											<span class="info-label">Location</span>
-											<h5 class="info-title">New York , USA</h5>
-										</div>
-									</li>
+									
 								</ul>
 								<div class="project-tag mt-10">
 									<h6 class="project-tag-title">Tag</h6>
-									<a href="#">Design / </a>
-									<a href="#">Apps / </a>
-									<a href="#">Domain / </a>
-									<a href="#">Server</a>
+									<p>{{ project.tools }}</p>
 								</div>
 							</div>
 						</div>
@@ -403,24 +370,24 @@
 						</div>
 						<div class="col-xl-8 col-lg-7">
 							<div class="text-center service-thumb mb-45">
-								<img class="webdesign" src="{{ url_for('uploaded_file', filename=project.filename1) }}" alt="gallery">
+								        <img src="{{ url_for('uploaded_file', filename=project.filename2) }}" class="card-img" alt="{{ project.title }}">
 							</div>
 						</div>
 					</div>
 					<div class="row mb-25">
 						<div class="col-md-4">
 							<div class="service-thumb mb-45">
-								<img class="webdesign" src="{{ url_for('uploaded_file', filename=project.filename4) }}" alt="gallery">
+								        <img src="{{ url_for('uploaded_file', filename=project.filename3) }}" class="card-img" alt="{{ project.title }}">
 							</div>
 						</div>
 						<div class="col-md-4">
 							<div class="service-thumb mb-45">
-								<img class="webdesign" src="{{ url_for('uploaded_file', filename=project.filename2) }}" alt="gallery">
+								        <img src="{{ url_for('uploaded_file', filename=project.filename4) }}" class="card-img" alt="{{ project.title }}">
 							</div>
 						</div>
 						<div class="col-md-4">
 							<div class="service-thumb mb-45">
-								<img class="webdesign" src="{{ url_for('uploaded_file', filename=project.filename3) }}" alt="gallery">
+								        <img src="{{ url_for('uploaded_file', filename=project.filename5) }}" class="card-img" alt="{{ project.title }}">
 							</div>
 						</div>
 					</div>
@@ -491,7 +458,6 @@
 				</div>
 			</section>
 			<!-- contact-section end -->
-			{% endfor %}
 		</main>
 
 

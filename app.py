@@ -52,12 +52,17 @@ class Project(db.Model):
     filename4 = db.Column(db.String(100))
     filename5 = db.Column(db.String(100))
     solution = db.Column(db.String(200))
+    
     project_link = db.Column(db.String(200),default=None)
     project_report = db.Column(db.String(200),default=None)
     insta_link = db.Column(db.String(200),default=None)
     youtube_link = db.Column(db.String(200),default=None)
     linkdin_link = db.Column(db.String(200),default=None)
     feedback = db.Column(db.String(200),default=None)
+    
+    client = db.Column(db.String(200),default=None)
+    user = db.Column(db.String(200),default=None)
+    date = db.Column(db.String(20),default=None)
 
 class Service(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -97,10 +102,10 @@ def projects():
 
 
 
-@app.route('/project_details')
-def project_details():
-    projects = Project.query.all()
-    return render_template("project_details.html",projects=projects)
+@app.route('/project_details/<int:id>')
+def project_details(id):
+    project = Project.query.filter_by(id=id).first()
+    return render_template("project_details.html",project=project)
 
 @app.route('/miniprojects')
 def miniprojects():
@@ -161,8 +166,9 @@ def logout():
 def admin_dashboard():
     all_projects = Project.query.all()
     return render_template('admin.html', projects=all_projects)
-@app.route('/admin_project_add', methods=['POST'])
-def upload_photo():
+
+@app.route('/admin_project_add', methods=['GET','POST'])
+def admin_project_add():
     # 1. Fetch all text data from the HTML form
     name = request.form.get('name')
     title = request.form.get('title')
@@ -174,13 +180,16 @@ def upload_photo():
     project_document = request.form.get('project_document')
     instagram_link = request.form.get('instagram_link')
     youtube_link = request.form.get('youtube_link')
-    linkedin_link = request.form.get('linkedin_link')
+    linkdin_link = request.form.get('linkedin_link')
     feedback = request.form.get('feedback')
+    client = request.form.get('client')
+    user = request.form.get('user')
+    date = request.form.get('date')
 
     # Validation: Ensure critical text fields are present
     if not title or not name:
         flash("Name and Title are required!", "danger")
-        return redirect(url_for('admin'))
+        return redirect(url_for('admin_dashboard'))
 
     # 2. Process all 5 image files dynamically
     filenames = {}
@@ -217,17 +226,20 @@ def upload_photo():
             tools=tools,
             solution=solution,
             project_link=project_link,
-            project_document=project_document,
-            instagram_link=instagram_link,
+            project_report=project_document,
+            insta_link=instagram_link,
             youtube_link=youtube_link,
-            linkedin_link=linkedin_link,
+            linkdin_link=linkdin_link,
             feedback=feedback,
             # Assigning the 5 distinct file names saved in our dictionary
-            file1=filenames.get('file1'),
-            file2=filenames.get('file2'),
-            file3=filenames.get('file3'),
-            file4=filenames.get('file4'),
-            file5=filenames.get('file5')
+            filename1=filenames.get('file1'),
+            filename2=filenames.get('file2'),
+            filename3=filenames.get('file3'),
+            filename4=filenames.get('file4'),
+            filename5=filenames.get('file5'),
+            client=client,
+            user=user,
+            date=date
         )
         
         db.session.add(new_project)
@@ -238,7 +250,7 @@ def upload_photo():
         db.session.rollback()
         flash(f"An error occurred while saving to the database: {str(e)}", "danger")
 
-    return redirect(url_for('admin'))
+    return redirect(url_for('admin_dashboard'))
 
 
 @app.route('/admin/project/add', methods=['POST'])

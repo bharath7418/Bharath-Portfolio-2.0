@@ -4,6 +4,7 @@
 
 
 
+
 <!--page-title-area start-->
 <div class="page-title-area pt-215 pb-30">
     <div class="container">
@@ -23,110 +24,122 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <!-- Project Management -->
                 <div style="background: #130a2a; border: 1px solid #3c1e75; border-radius: 12px; padding: 40px; margin-bottom: 50px; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);">
-                    <h3 style="color: white; margin-bottom: 25px;"><i class="bi bi-folder-plus" style="color: #913BFF;"></i> Add New Project</h3>
-                    <form action="{{ url_for('add_project') }}" method="POST" class="row g-3">
+                    <h3 style="color: white; margin-bottom: 25px;"><i class="bi bi-folder-plus" style="color: #913BFF;"></i> Add New Project Artifact</h3>
+                    
+                    <form action="/admin_project_add" method="POST" enctype="multipart/form-data" class="row g-3">
                         <div class="col-md-6">
-                            <label for="p_title">Project Title</label>
-                            <input type="text" id="p_title" name="title" required class="form-control" style="background: #1a103c; color: white; border: 1px solid #3c1e75; padding: 0.65rem 1rem;">
+                            <label for="name" style="color: #cbd5e1; margin-bottom: 5px; font-size: 0.9rem;">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Name (Max 20 chars)" maxlength="20" required class="form-control" style="background: #1a103c; color: white; border: 1px solid #3c1e75; padding: 0.65rem 1rem;">
                         </div>
                         <div class="col-md-6">
-                            <label for="p_stack">Tech Stack (e.g. Flask, SQLite)</label>
-                            <input type="text" id="p_stack" name="tech_stack" required class="form-control" style="background: #1a103c; color: white; border: 1px solid #3c1e75; padding: 0.65rem 1rem;">
+                            <label for="title" style="color: #cbd5e1; margin-bottom: 5px; font-size: 0.9rem;">Title</label>
+                            <input type="text" id="title" name="title" placeholder="Title (Max 20 chars)" maxlength="20" required class="form-control" style="background: #1a103c; color: white; border: 1px solid #3c1e75; padding: 0.65rem 1rem;">
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="tools" style="color: #cbd5e1; margin-bottom: 5px; font-size: 0.9rem;">Tools Used</label>
+                            <input type="text" id="tools" name="tools" placeholder="Tools Name (e.g. Python, Figma)" required class="form-control" style="background: #1a103c; color: white; border: 1px solid #3c1e75; padding: 0.65rem 1rem;">
                         </div>
                         <div class="col-md-6">
-                            <label for="p_type">Project Type</label>
-                            <select id="p_type" name="project_type" class="form-control" style="background: #1a103c; color: white; border: 1px solid #3c1e75; padding: 0.65rem 1rem;">
-                                <option value="Major">Major Project (Portfolio Grid)</option>
-                                <option value="Mini">Mini Project (Lab Builds)</option>
-                            </select>
+                            <label for="solution" style="color: #cbd5e1; margin-bottom: 5px; font-size: 0.9rem;">Solution</label>
+                            <input type="text" id="solution" name="solution" placeholder="Solution (Max 100 chars)" maxlength="100" required class="form-control" style="background: #1a103c; color: white; border: 1px solid #3c1e75; padding: 0.65rem 1rem;">
                         </div>
-                        <div class="col-md-6">
-                            <label for="p_link">GitHub / Deployment Link (Optional)</label>
-                            <input type="url" id="p_link" name="link" class="form-control" style="background: #1a103c; color: white; border: 1px solid #3c1e75; padding: 0.65rem 1rem;">
-                        </div>
+
                         <div class="col-12">
-                            <label for="p_desc">Technical Description Summary</label>
-                            <textarea id="p_desc" name="description" required rows="4" class="form-control" style="background: #1a103c; color: white; border: 1px solid #3c1e75; padding: 0.65rem 1rem;"></textarea>
+                            <label for="problem_statement" style="color: #cbd5e1; margin-bottom: 5px; font-size: 0.9rem;">Problem Statement</label>
+                            <textarea id="problem_statement" name="problem_statement" placeholder="Problem Statement (Max 200 chars)" maxlength="200" required rows="3" class="form-control" style="background: #1a103c; color: white; border: 1px solid #3c1e75; padding: 0.65rem 1rem;"></textarea>
                         </div>
+
+                        <div class="col-12">
+                            <label for="description" style="color: #cbd5e1; margin-bottom: 5px; font-size: 0.9rem;">Description</label>
+                            <textarea id="description" name="description" placeholder="Description (Max 200 chars)" maxlength="200" required rows="3" class="form-control" style="background: #1a103c; color: white; border: 1px solid #3c1e75; padding: 0.65rem 1rem;"></textarea>
+                        </div>
+
                         <div class="col-12 mt-4">
-                            <button type="submit" class="btn"><i class="bi bi-save"></i> Save Project Block</button>
+                            <h5 style="color: #913BFF; margin-bottom: 15px;"><i class="bi bi-images"></i> Project Gallery Images</h5>
+                            <div class="row g-2">
+                                <div class="col-md-2-4 col-sm-6">
+                                    <label class="form-label" style="color: #94a3b8; font-size: 0.8rem;">Image 1</label>
+                                    <input type="file" name="file1" class="form-control" accept="image/*" required style="background: #1a103c; color: white; border: 1px solid #3c1e75; font-size: 0.85rem;">
+                                </div>
+                                <div class="col-md-2-4 col-sm-6">
+                                    <label class="form-label" style="color: #94a3b8; font-size: 0.8rem;">Image 2</label>
+                                    <input type="file" name="file2" class="form-control" accept="image/*" required style="background: #1a103c; color: white; border: 1px solid #3c1e75; font-size: 0.85rem;">
+                                </div>
+                                <div class="col-md-2-4 col-sm-6">
+                                    <label class="form-label" style="color: #94a3b8; font-size: 0.8rem;">Image 3</label>
+                                    <input type="file" name="file3" class="form-control" accept="image/*" required style="background: #1a103c; color: white; border: 1px solid #3c1e75; font-size: 0.85rem;">
+                                </div>
+                                <div class="col-md-2-4 col-sm-6">
+                                    <label class="form-label" style="color: #94a3b8; font-size: 0.8rem;">Image 4</label>
+                                    <input type="file" name="file4" class="form-control" accept="image/*" required style="background: #1a103c; color: white; border: 1px solid #3c1e75; font-size: 0.85rem;">
+                                </div>
+                                <div class="col-md-2-4 col-sm-12">
+                                    <label class="form-label" style="color: #94a3b8; font-size: 0.8rem;">Image 5</label>
+                                    <input type="file" name="file5" class="form-control" accept="image/*" required style="background: #1a103c; color: white; border: 1px solid #3c1e75; font-size: 0.85rem;">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 mt-4">
+                            <h5 style="color: #913BFF; margin-bottom: 15px;"><i class="bi bi-link-45deg"></i> Project & Social Links</h5>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="project_link" style="color: #cbd5e1; margin-bottom: 5px; font-size: 0.9rem;">Project Link</label>
+                            <input type="url" id="project_link" name="project_link" placeholder="Live Deployment URL" class="form-control" style="background: #1a103c; color: white; border: 1px solid #3c1e75; padding: 0.65rem 1rem;">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="project_document" style="color: #cbd5e1; margin-bottom: 5px; font-size: 0.9rem;">Project Document</label>
+                            <input type="url" id="project_document" name="project_document" placeholder="Project Report Link" class="form-control" style="background: #1a103c; color: white; border: 1px solid #3c1e75; padding: 0.65rem 1rem;">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="linkdin_link" style="color: #cbd5e1; margin-bottom: 5px; font-size: 0.9rem;">LinkdIn Link</label>
+                            <input type="url" id="linkdin_link" name="linkdin_link" placeholder="LinkDin URL" class="form-control" style="background: #1a103c; color: white; border: 1px solid #3c1e75; padding: 0.65rem 1rem;">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="instagram_link" style="color: #cbd5e1; margin-bottom: 5px; font-size: 0.9rem;">Instagram Link</label>
+                            <input type="url" id="instagram_link" name="instagram_link" placeholder="Instagram URL" class="form-control" style="background: #1a103c; color: white; border: 1px solid #3c1e75; padding: 0.65rem 1rem;">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="youtube_link" style="color: #cbd5e1; margin-bottom: 5px; font-size: 0.9rem;">YouTube Link</label>
+                            <input type="url" id="youtube_link" name="youtube_link" placeholder="YouTube Video URL" class="form-control" style="background: #1a103c; color: white; border: 1px solid #3c1e75; padding: 0.65rem 1rem;">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="feedback" style="color: #cbd5e1; margin-bottom: 5px; font-size: 0.9rem;">Feedback Link</label>
+                            <input type="text" id="feedback" name="feedback" placeholder="Feedback/Review notes" class="form-control" style="background: #1a103c; color: white; border: 1px solid #3c1e75; padding: 0.65rem 1rem;">
+                        </div>
+
+                        <div class="col-md-4">
+                            <label for="client" style="color: #cbd5e1; margin-bottom: 5px; font-size: 0.9rem;">Client</label>
+                            <input type="text" id="client" name="client" placeholder="Client Details" class="form-control" style="background: #1a103c; color: white; border: 1px solid #3c1e75; padding: 0.65rem 1rem;">
+                        </div>
+
+
+                        <div class="col-md-4">
+                            <label for="user count" style="color: #cbd5e1; margin-bottom: 5px; font-size: 0.9rem;">User Count</label>
+                            <input type="text" id="user" name="user" placeholder="User Count" class="form-control" style="background: #1a103c; color: white; border: 1px solid #3c1e75; padding: 0.65rem 1rem;">
+                        </div>
+
+
+                        <div class="col-md-4">
+                            <label for="Date" style="color: #cbd5e1; margin-bottom: 5px; font-size: 0.9rem;">Date</label>
+                            <input type="text" id="date" name="date" placeholder="Date" class="form-control" style="background: #1a103c; color: white; border: 1px solid #3c1e75; padding: 0.65rem 1rem;">
+                        </div>
+                        
+                        <div class="col-12 mt-4">
+                            <button type="submit" class="btn btn-primary" style="background: #913BFF; border: none; padding: 0.75rem 2rem; font-weight: 500;"><i class="bi bi-cloud-upload"></i> Upload Project</button>
                         </div>
                     </form>
                 </div>
 
-                <!-- Existing Projects Listing -->
-                <h3 style="color: white; margin-bottom: 25px;"><i class="bi bi-list-task" style="color: #913BFF;"></i> Current Deployed Projects</h3>
-                <div class="row">
-                    {% for project in projects %}
-                    <div class="col-md-6 mb-4">
-                        <div style="background: #130a2a; border: 1px solid #3c1e75; padding: 25px; border-radius: 12px; display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
-                            <div>
-                                <span class="badge" style="background: #3c1e75; color: white; border: 1px solid #913BFF; font-size: 0.75rem; padding: 0.35rem 0.5rem; border-radius: 4px; float: right;">{{ project.project_type }}</span>
-                                <h4 style="color: white; margin-bottom: 10px;">{{ project.title }}</h4>
-                                <p style="color: #94a3b8; font-size: 0.9rem; margin-bottom: 15px;">{{ project.tech_stack }}</p>
-                                <p style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.6;">{{ project.description[:150] }}...</p>
-                            </div>
-                            <div class="mt-4 pt-3" style="border-top: 1px solid #3c1e75; display: flex; justify-content: space-between; align-items: center;">
-                                {% if project.link %}
-                                <a href="{{ project.link }}" target="_blank" style="color: #913BFF; font-weight: 500; font-size: 0.9rem;"><i class="bi bi-link-45deg"></i> Link</a>
-                                {% else %}
-                                <span style="color: #555; font-size: 0.9rem;"><i class="bi bi-link-45deg"></i> None</span>
-                                {% endif %}
-                                <form action="{{ url_for('delete_project', id=project.id) }}" method="POST" onsubmit="return confirm('Purge project artifact permanently?');">
-                                    <button type="submit" class="btn btn-danger btn-sm" style="padding: 0.4rem 0.8rem; font-size: 0.8rem;"><i class="bi bi-trash"></i> Delete</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                    {% else %}
-                    <div class="col-12">
-                        <div class="text-center py-5" style="background: #130a2a; border: 1px solid #3c1e75; border-radius: 12px; padding: 40px;">
-                            <p style="color: #94a3b8;">No projects in database.</p>
-                        </div>
-                    </div>
-                    {% endfor %}
-                </div>
+                <style>
+                    @media (min-width: 768px) {
+                        .col-md-2-4 { float: left; width: 20%; position: relative; min-height: 1px; padding-right: 12px; padding-left: 12px; }
+                    }
+                </style>
 
-                <div class="grid mt-5">
-                    <!-- Add Service -->
-                    <div class="card">
-                        <h3 style="color: white; margin-bottom: 20px;"><i class="bi bi-grid-fill" style="color: #913BFF;"></i> Deploy Service</h3>
-                        <form action="{{ url_for('add_service') }}" method="POST">
-                            <div class="mb-3">
-                                <label for="s_title">Service Title</label>
-                                <input type="text" id="s_title" name="title" required class="form-control" style="background: #1a103c; color: white; border: 1px solid #3c1e75; padding: 0.65rem 1rem;">
-                            </div>
-                            <div class="mb-3">
-                                <label for="s_icon">FontAwesome Icon (e.g. code, database, print)</label>
-                                <input type="text" id="s_icon" name="icon" value="code" required class="form-control" style="background: #1a103c; color: white; border: 1px solid #3c1e75; padding: 0.65rem 1rem;">
-                            </div>
-                            <div class="mb-3">
-                                <label for="s_desc">Scope Matrix Summary</label>
-                                <textarea id="s_desc" name="description" required rows="3" class="form-control" style="background: #1a103c; color: white; border: 1px solid #3c1e75; padding: 0.65rem 1rem;"></textarea>
-                            </div>
-                            <button type="submit" class="btn w-100"><i class="bi bi-plus-circle"></i> Deploy Service</button>
-                        </form>
-                    </div>
-
-                    <!-- Broadcast Blog -->
-                    <div class="card">
-                        <h3 style="color: white; margin-bottom: 20px;"><i class="bi bi-broadcast" style="color: #913BFF;"></i> Broadcast Blog</h3>
-                        <form action="{{ url_for('add_blog') }}" method="POST">
-                            <div class="mb-3">
-                                <label for="b_title">Article Topic Header</label>
-                                <input type="text" id="b_title" name="title" required class="form-control" style="background: #1a103c; color: white; border: 1px solid #3c1e75; padding: 0.65rem 1rem;">
-                            </div>
-                            <div class="mb-3">
-                                <label for="b_content">Post Content Details</label>
-                                <textarea id="b_content" name="content" required rows="5" class="form-control" style="background: #1a103c; color: white; border: 1px solid #3c1e75; padding: 0.65rem 1rem;"></textarea>
-                            </div>
-                            <button type="submit" class="btn w-100"><i class="bi bi-rss"></i> Publish Stream</button>
-                        </form>
-                    </div>
                 </div>
-            </div>
         </div>
     </div>
 </section>
