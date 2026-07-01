@@ -43,7 +43,7 @@ class Project(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(150))
     title = db.Column(db.String(150), nullable=False)
-    problem_statement = db.Column(db.String(400), default=None)
+    problem_statement = db.Column(db.Text, nullable=False)
     description = db.Column(db.Text, nullable=False)
     tools = db.Column(db.String(100))
     filename1 = db.Column(db.String(100))
@@ -51,7 +51,7 @@ class Project(db.Model):
     filename3 = db.Column(db.String(100))
     filename4 = db.Column(db.String(100))
     filename5 = db.Column(db.String(100))
-    solution = db.Column(db.String(200))
+    solution = db.Column(db.Text, nullable=False)
     
     project_link = db.Column(db.String(200),default=None)
     project_report = db.Column(db.String(200),default=None)
@@ -314,7 +314,7 @@ with app.app_context():
     # Check if Project table is empty; if so, populate with user's projects
     if not Project.query.first():
         project = Project(
-            name="COPACK",
+            name="GoPass.io",
             title="Student Compiler & Placement",
             tools="Flask, HTML, CSS, JS",
             problem_statement="Lorem100 Lorem ipsum dolor sit amet consectetur adipisicing elit...",
