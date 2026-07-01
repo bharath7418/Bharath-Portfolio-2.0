@@ -63,7 +63,17 @@ class Project(db.Model):
     client = db.Column(db.String(200),default=None)
     user = db.Column(db.String(200),default=None)
     date = db.Column(db.String(20),default=None)
-
+    
+    
+class MiniProject(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(150), nullable=False)
+    description = db.Column(db.Text, nullable=False)
+    tools = db.Column(db.String(100))
+    filename1 = db.Column(db.String(100))
+    git_link = db.Column(db.String(200),default=None)
+    project_link = db.Column(db.String(200),default=None)
+    
 class Service(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100), nullable=False)
@@ -109,7 +119,7 @@ def project_details(id):
 
 @app.route('/miniprojects')
 def miniprojects():
-    mini_projects = Project.query.filter_by(project_type='Mini').all()
+    mini_projects = MiniProject.query.all()
     return render_template('miniprojects.html', projects=mini_projects)
 
 @app.route('/uploads/<filename>')
@@ -363,7 +373,7 @@ with app.app_context():
                 title="Welcome to My Engineering Portfolio",
                 content="This digital portfolio is built utilizing Python, Flask, SQLite, and SQLAlchemy. It showcases my professional experience, key engineering projects, academic background, and leadership achievements. You can log into the administrative control panel to add, edit, or delete items in real-time.",
                 date_posted=datetime.utcnow()
-            )
+            )   
         ]
         db.session.bulk_save_objects(seeded_blogs)
         db.session.commit()

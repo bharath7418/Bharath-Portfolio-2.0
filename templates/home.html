@@ -3,19 +3,19 @@
 
 <!-- theme-main-banner start -->
 <section class="theme-main-banner position-relative pt-100 mt-265 pb-165 mt-md-100 pb-md-10">
-	<div class="inner-content text-center pb-300 pb-md-10">
-		<h1><span class="title-one">I’m A Full-Stack</span></h1>
+	<div class="inner-content text-center pb-300 pb-md-10 wow fadeInDown">
+		<h1><span class="title-one text-gradient">I’m A Full-Stack</span></h1>
 	</div>
-	<div class="title-wrapper">
-		<div class="title-two" data-text="Developer">De<span class="clipping-text">velop</span>er</div>
+	<div class="title-wrapper wow fadeInUp" data-wow-delay="0.2s">
+		<div class="title-two" data-text="Developer">De<span class="clipping-text text-gradient">velop</span>er</div>
 	</div>
-	<div class="author-thumb">
+	<div class="author-thumb wow zoomIn" data-wow-delay="0.4s">
 		<img class="d-none d-lg-inline-block" src="{{ url_for('static', filename='img/hero/author-thumb-1.png') }}" alt="author" style="filter: hue-rotate(240deg);">
 		<img class="d-lg-none d-inline-block" src="{{ url_for('static', filename='img/hero/author-md.png') }}" alt="author" style="filter: hue-rotate(240deg);">
 	</div>
-	<img class="shape_01 d-none d-lg-inline-block" src="{{ url_for('static', filename='img/shape/star-1.svg') }}" alt="shape">
+	<img class="shape_01 d-none d-lg-inline-block wow pulse infinite" data-wow-duration="2s" src="{{ url_for('static', filename='img/shape/star-1.svg') }}" alt="shape">
 
-	<a class="scroll-btn" href="#bt-section">
+	<a class="scroll-btn wow fadeIn" data-wow-delay="0.6s" href="#bt-section">
 		<img class="bg-round" src="{{ url_for('static', filename='img/hero/sbutton.png') }}" alt="shape">
 		<div class="icon">
 			<i class="bi bi-mouse"></i>
@@ -25,16 +25,16 @@
 <!-- theme-main-banner end -->
 
 <!-- about-section start -->
-<section id="bt-section" class="black-bg about-section black-soft-bg position-relative pt-285 pt-md-200 pt-xs-150">
-	<img class="shape-01" src="{{ url_for('static', filename='img/shape/star-2.svg') }}" alt="">
+<section id="bt-section" class="about-section position-relative pt-285 pt-md-200 pt-xs-150">
+	<img class="shape-01 wow pulse infinite" data-wow-duration="3s" src="{{ url_for('static', filename='img/shape/star-2.svg') }}" alt="">
 	<img class="shape-02" src="{{ url_for('static', filename='img/shape/square.svg') }}" alt="shape">
 	<div class="container">
 		<div class="row align-items-center">
-			<div class="col-lg-6">
+			<div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.2s">
 				<div class="about-text-wrapper mb-30">
-					<div class="sub-title">Full-Stack & AI Engineer</div>
+					<div class="sub-title text-gradient">Full-Stack & AI Engineer</div>
 					<h2 class="name-title mb-15">I’m Bharath R</h2>
-					<p style="color: #cbd5e1; font-size: 1.05rem; line-height: 1.8;">
+					<p style="font-size: 1.05rem; line-height: 1.8;">
 						High-performance Full-Stack Developer and AI & Data Science student with professional internship experience building scalable, production-ready web platforms. Adept at optimizing database architectures, engineering secure multi-user workflows, and delivering metrics-driven technical solutions.
 					</p>
 					<ul class="text-list">
@@ -44,7 +44,7 @@
 					</ul>
 				</div>
 			</div>
-			<div class="col-lg-6">
+			<div class="col-lg-6 wow fadeInRight" data-wow-delay="0.4s">
 				<div class="about-img-wrapper">
 					<img class="img-fluid" src="{{ url_for('static', filename='img/about/about-1.png') }}" alt="about" style="filter: hue-rotate(240deg);">
 					<img class="shape-03" src="{{ url_for('static', filename='img/shape/round-bg-1.svg') }}" alt="shape">
@@ -59,31 +59,69 @@
 
 <!-- project-section start -->
 <section class="project-section pb-180 pt-160 pt-lg-100 pb-lg-100">
-	<h2 class="wrapper-title text-center mb-30">Recent Projects</h2>
+	<h2 class="wrapper-title text-center mb-30">Recent <span class="text-gradient">Projects</span></h2>
 	<div class="container">
-		{% for project in projects %}
-		<div class="row portfolio-wrapper align-items-center mb-40">
-			<div class="col-xl-7 col-lg-6">
-				<div class="portfolio-name">
-					<span class="me-xl-4 me-1">0{{ loop.index }}.</span> {{ project.title }}
+		{% if projects %}
+			{% for project in projects %}
+			<div class="row portfolio-wrapper align-items-center mb-40 animate-fade-up">
+				<div class="col-xl-7 col-lg-6">
+					<div class="portfolio-name">
+						<span class="me-xl-4 me-1">0{{ loop.index }}.</span> {{ project.title }}
+					</div>
+				</div>
+				<div class="col-xl-5 col-lg-6">
+					<div class="skills-desc d-sm-flex justify-content-lg-end">
+						<p>{{ project.description[:100] }}...</p>
+						{% if project.project_link %}
+						<a class="ht-btn-two ms-sm-4" href="{{ project.project_link }}" target="_blank"><i class="bi bi-arrow-up-right"></i></a>
+						{% else %}
+						<a class="ht-btn-two ms-sm-4" href="/projects"><i class="bi bi-arrow-up-right"></i></a>
+						{% endif %}
+					</div>
+				</div>
+				<div class="col-12">
+					<div class="img-holder mt-40 hover-up" style="background-image: url('/static/img/gallery/img-{{ (loop.index % 4) + 1 }}.jpg'); background-size: cover; background-position: center; height: 350px; border-radius: 12px; border: 1px solid var(--card-border);">
+					</div>
 				</div>
 			</div>
-			<div class="col-xl-5 col-lg-6">
-				<div class="skills-desc d-sm-flex justify-content-lg-end">
-					<p style="color: #cbd5e1;">{{ project.description[:100] }}...</p>
-					{% if project.link %}
-					<a class="ht-btn-two ms-sm-4" href="{{ project.link }}" target="_blank"><i class="bi bi-arrow-up-right"></i></a>
-					{% else %}
-					<a class="ht-btn-two ms-sm-4" href="/projects"><i class="bi bi-arrow-up-right"></i></a>
-					{% endif %}
+			{% endfor %}
+		{% else %}
+			<!-- Custom Dynamic Showcase Fallbacks for Homepage -->
+			<div class="row portfolio-wrapper align-items-center mb-50 animate-fade-up">
+				<div class="col-xl-7 col-lg-6">
+					<div class="portfolio-name">
+						<span class="me-xl-4 me-1">01.</span> GoPass.io Platform
+					</div>
+				</div>
+				<div class="col-xl-5 col-lg-6">
+					<div class="skills-desc d-sm-flex justify-content-lg-end">
+						<p>Scalable compiler platform engineered to manage coding tests and automate performance tracking for 700+ active users.</p>
+						<a class="ht-btn-two ms-sm-4" href="/projects"><i class="bi bi-arrow-up-right"></i></a>
+					</div>
+				</div>
+				<div class="col-12">
+					<div class="img-holder mt-40 hover-up" style="background-image: url('/static/img/gallery/img-1.jpg'); background-size: cover; background-position: center; height: 380px; border-radius: 12px; border: 1px solid var(--card-border);">
+					</div>
 				</div>
 			</div>
-			<div class="col-12">
-				<div class="img-holder mt-40" style="background-image: url('/static/img/gallery/img-{{ (loop.index % 4) + 1 }}.jpg'); background-size: cover; background-position: center; height: 350px; border-radius: 8px;">
+			<div class="row portfolio-wrapper align-items-center mb-50 animate-fade-up" style="animation-delay: 0.2s;">
+				<div class="col-xl-7 col-lg-6">
+					<div class="portfolio-name">
+						<span class="me-xl-4 me-1">02.</span> Book Buddy Deployment
+					</div>
+				</div>
+				<div class="col-xl-5 col-lg-6">
+					<div class="skills-desc d-sm-flex justify-content-lg-end">
+						<p>Secure multi-user workflows, relational database integration, and optimized API routes for on-site application setups.</p>
+						<a class="ht-btn-two ms-sm-4" href="/projects"><i class="bi bi-arrow-up-right"></i></a>
+					</div>
+				</div>
+				<div class="col-12">
+					<div class="img-holder mt-40 hover-up" style="background-image: url('/static/img/gallery/img-2.jpg'); background-size: cover; background-position: center; height: 380px; border-radius: 12px; border: 1px solid var(--card-border);">
+					</div>
 				</div>
 			</div>
-		</div>
-		{% endfor %}
+		{% endif %}
 		<div class="row">
 			<div class="col-12 mt-80 text-center">
 				<a class="ht_btn" href="/projects">View All Projects</a>
@@ -95,10 +133,10 @@
 
 <!-- qualifications-section start -->
 <section class="theme-bg qualifications-section pt-100 pb-90">
-	<h2 class="wrapper-title mb-60 text-center text-white">My Qualifications</h2>
+	<h2 class="wrapper-title mb-60 text-center text-white wow fadeInUp">My Qualifications</h2>
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-6">
+			<div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.2s">
 				<div class="qualifications-wrapper mb-30">
 					<div class="header-sec mb-15">
 						<div class="icon">
@@ -125,10 +163,7 @@
 				</div>
 			</div>
 
-
-
-
-			<div class="col-lg-6">
+			<div class="col-lg-6 wow fadeInRight" data-wow-delay="0.4s">
 				<div class="qualifications-wrapper mb-30">
 					<div class="header-sec mb-15">
 						<div class="icon">
@@ -160,12 +195,12 @@
 <!-- qualifications-section end -->
 
 <!-- skills-section start -->
-<section class="black-bg skills-secion black-soft-bg position-relative pt-100 pb-120">
+<section class="skills-secion position-relative pt-100 pb-120">
 	<img class="shape-1a" src="{{ url_for('static', filename='img/shape/star-5.png') }}" alt="shape">
 	<img class="shape-2a" src="{{ url_for('static', filename='img/shape/square.svg') }}" alt="shape">
 	<div class="container">
-		<h2 class="wrapper-title text-white mb-60 text-center">My Expertise</h2>
-		<div class="row skills-wrapper align-items-center">
+		<h2 class="wrapper-title mb-60 text-center">My <span class="text-gradient">Expertise</span></h2>
+		<div class="row skills-wrapper align-items-center wow fadeInUp" data-wow-delay="0.1s">
 			<div class="col-lg-7">
 				<div class="skills-name">
 					<div class="img-holder">
@@ -176,12 +211,12 @@
 			</div>
 			<div class="col-lg-5">
 				<div class="skills-desc d-sm-flex justify-content-between">
-					<p class="ms-xl-5" style="color: #cbd5e1;">Python (Advanced), Flask, Jinja2, SQL, SQLAlchemy, Java, C</p>
+					<p class="ms-xl-5">Python (Advanced), Flask, Jinja2, SQL, SQLAlchemy, Java, C</p>
 					<a class="ht-btn-two ms-sm-4" href="/about"><i class="bi bi-arrow-up-right"></i></a>
 				</div>
 			</div>
 		</div>
-		<div class="row skills-wrapper align-items-center">
+		<div class="row skills-wrapper align-items-center wow fadeInUp" data-wow-delay="0.2s">
 			<div class="col-lg-7">
 				<div class="skills-name">
 					<div class="img-holder">
@@ -192,12 +227,12 @@
 			</div>
 			<div class="col-lg-5">
 				<div class="skills-desc d-sm-flex justify-content-between">
-					<p class="ms-xl-5" style="color: #cbd5e1;">NumPy, Pandas, Matplotlib, and Machine Learning Fundamentals</p>
+					<p class="ms-xl-5">NumPy, Pandas, Matplotlib, and Machine Learning Fundamentals</p>
 					<a class="ht-btn-two ms-sm-4" href="/about"><i class="bi bi-arrow-up-right"></i></a>
 				</div>
 			</div>
 		</div>
-		<div class="row skills-wrapper align-items-center">
+		<div class="row skills-wrapper align-items-center wow fadeInUp" data-wow-delay="0.3s">
 			<div class="col-lg-7">
 				<div class="skills-name">
 					<div class="img-holder">
@@ -208,12 +243,12 @@
 			</div>
 			<div class="col-lg-5">
 				<div class="skills-desc d-sm-flex justify-content-between">
-					<p class="ms-xl-5" style="color: #cbd5e1;">MySQL, SQLite, Git, GitHub, and Vercel Hosting Environments</p>
+					<p class="ms-xl-5">MySQL, SQLite, Git, GitHub, and Vercel Hosting Environments</p>
 					<a class="ht-btn-two ms-sm-4" href="/about"><i class="bi bi-arrow-up-right"></i></a>
 				</div>
 			</div>
 		</div>
-		<div class="row skills-wrapper align-items-center">
+		<div class="row skills-wrapper align-items-center wow fadeInUp" data-wow-delay="0.4s">
 			<div class="col-lg-7">
 				<div class="skills-name">
 					<div class="img-holder">
@@ -224,7 +259,7 @@
 			</div>
 			<div class="col-lg-5">
 				<div class="skills-desc d-sm-flex justify-content-between">
-					<p class="ms-xl-5" style="color: #cbd5e1;">Photoshop, CorelDRAW, print workflows, HTML5, CSS3, JavaScript</p>
+					<p class="ms-xl-5">Photoshop, CorelDRAW, print workflows, HTML5, CSS3, JavaScript</p>
 					<a class="ht-btn-two ms-sm-4" href="/about"><i class="bi bi-arrow-up-right"></i></a>
 				</div>
 			</div>
@@ -236,34 +271,34 @@
 <!-- achievements-section start -->
 <section class="feedback-section position-relative pt-70 pb-120">
 	<div class="container">
-		<h2 class="wrapper-title text-center mb-60">Key Achievements</h2>
+		<h2 class="wrapper-title text-center mb-60">Key <span class="text-gradient">Achievements</span></h2>
 		<div class="row">
-			<div class="col-md-6 mb-30">
+			<div class="col-md-6 mb-30 wow fadeInUp" data-wow-delay="0.1s">
 				<div class="card h-100">
 					<i class="bi bi-code-slash" style="font-size: 2.5rem; color: #913BFF;"></i>
 					<h3 class="mt-3">70-Day LeetCode Streak</h3>
-					<p style="color: #94a3b8;">Maintained a consistent 70-day algorithmic problem-solving streak on LeetCode, optimizing complex structures daily.</p>
+					<p>Maintained a consistent 70-day algorithmic problem-solving streak on LeetCode, optimizing complex structures daily.</p>
 				</div>
 			</div>
-			<div class="col-md-6 mb-30">
+			<div class="col-md-6 mb-30 wow fadeInUp" data-wow-delay="0.2s">
 				<div class="card h-100">
 					<i class="bi bi-keyboard" style="font-size: 2.5rem; color: #913BFF;"></i>
 					<h3 class="mt-3">Senior Typewriting Speed</h3>
-					<p style="color: #94a3b8;">Certified Senior Grade in English and Tamil Typewriting with a verified speed of 62 Words Per Minute (WPM).</p>
+					<p>Certified Senior Grade in English and Tamil Typewriting with a verified speed of 62 Words Per Minute (WPM).</p>
 				</div>
 			</div>
-			<div class="col-md-6 mb-30">
+			<div class="col-md-6 mb-30 wow fadeInUp" data-wow-delay="0.3s">
 				<div class="card h-100">
 					<i class="bi bi-people" style="font-size: 2.5rem; color: #913BFF;"></i>
 					<h3 class="mt-3">Leadership & Operations</h3>
-					<p style="color: #94a3b8;">Elected Student Coordinator for College Institution's Innovation Council (IIC). Formerly School Pupil Leader (SPL) and NSS Leader.</p>
+					<p>Elected Student Coordinator for College Institution's Innovation Council (IIC). Formerly School Pupil Leader (SPL) and NSS Leader.</p>
 				</div>
 			</div>
-			<div class="col-md-6 mb-30">
+			<div class="col-md-6 mb-30 wow fadeInUp" data-wow-delay="0.4s">
 				<div class="card h-100">
 					<i class="bi bi-trophy" style="font-size: 2.5rem; color: #913BFF;"></i>
 					<h3 class="mt-3">Chess & Sports Captain</h3>
-					<p style="color: #94a3b8;">Competed as a District-level chess player and served as the elected Team Captain of the school Football Team.</p>
+					<p>Competed as a District-level chess player and served as the elected Team Captain of the school Football Team.</p>
 				</div>
 			</div>
 		</div>
@@ -275,33 +310,33 @@
 <section class="contact-section pt-100 pb-160">
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-6">
+			<div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.2s">
 				<div class="contact-text mb-30">
 					<h2 class="wrapper-title mb-30">Let's Connect!</h2>
-					<p style="color: #cbd5e1; font-size: 1.05rem;">
+					<p style="font-size: 1.05rem;">
 						Whether you want to discuss a software project, hire me for full-stack API integration, or talk about AI-driven datasets, feel free to reach out.
 					</p>
 					<ul style="list-style: none; padding-left: 0; margin-top: 30px; font-size: 1.1rem;">
-						<li style="margin-bottom: 15px;"><i class="bi bi-envelope-fill" style="color: #913BFF; margin-right: 10px;"></i> bharatharasan7418@gmail.com</li>
-						<li style="margin-bottom: 15px;"><i class="bi bi-telephone-fill" style="color: #913BFF; margin-right: 10px;"></i> +91 7418771913</li>
-						<li style="margin-bottom: 15px;"><i class="bi bi-geo-alt-fill" style="color: #913BFF; margin-right: 10px;"></i> Tiruvannamalai, Tamil Nadu, India</li>
+						<li style="margin-bottom: 15px; display: flex; align-items: center;"><i class="bi bi-envelope-fill" style="color: #913BFF; margin-right: 15px; font-size: 1.25rem;"></i> bharatharasan7418@gmail.com</li>
+						<li style="margin-bottom: 15px; display: flex; align-items: center;"><i class="bi bi-telephone-fill" style="color: #913BFF; margin-right: 15px; font-size: 1.25rem;"></i> +91 7418771913</li>
+						<li style="margin-bottom: 15px; display: flex; align-items: center;"><i class="bi bi-geo-alt-fill" style="color: #913BFF; margin-right: 15px; font-size: 1.25rem;"></i> Tiruvannamalai, Tamil Nadu, India</li>
 					</ul>
 				</div>
 			</div>
-			<div class="col-lg-6">
-				<div class="contact-form mb-30" style="background: #130a2a; padding: 40px; border-radius: 12px; border: 1px solid #3c1e75;">
+			<div class="col-lg-6 wow fadeInRight" data-wow-delay="0.4s">
+				<div class="contact-form mb-30 card">
 					<form action="/contact" method="POST">
 						<div class="mb-3">
 							<label for="name" class="form-label">Full Name</label>
-							<input type="text" class="form-control" id="name" name="name" required style="background: #1a103c; color: white; border: 1px solid #3c1e75;">
+							<input type="text" class="form-control" id="name" name="name" required placeholder="Your full name">
 						</div>
 						<div class="mb-3">
 							<label for="email" class="form-label">Email Address</label>
-							<input type="email" class="form-control" id="email" name="email" required style="background: #1a103c; color: white; border: 1px solid #3c1e75;">
+							<input type="email" class="form-control" id="email" name="email" required placeholder="your.email@example.com">
 						</div>
 						<div class="mb-3">
 							<label for="message" class="form-label">Message</label>
-							<textarea class="form-control" id="message" name="message" rows="5" required style="background: #1a103c; color: white; border: 1px solid #3c1e75;"></textarea>
+							<textarea class="form-control" id="message" name="message" rows="5" required placeholder="Describe your project, timeline, or query..."></textarea>
 						</div>
 						<button type="submit" class="btn w-100">Send Message</button>
 					</form>

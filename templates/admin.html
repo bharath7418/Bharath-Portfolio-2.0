@@ -147,4 +147,69 @@
     </div>
 </section>
 
+<section class="admin-details pt-40 pb-160">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div style="background: #130a2a; border: 1px solid #3c1e75; border-radius: 12px; padding: 40px; margin-bottom: 50px; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);">
+                    <h3 style="color: white; margin-bottom: 25px;"><i class="bi bi-folder-plus" style="color: #913BFF;"></i> Add New Project Artifact</h3>
+                    
+                    <form action="/admin_project_add" method="POST" enctype="multipart/form-data" class="row g-3">
+                        
+                        <!-- Core Details Section -->
+                        <div class="col-md-6">
+                            <label for="name" style="color: #cbd5e1; margin-bottom: 5px; font-size: 0.9rem;"><i class="bi bi-tag-fill" style="color: #913BFF;"></i> Name</label>
+                            <input type="text" id="name" name="name" placeholder="Name (Max 20 chars)" maxlength="20" required class="form-control" style="background: #1a103c; color: white; border: 1px solid #3c1e75; padding: 0.65rem 1rem;">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="title" style="color: #cbd5e1; margin-bottom: 5px; font-size: 0.9rem;"><i class="bi bi-type-h1" style="color: #913BFF;"></i> Title</label>
+                            <input type="text" id="title" name="title" placeholder="Title (Max 20 chars)" maxlength="20" required class="form-control" style="background: #1a103c; color: white; border: 1px solid #3c1e75; padding: 0.65rem 1rem;">
+                        </div>
+
+                        <div class="col-12">
+                            <label for="problem_statement" style="color: #cbd5e1; margin-bottom: 5px; font-size: 0.9rem;"><i class="bi bi-exclamation-octagon-fill" style="color: #913BFF;"></i> Problem Statement</label>
+                            <textarea id="problem_statement" name="problem_statement" placeholder="Problem Statement (Max 200 chars)" maxlength="200" required rows="4" class="form-control" style="background: #1a103c; color: white; border: 1px solid #3c1e75; padding: 0.65rem 1rem;"></textarea>
+                        </div>
+                        
+                        <div class="col-12">
+                            <label for="description" style="color: #cbd5e1; margin-bottom: 5px; font-size: 0.9rem;"><i class="bi bi-file-earmark-text-fill" style="color: #913BFF;"></i> Description</label>
+                            <textarea id="description" name="description" placeholder="Description (Max 200 chars)" maxlength="200" required rows="3" class="form-control" style="background: #1a103c; color: white; border: 1px solid #3c1e75; padding: 0.65rem 1rem;"></textarea>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="tools" style="color: #cbd5e1; margin-bottom: 5px; font-size: 0.9rem;"><i class="bi bi-tools" style="color: #913BFF;"></i> Tools Used</label>
+                            <input type="text" id="tools" name="tools" placeholder="Tools Name (e.g. Python, Figma)" required class="form-control" style="background: #1a103c; color: white; border: 1px solid #3c1e75; padding: 0.65rem 1rem;">
+                        </div>
+
+                        <!-- File upload and Link fields matching the DB Model -->
+                        <div class="col-md-12">
+                            <label for="filename1" style="color: #cbd5e1; margin-bottom: 5px; font-size: 0.9rem;"><i class="bi bi-cloud-arrow-up-fill" style="color: #913BFF;"></i> Upload Project Image / File</label>
+                            <input type="file" id="filename1" name="filename1" class="form-control" style="background: #1a103c; color: white; border: 1px solid #3c1e75; padding: 0.65rem 1rem;">
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="git_link" style="color: #cbd5e1; margin-bottom: 5px; font-size: 0.9rem;"><i class="bi bi-github" style="color: #913BFF;"></i> GitHub Link</label>
+                            <input type="url" id="git_link" name="git_link" placeholder="https://github.com/..." class="form-control" style="background: #1a103c; color: white; border: 1px solid #3c1e75; padding: 0.65rem 1rem;">
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="project_link" style="color: #cbd5e1; margin-bottom: 5px; font-size: 0.9rem;"><i class="bi bi-link-45deg" style="color: #913BFF;"></i> Live Project URL</label>
+                            <input type="url" id="project_link" name="project_link" placeholder="https://yourproject.com" class="form-control" style="background: #1a103c; color: white; border: 1px solid #3c1e75; padding: 0.65rem 1rem;">
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="col-12 pt-3">
+                            <button type="submit" class="btn" style="background: #913BFF; color: white; border: none; padding: 0.75rem 2rem; font-weight: 600; border-radius: 6px; width: 100%;">
+                                <i class="bi bi-check-circle-fill"></i> Save Project Artifact
+                            </button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
 {% endblock %}
