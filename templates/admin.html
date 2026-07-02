@@ -154,21 +154,12 @@
                 <div style="background: #130a2a; border: 1px solid #3c1e75; border-radius: 12px; padding: 40px; margin-bottom: 50px; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);">
                     <h3 style="color: white; margin-bottom: 25px;"><i class="bi bi-folder-plus" style="color: #913BFF;"></i> Add New Project Artifact</h3>
                     
-                    <form action="/admin_project_add" method="POST" enctype="multipart/form-data" class="row g-3">
+                    <form action="/admin_miniproject_add" method="POST" enctype="multipart/form-data" class="row g-3">
                         
                         <!-- Core Details Section -->
                         <div class="col-md-6">
                             <label for="name" style="color: #cbd5e1; margin-bottom: 5px; font-size: 0.9rem;"><i class="bi bi-tag-fill" style="color: #913BFF;"></i> Name</label>
                             <input type="text" id="name" name="name" placeholder="Name (Max 20 chars)" maxlength="20" required class="form-control" style="background: #1a103c; color: white; border: 1px solid #3c1e75; padding: 0.65rem 1rem;">
-                        </div>
-                        <div class="col-md-6">
-                            <label for="title" style="color: #cbd5e1; margin-bottom: 5px; font-size: 0.9rem;"><i class="bi bi-type-h1" style="color: #913BFF;"></i> Title</label>
-                            <input type="text" id="title" name="title" placeholder="Title (Max 20 chars)" maxlength="20" required class="form-control" style="background: #1a103c; color: white; border: 1px solid #3c1e75; padding: 0.65rem 1rem;">
-                        </div>
-
-                        <div class="col-12">
-                            <label for="problem_statement" style="color: #cbd5e1; margin-bottom: 5px; font-size: 0.9rem;"><i class="bi bi-exclamation-octagon-fill" style="color: #913BFF;"></i> Problem Statement</label>
-                            <textarea id="problem_statement" name="problem_statement" placeholder="Problem Statement (Max 200 chars)" maxlength="200" required rows="4" class="form-control" style="background: #1a103c; color: white; border: 1px solid #3c1e75; padding: 0.65rem 1rem;"></textarea>
                         </div>
                         
                         <div class="col-12">

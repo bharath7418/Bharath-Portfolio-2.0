@@ -64,10 +64,9 @@ class Project(db.Model):
     user = db.Column(db.String(200),default=None)
     date = db.Column(db.String(20),default=None)
     
-    
 class MiniProject(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(150), nullable=False)
+    name = db.Column(db.String(150), nullable=False)
     description = db.Column(db.Text, nullable=False)
     tools = db.Column(db.String(100))
     filename1 = db.Column(db.String(100))
@@ -263,21 +262,6 @@ def admin_project_add():
     return redirect(url_for('admin_dashboard'))
 
 
-@app.route('/admin/project/add', methods=['POST'])
-@login_required
-def add_project():
-    title = request.form.get('title')
-    description = request.form.get('description')
-    tech_stack = request.form.get('tech_stack')
-    project_type = request.form.get('project_type', 'Major')
-    link = request.form.get('link')
-    
-    new_project = Project(title=title, description=description, tech_stack=tech_stack, project_type=project_type, link=link)
-    db.session.add(new_project)
-    db.session.commit()
-    flash('Project added successfully!', 'success')
-    return redirect(url_for('admin_dashboard'))
-
 @app.route('/admin/project/delete/<int:id>', methods=['POST'])
 @login_required
 def delete_project(id):
@@ -285,31 +269,6 @@ def delete_project(id):
     db.session.delete(project)
     db.session.commit()
     flash('Project deleted successfully!', 'success')
-    return redirect(url_for('admin_dashboard'))
-
-@app.route('/admin/service/add', methods=['POST'])
-@login_required
-def add_service():
-    title = request.form.get('title')
-    description = request.form.get('description')
-    icon = request.form.get('icon', 'code')
-    
-    new_service = Service(title=title, description=description, icon=icon)
-    db.session.add(new_service)
-    db.session.commit()
-    flash('Service added successfully!', 'success')
-    return redirect(url_for('admin_dashboard'))
-
-@app.route('/admin/blog/add', methods=['POST'])
-@login_required
-def add_blog():
-    title = request.form.get('title')
-    content = request.form.get('content')
-    
-    new_blog = Blog(title=title, content=content, date_posted=datetime.utcnow())
-    db.session.add(new_blog)
-    db.session.commit()
-    flash('Blog posted successfully!', 'success')
     return redirect(url_for('admin_dashboard'))
 
 # --- DATABASE SEEDING ---
